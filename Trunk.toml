@@ -1,3 +1,7 @@
+[serve]
+port = 8080
+open = true
+
 [build]
 public_url = "./"
 filehash = false
