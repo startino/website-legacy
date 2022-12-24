@@ -1,11 +1,10 @@
 use yew::{Properties, Html};
 use yew::prelude::*;
 
-pub mod topbar;
-pub mod button;
+pub mod components;
 
-use topbar::Topbar;
-use button::Button;
+use components::topbar::Topbar;
+use components::button::Button;
 
 #[function_component(App)]
 fn app() -> Html {
