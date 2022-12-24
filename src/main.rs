@@ -1,48 +1,11 @@
 use yew::{Properties, Html};
 use yew::prelude::*;
 
-#[function_component]
-fn Topbar() -> Html {
-    html! {
-        <div class="sticky z-40 top-0 w-full backdrop-blur flex-none transition-colors duration-500 bg-black/5">
-            <div class="py-4 border-b border-pink-300/10 mx-5">
-                <div class="px-auto xl:px-40 lg:px-20 md:px-10 md:px-auto relative flex items-center">
-                    <a class="px-3 flex overflow-hidden" href="#">
-                        <img src="images/logo/circle/1024.png" class="h-9 rounded-full" alt="Logo" />
-                    </a>
+pub mod topbar;
+pub mod button;
 
-                    <div class="relative items-center ml-auto">
-                        <nav class="text-sm leading-6 font-semibold text-purple-400 hover:text-emerald-400">
-                            <ul class="flex space-x-8">
-                                <li>
-                                    <a href="#">{"Nav Item"}</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
-}
-
-#[derive(Properties, PartialEq)]
-pub struct Props {
-    #[prop_or_default]
-    pub text: String,
-    pub href: String,
-}
-
-#[function_component]
-fn Button(props: &Props) -> Html {
-    html! {
-        <a href={props.href.clone()} class="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-white rounded-md shadow-2xl group">
-            <span class="absolute inset-0 w-full h-full transition duration-300 ease-out opacity-100 bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 group-hover:opacity-0"></span>
-            <span class="absolute inset-0 w-full h-full transition duration-300 ease-out opacity-0 bg-gradient-to-br from-teal-600 to-emerald-600 group-hover:opacity-100"></span>
-            <span class="relative">{props.text.clone()}</span>
-        </a>
-    }
-}
+use topbar::Topbar;
+use button::Button;
 
 #[function_component(App)]
 fn app() -> Html {
