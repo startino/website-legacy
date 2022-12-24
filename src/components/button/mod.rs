@@ -1,4 +1,4 @@
-use yew::{Properties, Html};
+use yew::{Properties};
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq)]

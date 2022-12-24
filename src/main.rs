@@ -1,4 +1,3 @@
-use yew::{Properties, Html};
 use yew::prelude::*;
 
 pub mod components;
@@ -8,6 +7,10 @@ use components::button::Button;
 
 #[function_component(App)]
 fn app() -> Html {
+
+    // many <br/>, get rid of it when page actually has content
+    let brs = (0..999).collect::<Vec<i32>>().iter().map(|_| html! {<br/>}).collect::<Html>();
+
     html! {
         <div class="bg-white dark:bg-black">
         <div class="pb-20 bg-gradient-to-r from-purple-900/30 to-teal-900/30 antialiased">
@@ -32,9 +35,9 @@ fn app() -> Html {
                     </div>
                 </div>
             </div>
-            
-            // get rid of this sometime lol
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+            // temp, get rid of when page has content
+            {brs}
 
         </div>
         </div>

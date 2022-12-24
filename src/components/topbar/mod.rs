@@ -1,4 +1,3 @@
-use yew::{Properties, Html};
 use yew::prelude::*;
 
 #[function_component]
