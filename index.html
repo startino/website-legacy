@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]">
+<html lang="en">
 <head>
     <!-- Meta Data -->
     <meta charset="UTF-8">
@@ -28,6 +28,19 @@
                 navigator.serviceWorker
                         .register('./service_worker.js');
             }
+        }
+    </script>
+
+    <script>
+        // color theme
+        if (
+            localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
         }
     </script>
 
