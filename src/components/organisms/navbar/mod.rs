@@ -1,13 +1,11 @@
-use yew::{function_component, html, Html, Properties, Children};
+use yew::{function_component, html, Html};
 
-#[derive(Properties, PartialEq)]
-pub struct Props {
-    #[prop_or_default]
-    pub children: Children, 
-}
+mod props;
+use props::Props;
+
 
 #[function_component]
-pub fn Topbar(props: &Props) -> Html {
+pub fn Navbar(props: &Props) -> Html {
     html! {
         <div class="sticky z-40 top-0 w-full backdrop-blur flex-none transition-colors duration-500 bg-black/5">
             <div class="py-4 border-b border-pink-300/10 mx-5">

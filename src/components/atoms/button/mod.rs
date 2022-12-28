@@ -1,11 +1,7 @@
-use yew::{function_component, html, Html, Properties};
+use yew::{function_component, html, Html};
 
-#[derive(Properties, PartialEq)]
-pub struct Props {
-    #[prop_or_default]
-    pub text: String,
-    pub href: String,
-}
+mod props;
+use props::Props;
 
 #[function_component]
 pub fn Button(props: &Props) -> Html {

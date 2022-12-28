@@ -1,12 +1,12 @@
-use wasm_bindgen::prelude::*;
-use web_sys::Window;
+//use wasm_bindgen::prelude::*;
+//use web_sys::Window;
 use yew::{function_component, html, Html};
 
 #[function_component]
 pub fn ThemeButton() -> Html {
-    let local_storage = web_sys::window().unwrap().local_storage().unwrap().unwrap();
+    //let local_storage = web_sys::window().unwrap().local_storage().unwrap().unwrap();
 
-    let value = local_storage.get_item("color-theme").unwrap();
+    //let value = local_storage.get_item("color-theme").unwrap();
     
     html! {
         <button type="button" class="fill-purple-400/20 stroke-purple-400 hover:fill-emerald-400/20 hover:stroke-emerald-400">

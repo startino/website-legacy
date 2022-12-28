@@ -2,9 +2,8 @@ use yew::prelude::*;
 
 pub mod components;
 
-use components::topbar::Topbar;
-use components::button::Button;
-use components::theme_button::ThemeButton;
+
+use components::*;
 
 #[function_component(App)]
 fn app() -> Html {
@@ -12,13 +11,12 @@ fn app() -> Html {
     // many <br/>, get rid of it when page actually has content
     let brs = (0..999).collect::<Vec<i32>>().iter().map(|_| html! {<br/>}).collect::<Html>();
 
-    let logo = html! {<img src="images/logo/circle/1024.png" class="h-9 rounded-full" alt="Logo"/>};
     html! {
         <div class="bg-white dark:bg-black">
         <div class="pb-20 bg-gradient-to-r from-purple-900/30 to-teal-900/30 antialiased">
-            <Topbar>
+            <Navbar>
                 <a class="px-3 flex overflow-hidden" href="#">
-                    <img src="images/logo/circle/1024.png" class="h-9 rounded-full" alt="Logo"/>
+                    <Logo style="circle"/>
                 </a>
 
                 <div class="flex items-center ml-auto">
@@ -37,7 +35,7 @@ fn app() -> Html {
                         </ul>
                     </nav>
                 </div>
-            </Topbar>
+            </Navbar>
             <div class="py-40 px-4 sm:px-6 md:px-8 border-b border-pink-500/40 shadow-2xl">
                 <div class="relative max-w-5xl mx-auto">
                     <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center text-white">
