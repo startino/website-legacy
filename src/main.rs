@@ -35,7 +35,7 @@ fn switch(routes: Route) -> Html {
         Route::Home => html! {
             <Home/>
         },
-        Route::About => html! { <p>{"About"}</p> },
+        Route::About => html! { <About/> },
         Route::Contact => html! { <p>{"Contact"}</p> },
         Route::NotFound => html! {
             <NotFound/>

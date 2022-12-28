@@ -6,3 +6,6 @@ pub use theme_button::ThemeButton;
 
 mod logo;
 pub use logo::Logo;
+
+mod root;
+pub use root::Root;
