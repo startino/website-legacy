@@ -1,8 +1,11 @@
-mod atoms;
-pub use atoms::{Button, Logo, ThemeButton};
+pub mod atoms;
+pub use atoms::*;
 
-mod molecules;
+pub mod molecules;
 pub use molecules::*;
 
-mod organisms;
+pub mod organisms;
 pub use organisms::*;
+
+pub mod pages;
+pub use pages::*;

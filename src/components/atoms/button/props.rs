@@ -1,8 +1,8 @@
-use yew::{Properties};
+use yew::{Properties, Children};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
     #[prop_or_default]
-    pub text: String,
-    pub href: String,
+    pub children: Children,
+    pub btn_type: String,
 }
