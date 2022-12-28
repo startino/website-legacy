@@ -7,7 +7,7 @@ pub fn ThemeButton() -> Html {
     //let local_storage = web_sys::window().unwrap().local_storage().unwrap().unwrap();
 
     //let value = local_storage.get_item("color-theme").unwrap();
-    
+
     html! {
         <button type="button" class="fill-purple-400/20 stroke-purple-400 hover:fill-emerald-400/20 hover:stroke-emerald-400">
             // Light mode

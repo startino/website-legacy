@@ -3,7 +3,6 @@ use yew::{function_component, html, Html};
 mod props;
 use props::Props;
 
-
 #[function_component]
 pub fn Navbar(props: &Props) -> Html {
     html! {

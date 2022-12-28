@@ -1,4 +1,4 @@
-use yew::{Properties};
+use yew::Properties;
 
 #[derive(Properties, PartialEq)]
 pub struct Props {

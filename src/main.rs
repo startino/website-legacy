@@ -1,5 +1,5 @@
-use yew_router::prelude::*;
 use yew::prelude::*;
+use yew_router::prelude::*;
 
 mod components;
 use components::pages::Home;
@@ -32,7 +32,7 @@ fn not_found() -> Html {
 
 fn switch(routes: Route) -> Html {
     match routes {
-        Route::Home => html! { 
+        Route::Home => html! {
             <Home/>
         },
         Route::About => html! { <p>{"About"}</p> },

@@ -12,8 +12,12 @@ impl Component for Home {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
-        // many <br/>, get rid of it when page actually has content
-        let brs = (0..999).collect::<Vec<i32>>().iter().map(|_| html! {<br/>}).collect::<Html>();
+        // many <br/>, get rid of it when page actuall has content
+        let brs = (0..999)
+            .collect::<Vec<i32>>()
+            .iter()
+            .map(|_| html! {<br/>})
+            .collect::<Html>();
 
         html! {
             <div class="bg-white dark:bg-black">
@@ -69,4 +73,3 @@ impl Component for Home {
         }
     }
 }
-

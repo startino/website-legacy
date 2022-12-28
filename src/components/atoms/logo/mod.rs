@@ -9,11 +9,10 @@ pub fn Logo(props: &Props) -> Html {
         html! {
             <img src="images/logo/circle/1024.png" class="h-9 rounded-full" alt="Logo"/>
         }
-    }
-    else {//  props.style == "square"
+    } else {
+        //  props.style == "square"
         html! {
             <img src="images/logo/square/1024.png" class="h-9" alt="Logo"/>
         }
     }
 }
-
