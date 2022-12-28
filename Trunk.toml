@@ -3,5 +3,5 @@ port = 8080
 open = true
 
 [build]
-public_url = "./"
+public_url = "/"
 filehash = false
