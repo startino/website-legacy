@@ -2,8 +2,8 @@ use yew::prelude::*;
 
 use crate::components::*;
 
-pub struct Home;
-impl Component for Home {
+pub struct About;
+impl Component for About {
     type Message = ();
     type Properties = ();
 
@@ -44,17 +44,18 @@ impl Component for Home {
                             </nav>
                         </div>
                     </Navbar>
+
                     <div class="py-40 px-4 sm:px-6 md:px-8 border-b border-pink-500/40 shadow-2xl">
                         <div class="relative max-w-5xl mx-auto">
                             <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center text-white">
-                                {"Futino"}
+                                {"About Us"}
                             </h1>
 
                             <p class="mt-6 text-lg text-white text-center max-w-3xl mx-auto">
-                                {"Dynamically built web-apps with "}
+                                {"Who are we, what are we about?"}
                                 <a class="inline text-purple-400 hover:text-emerald-400"
-                                    href="https://en.wikipedia.org/wiki/Free_and_open-source_software">
-                                    {"Free and Open-Source Software!"}
+                                    href="#">
+                                    {"Lets find out!"}
                                 </a>
                             </p>
 
@@ -65,6 +66,10 @@ impl Component for Home {
                         </div>
                     </div>
 
+                    <div class="py-20 px-4 sm:px-6 md:px-8 border-b border-pink-500/40">
+                        <div class="relative max-w-5xl mx-auto">
+                        </div>
+                    </div>
                     // temp, get rid of when page has content
                     {brs}
 

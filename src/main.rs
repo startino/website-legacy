@@ -2,7 +2,7 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 
 mod components;
-use components::pages::Home;
+use components::pages::*;
 
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
