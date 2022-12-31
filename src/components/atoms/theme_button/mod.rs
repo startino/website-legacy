@@ -1,15 +1,16 @@
-//use wasm_bindgen::prelude::*;
-//use web_sys::Window;
-use yew::{function_component, html, Html};
+use yew::{function_component, html, Callback, Html};
 
 #[function_component]
 pub fn ThemeButton() -> Html {
-    //let local_storage = web_sys::window().unwrap().local_storage().unwrap().unwrap();
+    let local_storage = web_sys::window().unwrap().local_storage().unwrap().unwrap();
 
-    //let value = local_storage.get_item("color-theme").unwrap();
+    let onclick = Callback::from(move |_| {
+        let greeting = String::from("Hi there");
+        web_sys::console::log_1(&greeting.into()); // if uncommented will print
+    });
 
     html! {
-        <button type="button" class="fill-purple-400/20 stroke-purple-400 hover:fill-emerald-400/20 hover:stroke-emerald-400">
+        <button onclick={onclick} class="fill-purple-400/20 stroke-purple-400 hover:fill-emerald-400/20 hover:stroke-emerald-400">
             // Light mode
             <span class="dark:hidden">
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">

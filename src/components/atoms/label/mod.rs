@@ -4,9 +4,9 @@ mod props;
 use props::Props;
 
 #[function_component]
-pub fn Root(props: &Props) -> Html {
+pub fn Label(props: &Props) -> Html {
     html! {
-        <div class="grow w-full h-full bg-gradient-to-r from-purple-900/30 to-teal-900/30 antialiased">
+        <div class="text-center align-middle text-black dark:text-white">
             {for props.children.iter()}
         </div>
     }

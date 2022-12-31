@@ -2,7 +2,7 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 
 mod components;
-use components::pages::*;
+use components::*;
 
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
@@ -47,7 +47,9 @@ fn switch(routes: Route) -> Html {
 fn app() -> Html {
     html! {
         <BrowserRouter>
-            <Switch<Route> render={switch}/> // <- must be child of <BrowserRouter>
+            <Page>
+                <Switch<Route> render={switch}/> // <- must be child of <BrowserRouter>
+            </Page>
         </BrowserRouter>
     }
 }
