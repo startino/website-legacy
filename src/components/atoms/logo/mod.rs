@@ -18,19 +18,14 @@ pub fn Logo(props: &Props) -> Html {
         }
     } else if props.style == "labeled" {
         html! {
-            <>
-            <div class="sm:invisible">
-                <Logo style="circle"/>
-            </div>
-            <div class="flex gap-5 invisible sm:visible">
+            <div class="flex justify-center gap-5">
                 <Logo style="circle"/>
                 <Label>
-                    <p class="pt-0.5 font-bold text-xl">
+                    <p class="pt-0.5 font-bold text-xl invisible sm:visible">
                     {"Futino"}
                     </p>
                 </Label>
             </div>
-            </>
         }
     } else {
         html! {
