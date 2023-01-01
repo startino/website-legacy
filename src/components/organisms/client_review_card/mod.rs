@@ -1,42 +1,33 @@
 
-struct ClientReview {
-    name: String,
-    company: String,
-    body: String,
-    }
-    
-    impl ClientReview {}
-    
-    fn get_client_reviews() -> Vec<ClientReview> {
-        // Later on get client reviews from a csv or something and parse it.
-        let review1 = ClientReview {
-        name: String::from("Elon Gates"),
-        company: String::from("Microsoft"),
-        body: String::from("words more words and even more words we dont really care about"),
-        };
-        let review2 = ClientReview {
-        name: String::from("Jeff Musk"),
-        company: String::from("Apple"),
-        body: String::from("words more words and even more words we dont really care about"),
-        };
-        let review3 = ClientReview {
-        name: String::from("Bill Bezoz"),
-        company: String::from("Amazon"),
-        body: String::from("words more words and even more words we dont really care about"),
-        };
-    
-        let reviews = vec![review1, review2, review3];
-    
-        return reviews;
-        }
+#[function_component]
+pub fn ClientReviewCard(props: &Props) -> Html {
+html! {
+<div class="mt-20 text-left w-20 p-8 rounded-xl bg-gradient-to-r from-teal-900/30 to-purple-900/30 antialiased">
+    <figure class="flex">
+        <img class="object-cover w-12 h-12 rounded-full" src="images/pfp/jorge.jpg" width="600" height="800" />
+        <figcaption class=" pl-20">
+            <div class="text-white text-2xl font-normal">
+                {&props.name}
+            </div>
+            <p class="text-white text-xl font-normal">
+                {"CEO of "}
+                <a class="inline text-purple-400 hover:text-emerald-400"
+                    href="https://en.wikipedia.org/wiki/Free_and_open-source_software">
+                    {&props.company}
+                </a>
+            </p>
+        </figcaption>
 
-        /*
-        let reviews = get_client_reviews();
-        let mut reviews_html: Vec<Html> = Vec::new();
+    </figure>
 
-        for review in reviews {
-        let review_html: Html = html! {
-        <ClientReviewCard name={review.name} company={review.company} body={review.body} />};
-        reviews_html.push(review_html);
-        }
-        */  
+    <blockquote class="p-8">
+        <p class="text-lg text-white text-left font-thin">
+            {
+            &props.body
+            }
+        </p>
+    </blockquote>
+
+</div>
+}
+}
