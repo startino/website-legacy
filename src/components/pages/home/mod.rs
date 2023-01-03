@@ -40,6 +40,11 @@ impl Component for Home {
                     <div class="grid grid-cols-3 gap-2">
                         <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
                         <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
+                        
                     </div>
 
                 </div>
