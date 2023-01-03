@@ -37,14 +37,14 @@ impl Component for Home {
                         <a href="/about"><Button btn_type="button"><p>{"Who Are We?"}</p></Button></a>
                     </div>
 
-                    <div class="grid grid-cols-3 gap-2">
+                    <div class="grid flex grid-cols-3 gap-2">
+                        <ClientReviewCard body="Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="Lorem ipsum dolor sit amet enim amet ad eleifend consequat elit per morbi nullam metus nam class hac curabitur praesent sociosqu vulputate torquent sapien volutpat nostra vel curae consectetur curabitur." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="Lorem ipsum dolor sit amet turpis quam netus imperdiet vel." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl." name="Frog Mason" company="Orange"/>
                         <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
                         <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
-                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
-                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
-                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
-                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
-                        
+
                     </div>
 
                 </div>
