@@ -3,6 +3,7 @@ use yew::prelude::*;
 use crate::components::*;
 
 pub struct Home;
+
 impl Component for Home {
     type Message = ();
     type Properties = ();
@@ -35,7 +36,14 @@ impl Component for Home {
                         <a href="/contact"><Button btn_type="button"><p>{"Contact Us!"}</p></Button></a>
                         <a href="/about"><Button btn_type="button"><p>{"Who Are We?"}</p></Button></a>
                     </div>
+
+                    <div class="grid grid-cols-3 gap-2">
+                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
+                    </div>
+
                 </div>
+
             </div>
         }
     }
