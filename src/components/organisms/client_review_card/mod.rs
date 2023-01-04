@@ -13,7 +13,7 @@ pub fn ClientReviewCard(props: &Props) -> Html {
         company,
     } = props;
     html! {
-    <div class="pt-10 text-left rounded-xl bg-gradient-to-r from-teal-900/30 to-purple-900/30 antialiased">
+    <div class="pt-10 text-left rounded-xl bg-gradient-to-r from-teal-900/30 to-purple-900/30 ">
         <figure class="flex px-5">
             <img class="object-cover w-12 h-12 rounded-full" src="images/logo/square/512.png" width="600" height="800" />
             <figcaption class=" pl-6">

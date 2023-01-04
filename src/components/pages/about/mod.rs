@@ -29,11 +29,13 @@ impl Component for About {
                     </p>
                 </div>
             </div>
-
-            <StaffCard body="This is some text that will be read but will be useless."
-            name="Jonas Lewis" title="Lead Developer, Co-Founder, & Co-Owner"/>
-            <StaffCard body="This is some text that will be read but will be useless."
-            name="Jorge Lindberg" title="Lead Developer, Co-Founder, & Co-Owner"/>
+            <div class="my-10 mx-auto sm:px-6 md:px-8 border-b border-pink-500/40 shadow-2xl">
+                <StaffCard body="This is some text that will be read but will be useless."
+                name="Jonas Lewis" title="Lead Developer, Co-Founder, & Co-Owner"/>
+                <StaffCard body="This is some text that will be read but will be useless."
+                name="Jorge Lindberg" title="Lead Developer, Co-Founder, & Co-Owner"/>
+            </div>
+            
             </main>
         }
     }
