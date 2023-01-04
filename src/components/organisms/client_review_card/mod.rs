@@ -13,10 +13,10 @@ pub fn ClientReviewCard(props: &Props) -> Html {
         company,
     } = props;
     html! {
-    <div class="mt-20 text-left p-8 rounded-xl bg-gradient-to-r from-teal-900/30 to-purple-900/30 antialiased">
-        <figure class="flex">
+    <div class="pt-10 text-left rounded-xl bg-gradient-to-r from-teal-900/30 to-purple-900/30 antialiased">
+        <figure class="flex px-5">
             <img class="object-cover w-12 h-12 rounded-full" src="images/logo/square/512.png" width="600" height="800" />
-            <figcaption class=" p-auto">
+            <figcaption class=" pl-6">
             <Label>
             <h3 class="text-left">
             {
@@ -25,7 +25,7 @@ pub fn ClientReviewCard(props: &Props) -> Html {
             </h3>
             </Label>
             <Label>
-            <h3>
+            <h3 class="text-left">
             {"CEO of Apple"}
             </h3>
             </Label>
@@ -34,10 +34,14 @@ pub fn ClientReviewCard(props: &Props) -> Html {
 
         </figure>
 
-        <blockquote class="p-8">
-            <p class="text-lg text-white text-left font-thin">
+        <blockquote class="p-4">
+            <Label>
+            <h3 class="text-left font-thin">
+            
                 {body}
-            </p>
+            
+            </h3>
+            </Label>
         </blockquote>
 
     </div>

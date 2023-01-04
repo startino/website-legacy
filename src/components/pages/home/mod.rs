@@ -15,7 +15,7 @@ impl Component for Home {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <div class="py-40 px-4 sm:px-6 md:px-8 border-b border-pink-500/40 shadow-2xl">
-                <div class="relative max-w-5xl mx-auto">
+                <div class="relative max-w-6xl mx-auto">
                     <Label>
                     <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl m-5">
                         {"Futino"}
@@ -37,14 +37,26 @@ impl Component for Home {
                         <a href="/about"><Button btn_type="button"><p>{"Who Are We?"}</p></Button></a>
                     </div>
 
-                    <div class="grid flex grid-cols-3 gap-2">
+                    <div class="mt-20 grid grid-cols-3 gap-x-6">
+                        <div class="row-end-auto grid grid-cols-1 gap-6">
                         <ClientReviewCard body="Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="Lorem ipsum dolor sit amet enim amet ad eleifend consequat elit per morbi nullam metus nam class hac curabitur praesent sociosqu vulputate torquent sapien volutpat nostra vel curae consectetur curabitur." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="Lorem ipsum dolor sit amet turpis quam netus imperdiet vel." name="Frog Mason" company="Orange"/>
+                        </div>
+                        <div class="grid grid-cols-1 gap-6">
                         <ClientReviewCard body="Lorem ipsum dolor sit amet enim amet ad eleifend consequat elit per morbi nullam metus nam class hac curabitur praesent sociosqu vulputate torquent sapien volutpat nostra vel curae consectetur curabitur." name="Frog Mason" company="Orange"/>
                         <ClientReviewCard body="Lorem ipsum dolor sit amet turpis quam netus imperdiet vel." name="Frog Mason" company="Orange"/>
                         <ClientReviewCard body="Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl." name="Frog Mason" company="Orange"/>
                         <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl." name="Frog Mason" company="Orange"/>
+                        </div>
+                        <div class="grid grid-cols-1 gap-6">
+                        <ClientReviewCard body="Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl." name="Frog Mason" company="Orange"/>
                         <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
-
+                        <ClientReviewCard body="Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl." name="Frog Mason" company="Orange"/>
+                        <ClientReviewCard body="blah blah some nice words about futino and how we're the best." name="Frog Mason" company="Orange"/>
+                        </div>
                     </div>
 
                 </div>
