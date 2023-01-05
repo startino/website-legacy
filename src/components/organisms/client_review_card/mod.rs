@@ -37,9 +37,9 @@ pub fn ClientReviewCard(props: &Props) -> Html {
         <blockquote class="p-6">
             <Label>
             <h3 class="text-left font-thin">
-            
+
                 {body}
-            
+
             </h3>
             </Label>
         </blockquote>
