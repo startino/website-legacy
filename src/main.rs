@@ -32,11 +32,9 @@ fn not_found() -> Html {
 
 fn switch(routes: Route) -> Html {
     match routes {
-        Route::Home => html! {
-            <Home/>
-        },
+        Route::Home => html! {<Home/> },
         Route::About => html! { <About/> },
-        Route::Contact => html! { <p>{"Contact"}</p> },
+        Route::Contact => html! { <Contact/> },
         Route::NotFound => html! {
             <NotFound/>
         },
