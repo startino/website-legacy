@@ -5,11 +5,11 @@ use crate::components::*;
 pub struct Home;
 
 impl Component for Home {
-type Message = ();
-type Properties = ();
+    type Message = ();
+    type Properties = ();
 
-fn create(_ctx: &Context<Self>) -> Self {
-    Self
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
@@ -22,7 +22,7 @@ fn create(_ctx: &Context<Self>) -> Self {
                                 {"Futino"}
                             </h1>
                         </Label>
-        
+
                         <Label>
                             <h2 class="text-lg">
                                 {"Dynamically built web-apps with "}
@@ -32,7 +32,7 @@ fn create(_ctx: &Context<Self>) -> Self {
                                 </a>
                             </h2>
                         </Label>
-        
+
                         <div class="mt-6 sm:mt-10 flex justify-center space-x-6 text-sm">
                             <a href="/contact"><Button btn_type="button">
                                     <p>{"Contact Us!"}</p>
@@ -41,9 +41,25 @@ fn create(_ctx: &Context<Self>) -> Self {
                                     <p>{"Who Are We?"}</p>
                                 </Button></a>
                         </div>
-        
+
                     </div>
-                    
+
+                </div>
+
+                <div class="justify-items-center my-10 mx-auto sm:px-6 md:px-8 border-b border-pink-500/40 shadow-2xl">
+                    <div class="grid grid-cols-2">
+                        <StaffCard body="This is some text that will be read but will be useless."
+                        name="Jonas Lewis" title="Lead Developer, Co-Founder, & Co-Owner"/>
+                        <StaffCard body="This is some text that will be read but will be useless."
+                        name="Jorge Lindberg" title="Lead Developer, Co-Founder, & Co-Owner"/>
+                    </div>
+                    <div class="">
+                    <Label>
+                        <h3 class="text-center text-purple-400 hover:text-emerald-400">
+                        {"Learn more."}
+                        </h3>
+                    </Label>
+                    </div>
                 </div>
 
                 // Client review section, will include the most valued reviews at the top.
@@ -82,12 +98,14 @@ fn create(_ctx: &Context<Self>) -> Self {
                                 name="Frog Mason" company="Orange" />
                         </div>
                     </div>
-    
-    
+
+
+
+
                 </div>
-    
+
             </main>
-        
+
         }
-        }
-        }
+    }
+}
