@@ -2,7 +2,7 @@ use yew::prelude::*; use crate::components::*; pub struct Contact; impl
 Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
 &Context<Self>) -> Self { Self } fn view(&self, _ctx: &Context<Self>) -> Html { html! {
         <main>
-            <div class="py-40 px-4 sm:px-6 md:px-8 border-b border-pink-500/40 shadow-2xl">
+            <div class="py-40 px-4 sm:px-6 md:px-8 border-b border-secondary-500/40 shadow-2xl">
                 <div class="relative max-w-6xl mx-auto">
                     <Label>
                         <h1 class="text-left font-extrabold text-8xl m-5">
@@ -23,8 +23,8 @@ Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
             </div>
 
             <div
-                class="relative grid grid-cols-4 gap-5 py-10 px-6 sm:px-6 md:px-8 border-b border-pink-500/40 shadow-2xl">
-                <div class="col-span-1 bg-purple-800/20 h-96">
+                class="relative grid grid-cols-4 gap-5 py-10 px-6 sm:px-6 md:px-8 border-b border-secondary-500/40 shadow-2xl">
+                <div class="col-span-1 bg-primary-800/20 h-96">
                     <Label>
                         <h3 class="text-left font-bold text-4xl m-5">
                             {"Get in touch."}
@@ -75,8 +75,8 @@ Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
                 </div>
             </div>
             <div
-            class="relative grid grid-cols-4 gap-5 py-10 px-6 sm:px-6 md:px-8 border-b border-pink-500/40 shadow-2xl">
-            <div class="col-span-1 bg-purple-800/20 h-80">
+            class="relative grid grid-cols-4 gap-5 py-10 px-6 sm:px-6 md:px-8 border-b border-secondary-500/40 shadow-2xl">
+            <div class="col-span-1 bg-primary-800/20 h-80">
                 <Label>
                     <h3 class="text-left font-bold text-4xl m-5">
                         {"Frequently asked questions."}
