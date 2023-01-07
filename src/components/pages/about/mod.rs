@@ -22,7 +22,7 @@ impl Component for About {
 
                     <p class="mt-6 text-lg text-white text-center max-w-3xl mx-auto">
                         {"Who are we? what are we about? "}
-                        <a class="inline text-primary-400 hover:text-emerald-400"
+                        <a class="inline text-primary-400 hover:text-accent-400"
                             href="#staff">
                             {"Lets find out!"}
                         </a>

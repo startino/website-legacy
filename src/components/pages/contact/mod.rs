@@ -85,7 +85,7 @@ Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
                 <Label>
                     <h4 class="text-left font-thin text-lg m-5">
                         {"Can't find the answer you're looking for? "}
-                        <a href="#" class="hover:text-emerald-400">
+                        <a href="#" class="hover:text-accent-400">
                             {"Ask here."}
                         </a>
                     </h4>

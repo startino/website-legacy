@@ -60,7 +60,7 @@ fn create(_ctx: &Context<Self>) -> Self {
                             online with beautiful websites and apps that they can customise."}
                         </h3>
                         <h3 class="pt-3 p-5 ">
-                            <a href="/about" class="text-primary-700 hover:text-accent-emerald-dark">{"Learn more about us."}</a>
+                            <a href="/about" class="text-primary-700 hover:text-accent-accent-dark">{"Learn more about us."}</a>
                         </h3>
                     </Label>
                 </div>
@@ -87,13 +87,13 @@ fn create(_ctx: &Context<Self>) -> Self {
                         <figcaption class="text-left align-text-bottom font-medium p-3">
                             <p class="text-white">
                                 {"CEO of "}
-                                <a class="inline font-bold dark:text-primary-700 dark:hover:text-accent-emerald-dark"
+                                <a class="inline font-bold dark:text-primary-700 dark:hover:text-accent-accent-dark"
                                     href="https://www.microsoft.com">
                                     {"Apple"}
                                 </a>
                             </p>
 
-                            <p class="text-primary-700 dark:hover:text-accent-emerald-dark">
+                            <p class="text-primary-700 dark:hover:text-accent-accent-dark">
                                 <a href="https://en.wikipedia.org/wiki/Jeff_Bezos">
                                     {"Elon Musk"}
                                 </a>
