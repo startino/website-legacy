@@ -15,8 +15,8 @@ fn create(_ctx: &Context<Self>) -> Self {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
         <main>
-            <div class="py-40 px-4 sm:px-6 md:px-8 border-b border-pink-500/40 shadow-2xl">
-                <div class="relative max-w-6xl mx-auto ">
+            <div class="py-40 px-4 sm:px-6 md:px-8 border-b dark:border-primary-pink-dark shadow-2xl">
+                <div class="relative max-w-6xl mx-auto">
                     <Label>
                         <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl m-5">
                             {"Futino"}
@@ -26,7 +26,7 @@ fn create(_ctx: &Context<Self>) -> Self {
                     <Label>
                         <h2 class="text-lg">
                             {"Dynamically built web-apps with "}
-                            <a class="inline text-purple-400 hover:text-emerald-400"
+                            <a class="inline dark:text-primary-purple-dark dark: hover:text-accent-teal-dark"
                                 href="https://en.wikipedia.org/wiki/Free_and_open-source_software">
                                 {"Free and Open-Source Software!"}
                             </a>
@@ -45,7 +45,7 @@ fn create(_ctx: &Context<Self>) -> Self {
             </div>
 
              // About us section: will include our staff cards and a brief introduction.
-            <div class="justify-items-center my-10 border-b border-pink-500/40 shadow-2xl">
+            <div class="justify-items-center my-10 border-b border-primary-pink-dark/40 shadow-2xl">
                 <div class="justify-items-center grid grid-cols-2">
                     <StaffCard body="This is some text that will be read but will be useless." name="Jonas Lewis"
                         title="Lead Developer, Co-Founder, & Co-Owner" />
@@ -60,14 +60,14 @@ fn create(_ctx: &Context<Self>) -> Self {
                             online with beautiful websites and apps that they can customise."}
                         </h3>
                         <h3 class="pt-3 p-5 ">
-                            <a href="/about" class="text-purple-400 hover:text-emerald-400">{"Learn more about us."}</a>
+                            <a href="/about" class="text-primary-purple-dark hover:text-accent-emerald-dark">{"Learn more about us."}</a>
                         </h3>
                     </Label>
                 </div>
             </div>
 
             // Client review section, will include the most valued reviews at the top.
-            <div class="relative border-b border-pink-500/40 shadow-2xl">
+            <div class="relative border-b dark:border-primary-pink-dark/40 shadow-2xl">
                 <div class="max-w-4xl mx-auto">
                     <p class="text-4xl dark:text-white text-center  font-bold">
                         {
@@ -87,13 +87,13 @@ fn create(_ctx: &Context<Self>) -> Self {
                         <figcaption class="text-left align-text-bottom font-medium p-3">
                             <p class="text-white">
                                 {"CEO of "}
-                                <a class="inline text-purple-400 hover:text-emerald-400 font-bold"
+                                <a class="inline font-bold dark:text-primary-purple-dark dark:hover:text-accent-emerald-dark"
                                     href="https://www.microsoft.com">
                                     {"Apple"}
                                 </a>
                             </p>
 
-                            <p class="text-purple-400 hover:text-emerald-400">
+                            <p class="text-primary-purple-dark dark:hover:text-accent-emerald-dark">
                                 <a href="https://en.wikipedia.org/wiki/Jeff_Bezos">
                                     {"Elon Musk"}
                                 </a>
@@ -115,9 +115,6 @@ fn create(_ctx: &Context<Self>) -> Self {
                             name="Frog Mason" company="Orange" />
                         <ClientReviewCard body="Lorem ipsum dolor sit amet turpis quam netus imperdiet vel."
                             name="Frog Mason" company="Orange" />
-                        <ClientReviewCard
-                            body="Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."
-                            name="Frog Mason" company="Orange" />
                     </div>
                     <div class="grid grid-cols-1 gap-6">
                         <ClientReviewCard
@@ -128,11 +125,28 @@ fn create(_ctx: &Context<Self>) -> Self {
 
                     </div>
                 </div>
-                <div class="p-6 flex justify-center text-sm">
+                <div class="p-10 flex justify-center text-sm">
                     <a href="#"><Button btn_type="button">
                             <p>{"Show more..."}</p>
                         </Button></a>
                 </div>
+            </div>
+
+            <div class="relative border-b border-pink-400/40 shadow-2xl">
+                <div class="my-32 mx-32">
+                    <Label>
+                        <h1 class="text-left font-extrabold text-2xl">
+                            {"A Solution To Your Obstacle."}
+                        </h1>
+                    </Label>
+                    <Label>
+                        <h1 class="text-left font-normal text-xl max-w-2xl pt-6">
+                            {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
+                        </h1>
+                    </Label>
+                </div>
+               
+
             </div>
 
 
