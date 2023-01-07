@@ -52,9 +52,9 @@ fn create(_ctx: &Context<Self>) -> Self {
                     <StaffCard body="This is some text that will be read but will be useless." name="Jorge Lindberg"
                         title="Lead Developer, Co-Founder, & Co-Owner" />
                 </div>
-                <div class="mx-auto max-w-6xl">
+                <div class="mx-auto max-w-2xl">
                     <Label>
-                        <h3 class=" text-xl p-6 ">
+                        <h3 class=" text-2xl p-6 ">
                             {"Futino creates and maintains dynamic web-apps that don't rely on proprietary
                             subscription-based solutions. We help growing companies and startups to build their presence
                             online with beautiful websites and apps that they can customise."}
@@ -67,8 +67,41 @@ fn create(_ctx: &Context<Self>) -> Self {
             </div>
 
             // Client review section, will include the most valued reviews at the top.
-            <div class="relative  border-b border-pink-500/40 shadow-2xl">
-                <div class="max-w-6xl mx-auto mt-20 grid grid-cols-3 gap-x-6">
+            <div class="relative border-b border-pink-500/40 shadow-2xl">
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-4xl dark:text-white text-center  font-bold">
+                        {
+                        "How would you thrive without Futino?"
+                        }
+                    </p>
+                    <p class="text-xl text-thin dark:text-white text-center p-6">
+                        {
+                        " \"The best solutions company on the planet. If you have a small business or are wanting to
+                        start one,
+                        using Futino's services is a must to compete in the space.\" "
+                        }
+                    </p>
+
+                    <figure class="justify-center items-center mx-auto flex">
+                        <img class="object-covet rounded-full w-12 h-12" src="images/logo/circle/1024.png" />
+                        <figcaption class="text-left align-text-bottom font-medium p-3">
+                            <p class="text-white">
+                                {"CEO of "}
+                                <a class="inline text-purple-400 hover:text-emerald-400 font-bold"
+                                    href="https://www.microsoft.com">
+                                    {"Apple"}
+                                </a>
+                            </p>
+
+                            <p class="text-purple-400 hover:text-emerald-400">
+                                <a href="https://en.wikipedia.org/wiki/Jeff_Bezos">
+                                    {"Elon Musk"}
+                                </a>
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="max-w-6xl mx-auto mt-10 grid grid-cols-3 gap-x-6">
                     <div class="row-end-auto grid grid-cols-1 gap-6">
                         <ClientReviewCard
                             body="Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."
@@ -96,11 +129,13 @@ fn create(_ctx: &Context<Self>) -> Self {
                     </div>
                 </div>
                 <div class="p-6 flex justify-center text-sm">
-                    <a href="/contact"><Button btn_type="button">
+                    <a href="#"><Button btn_type="button">
                             <p>{"Show more..."}</p>
                         </Button></a>
                 </div>
             </div>
+
+
         </main>
 
         }
