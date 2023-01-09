@@ -29,12 +29,36 @@ impl Component for About {
                     </p>
                 </div>
             </div>
-            <div class="my-10 mx-auto sm:px-6 md:px-8 border-b border-secondary-500/40 shadow-2xl">
-                <StaffCard body="This is some text that will be read but will be useless."
-                name="Jonas Lewis" title="Lead Developer, Co-Founder, & Co-Owner"/>
-                <StaffCard body="This is some text that will be read but will be useless."
-                name="Jorge Lindberg" title="Lead Developer, Co-Founder, & Co-Owner"/>
+            <div class="justify-items-center my-10 border-b border-secondary-500/40 shadow-2xl">
+                <div id="staff" class="justify-items-center grid grid-cols-2">
+                    <StaffCard body="This is some text that will be read but will be useless." name="Jonas Lewis"
+                        title="Lead Developer, Co-Founder, & Co-Owner" />
+                    <StaffCard body="This is some text that will be read but will be useless." name="Jorge Lindberg"
+                        title="Lead Developer, Co-Founder, & Co-Owner" />
+                </div>
             </div>
+
+            <div class="relative border-b border-secondary-500/40 shadow-2xl">
+                <div class="my-32 mx-32">
+                    <Label>
+                        <h1 class="inline text-left font-extrabold text-2xl">
+                            <h1 class="text-primary-700">{"What"}</h1>
+                            {" we do."}
+                        </h1>
+                    </Label>
+                    <Label>
+                        <h1 class="text-left font-normal text-xl max-w-2xl pt-6">
+                            {"Futino creates and maintains dynamic web-apps that don't rely on proprietary
+                            subscription-based solutions. We help growing companies and startups to build their presence
+                            online with beautiful websites and apps that they can customise."}
+                        </h1>
+                    </Label>
+                </div>
+               
+
+            </div>
+
+            
             
             </main>
         }

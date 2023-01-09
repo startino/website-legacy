@@ -132,7 +132,7 @@ fn create(_ctx: &Context<Self>) -> Self {
                 </div>
             </div>
 
-            <div class="relative border-b border-secondary-400/40 shadow-2xl">
+            <div class="relative border-b border-secondary-500/40 shadow-2xl">
                 <div class="my-32 mx-32">
                     <Label>
                         <h1 class="text-left font-extrabold text-2xl">
