@@ -19,14 +19,14 @@ pub fn Header(props: &Props) -> Html {
                     <div class="flex items-center ml-auto">
                         <nav class="text-sm leading-6 font-semibold text-primary-400">
                             <ul class="m-auto flex space-x-8">
-                                <li class="hover:text-accentaccent-400">
-                                    <a href="/">{"Home"}</a>
+                                <li>
+                                    <TextLink text="Home" href="/" />
                                 </li>
-                                <li class="hover:text-accentaccent-400">
-                                    <a href="/contact">{"Contact"}</a>
+                                <li>
+                                    <TextLink text="Contact" href="/contact" />
                                 </li>
-                                <li class="hover:text-accent-400">
-                                    <a href="/about">{"About Us"}</a>
+                                <li>
+                                    <TextLink text="About Us" href="/about" />
                                 </li>
                                 <li class="border-l border-secondary-300/10"/>
                                 <li class="hover:text-accent-400">
