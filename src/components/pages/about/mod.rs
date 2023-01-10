@@ -42,40 +42,26 @@ impl Component for About {
                 {" we are."}
               </h1>
               <div id="staff" class="justify-items-center grid grid-cols-2">
-                <div
-                  class="py-6 px-4 sm:px-6 md:px-8 dark: border-secondary-600/40"
-                >
-                  <a
-                    href="#"
-                    class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-primary-100 dark:border-primary-800 dark:bg-primary-800/10 dark:hover:bg-primary-800"
-                  >
-                    <img
-                      class="object-cover w-full rounded-t-lg h-288 w-110 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                      src="images/logo/square/1024.png"
-                      alt=""
-                    />
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                      <div class="mb-2 grid grid-flow-col text-xl text-white font-light ">
+                <StaffCard name="Jonas Lewis"
+                        title="Lead Developer, Co-Founder, & Co-Owner" >
                         <p>
-                          {"Lorem ipsum dolor sit amet fermentum ut curabitur
-                          maecenas facilisis ullamcorper ornare arcu amet dui
-                          habitasse placerat suspendisse vulputate nisl."}
-                        </p>
-                        <p >
-                          {"Lorem ipsum dolor sit amet fermentum ut curabitur
-                          maecenas facilisis ullamcorper ornare arcu amet dui
-                          habitasse placerat suspendisse vulputate nisl."}
-                        </p>
-                      </div>
-                      <figcaption class="align-text-bottom font-medium">
-                        <div class="text-slate-300">
-                          {"Co-Founder / CEO of Futino"}
-                        </div>
-                        <div class="text-slate-400">{"Jorge Lewis"}</div>
-                      </figcaption>
-                    </div>
-                  </a>
-                </div>
+                            {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis
+                            ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
+                            </p>
+                            <p>
+                                {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis 
+                                ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
+                                </p>
+                        </StaffCard>
+                        <StaffCard name="Jonas Lewis"
+                        title="Lead Developer, Co-Founder, & Co-Owner" >
+                        <p>
+                            {"This is some text that will be read but will be useless."}
+                            </p>
+                            <p>
+                                {"This is some text that will be read but will be useless."}
+                                </p>
+                        </StaffCard>
               </div>
             </div>
           </div>

@@ -47,16 +47,14 @@ impl Component for Home {
              // About us section: will include our staff cards and a brief introduction.
             <div class="justify-items-center my-10 border-b border-secondary-500/40 shadow-2xl">
                 <div class="justify-items-center grid grid-cols-2">
+                    
                     <StaffCard name="Jonas Lewis"
                         title="Lead Developer, Co-Founder, & Co-Owner" >
                         <p>
                         {"This is some text that will be read but will be useless."}
                         </p>
-                        <p>
-                            {"This is some text that will be read but will be useless."}
-                            </p>
                         </StaffCard>
-                    <StaffCard name="Jonas Lewis"
+                        <StaffCard name="Jonas Lewis"
                         title="Lead Developer, Co-Founder, & Co-Owner" >
                         <p>
                         {"This is some text that will be read but will be useless."}
