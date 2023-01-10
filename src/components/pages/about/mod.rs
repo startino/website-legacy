@@ -14,9 +14,9 @@ impl Component for About {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
         <main>
+          // Top section
           <div
-            class="py-40 px-4 sm:px-6 md:px-8 border-b border-secondary-500/40 shadow-2xl"
-          >
+            class="py-40 px-4 sm:px-6 md:px-8 border-b border-secondary-500/40 shadow-2xl">
             <div class="relative max-w-5xl mx-auto">
               <h1
                 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center text-white"
@@ -35,31 +35,43 @@ impl Component for About {
               </p>
             </div>
           </div>
+
+          // Staff section
           <div class="relative border-b border-secondary-500/40 shadow-2xl">
-            <div class="my-32 mx-32">
-              <h1 class="inline text-left font-bold text-2xl text-white">
+            <div class="my-40 mx-32">
+              <h1 class="p-6 text-left font-bold text-3xl text-white">
                 <a class="font-black text-primary-700">{"Who"}</a>
                 {" we are."}
               </h1>
-              <div id="staff" class="justify-items-center grid grid-cols-2">
+              <div id="staff" class="justify-items-center grid grid-cols-2 p-6">
                 <StaffCard name="Jonas Lewis"
+                        title="Lead Developer, Co-Founder, & Co-Owner" >
+                        <p class="text-lg">
+                            {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis
+                            ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
+                            </p>
+                            <p class="text-lg">
+                                {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis 
+                                ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
+                                </p>
+                                <p class="text-lg">
+                                  {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis
+                                  ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
+                                  </p>
+                        </StaffCard>
+                        <StaffCard name="Jorge Lindberg"
                         title="Lead Developer, Co-Founder, & Co-Owner" >
                         <p>
                             {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis
                             ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
                             </p>
                             <p>
-                                {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis 
+                              {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis
+                              ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
+                              </p>
+                              <p>
+                                {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis
                                 ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
-                                </p>
-                        </StaffCard>
-                        <StaffCard name="Jonas Lewis"
-                        title="Lead Developer, Co-Founder, & Co-Owner" >
-                        <p>
-                            {"This is some text that will be read but will be useless."}
-                            </p>
-                            <p>
-                                {"This is some text that will be read but will be useless."}
                                 </p>
                         </StaffCard>
               </div>
@@ -69,7 +81,7 @@ impl Component for About {
 
           <div class="relative border-b border-secondary-500/40 shadow-2xl">
             <div class="my-32 mx-32">
-              <h1 class="inline text-left font-bold text-2xl text-white">
+              <h1 class="inline text-left font-bold text-3xl text-white">
                 <a class="font-black text-primary-700">{"What"}</a>
                 {" we do."}
               </h1>
@@ -83,7 +95,7 @@ impl Component for About {
           </div>
           <div class="relative border-b border-secondary-500/40 shadow-2xl">
             <div class="my-32 mx-32">
-              <h1 class="inline text-left font-bold text-2xl text-white">
+              <h1 class="inline text-left font-bold text-3xl text-white">
                 <a class="font-black text-primary-700">{"Why"}</a>
                 {" we do."}
               </h1>

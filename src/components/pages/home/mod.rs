@@ -47,7 +47,7 @@ impl Component for Home {
              // About us section: will include our staff cards and a brief introduction.
             <div class="justify-items-center my-10 border-b border-secondary-500/40 shadow-2xl">
                 <div class="justify-items-center grid grid-cols-2">
-                    
+
                     <StaffCard name="Jonas Lewis"
                         title="Lead Developer, Co-Founder, & Co-Owner" >
                         <p>
@@ -69,7 +69,7 @@ impl Component for Home {
                             online with beautiful websites and apps that they can customise."}
                         </h3>
                         <h3 class="pt-3 p-5 ">
-                            <a href="/about" class="text-primary-700 hover:text-accent-accent-dark">{"Learn more about us."}</a>
+                            <a href="/about" class="inline-flex text-primary-700 hover:text-accent-accent-dark">{"Learn more about us."} <span><ExternalLinkIcon /></span></a>
                         </h3>
                     </Label>
                 </div>
@@ -144,14 +144,19 @@ impl Component for Home {
             <div class="relative border-b border-secondary-500/40 shadow-2xl">
                 <div class="my-32 mx-32">
                     <Label>
-                        <h1 class="text-left font-extrabold text-2xl">
-                            {"A Solution To Your Obstacle."}
-                        </h1>
+                        <h1 class="p-6 pl-0 text-left font-bold text-3xl text-white">
+                            {"A "}
+                            <a class="font-black text-primary-700">{"Solution"}</a>
+                            {" To Your Obstacle."}
+                          </h1>
                     </Label>
                     <Label>
-                        <h1 class="text-left font-normal text-xl max-w-2xl pt-6">
+                        <h3 class="text-left font-normal text-xl max-w-2xl pt-6">
                             {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
-                        </h1>
+                        </h3>
+                        <h3 class="text-left p-3 pl-0">
+                            <a href="/about" class="inline-flex text-primary-600 hover:text-accent-accent-dark">{"Learn more about us."} <span><ExternalLinkIcon /></span></a>
+                        </h3>
                     </Label>
                 </div>
 
