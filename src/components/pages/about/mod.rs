@@ -43,12 +43,11 @@ impl Component for About {
               </h1>
               <div id="staff" class="justify-items-center grid grid-cols-2">
                 <div
-                  id="staff"
                   class="py-6 px-4 sm:px-6 md:px-8 dark: border-secondary-600/40"
                 >
                   <a
                     href="#"
-                    class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-primary-100 dark:border-primary-800 dark:bg-primary-600 dark:hover:bg-primary-800"
+                    class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-primary-100 dark:border-primary-800 dark:bg-primary-800/10 dark:hover:bg-primary-800"
                   >
                     <img
                       class="object-cover w-full rounded-t-lg h-288 w-110 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
@@ -56,7 +55,7 @@ impl Component for About {
                       alt=""
                     />
                     <div class="flex flex-col justify-between p-4 leading-normal">
-                      <div class="mb-2 grid grid-cols-2 text-2xl text-white font-light ">
+                      <div class="mb-2 grid grid-flow-col text-xl text-white font-light ">
                         <p>
                           {"Lorem ipsum dolor sit amet fermentum ut curabitur
                           maecenas facilisis ullamcorper ornare arcu amet dui

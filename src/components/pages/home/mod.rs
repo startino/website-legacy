@@ -5,11 +5,11 @@ use crate::components::*;
 pub struct Home;
 
 impl Component for Home {
-type Message = ();
-type Properties = ();
+    type Message = ();
+    type Properties = ();
 
-fn create(_ctx: &Context<Self>) -> Self {
-    Self
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
@@ -47,10 +47,21 @@ fn create(_ctx: &Context<Self>) -> Self {
              // About us section: will include our staff cards and a brief introduction.
             <div class="justify-items-center my-10 border-b border-secondary-500/40 shadow-2xl">
                 <div class="justify-items-center grid grid-cols-2">
-                    <StaffCard body="This is some text that will be read but will be useless." name="Jonas Lewis"
-                        title="Lead Developer, Co-Founder, & Co-Owner" />
-                    <StaffCard body="This is some text that will be read but will be useless." name="Jorge Lindberg"
-                        title="Lead Developer, Co-Founder, & Co-Owner" />
+                    <StaffCard name="Jonas Lewis"
+                        title="Lead Developer, Co-Founder, & Co-Owner" >
+                        <p>
+                        {"This is some text that will be read but will be useless."}
+                        </p>
+                        <p>
+                            {"This is some text that will be read but will be useless."}
+                            </p>
+                        </StaffCard>
+                    <StaffCard name="Jonas Lewis"
+                        title="Lead Developer, Co-Founder, & Co-Owner" >
+                        <p>
+                        {"This is some text that will be read but will be useless."}
+                        </p>
+                        </StaffCard>
                 </div>
                 <div class="mx-auto max-w-2xl">
                     <Label>
@@ -145,7 +156,7 @@ fn create(_ctx: &Context<Self>) -> Self {
                         </h1>
                     </Label>
                 </div>
-               
+
 
             </div>
 
@@ -153,5 +164,5 @@ fn create(_ctx: &Context<Self>) -> Self {
         </main>
 
         }
-        }
-        }
+    }
+}
