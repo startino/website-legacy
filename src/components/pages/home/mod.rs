@@ -15,10 +15,10 @@ impl Component for Home {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
         <main>
-            <div class="py-40 px-4 sm:px-6 md:px-8 border-b dark:border-secondary-900/40 shadow-2xl">
-                <div class="relative max-w-6xl mx-auto">
+            <div class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 dark:border-secondary-900/40">
+                <div class="relative mx-auto max-w-6xl">
                     <Label>
-                        <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl m-5 text-secondary-light">
+                        <h1 class="m-5 text-4xl font-extrabold sm:text-5xl lg:text-6xl text-primary-light">
                             {"Futino"}
                         </h1>
                     </Label>
@@ -33,7 +33,7 @@ impl Component for Home {
                         </h2>
                     </Label>
 
-                    <div class="mt-6 sm:mt-10 flex justify-center space-x-6 text-sm">
+                    <div class="flex justify-center mt-6 space-x-6 text-sm sm:mt-10">
                         <a href="/contact"><Button btn_type="button">
                                 <p>{"Contact Us!"}</p>
                             </Button></a>
@@ -45,8 +45,8 @@ impl Component for Home {
             </div>
 
              // About us section: will include our staff cards and a brief introduction.
-            <div class="justify-items-center my-10 border-b border-secondary-500/40 shadow-2xl">
-                <div class="justify-items-center grid grid-cols-2">
+            <div class="justify-items-center my-10 border-b shadow-2xl border-secondary-500/40">
+                <div class="grid grid-cols-2 justify-items-center">
 
                     <StaffCard name="Jonas Lewis"
                         title="Lead Developer, Co-Founder, & Co-Owner" >
@@ -63,12 +63,12 @@ impl Component for Home {
                 </div>
                 <div class="mx-auto max-w-2xl">
                     <Label>
-                        <h3 class=" text-2xl p-6 ">
+                        <h3 class="p-6 text-2xl">
                             {"Futino creates and maintains dynamic web-apps that don't rely on proprietary
                             subscription-based solutions. We help growing companies and startups to build their presence
                             online with beautiful websites and apps that they can customise."}
                         </h3>
-                        <h3 class="pt-3 p-5 ">
+                        <h3 class="p-5 pt-3">
                             <a href="/about" class="inline-flex">{"Learn more about us."} <span><ExternalLinkIcon /></span></a>
                         </h3>
                     </Label>
@@ -76,14 +76,14 @@ impl Component for Home {
             </div>
 
             // Client review section, will include the most valued reviews at the top.
-            <div class="relative border-b dark:border-primary-500/40 shadow-2xl">
-                <div class="max-w-4xl mx-auto">
-                    <p class="text-4xl dark:text-white text-center  font-bold">
+            <div class="relative border-b shadow-2xl dark:border-primary-500/40">
+                <div class="mx-auto max-w-4xl">
+                    <p class="text-4xl font-bold text-center dark:text-white">
                         {
                         "How would you thrive without Futino?"
                         }
                     </p>
-                    <p class="text-xl text-thin dark:text-white text-center p-6">
+                    <p class="p-6 text-xl text-center dark:text-white text-thin">
                         {
                         " \"The best solutions company on the planet. If you have a small business or are wanting to
                         start one,
@@ -91,9 +91,9 @@ impl Component for Home {
                         }
                     </p>
 
-                    <figure class="justify-center items-center mx-auto flex">
-                        <img class="object-covet rounded-full w-12 h-12" src="images/logo/circle/1024.png" />
-                        <figcaption class="text-left align-text-bottom font-medium p-3">
+                    <figure class="flex justify-center items-center mx-auto">
+                        <img class="w-12 h-12 rounded-full object-covet" src="images/logo/circle/1024.png" />
+                        <figcaption class="p-3 font-medium text-left align-text-bottom">
                             <p class="text-white">
                                 {"CEO of "}
                                 <a class="inline font-bold dark:text-primary-700 dark:hover:text-accent-accent-dark"
@@ -110,8 +110,8 @@ impl Component for Home {
                         </figcaption>
                     </figure>
                 </div>
-                <div class="max-w-6xl mx-auto mt-10 grid grid-cols-3 gap-x-6">
-                    <div class="row-end-auto grid grid-cols-1 gap-6">
+                <div class="grid grid-cols-3 gap-x-6 mx-auto mt-10 max-w-6xl">
+                    <div class="grid grid-cols-1 row-end-auto gap-6">
                         <ClientReviewCard
                             body="Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."
                             name="Frog Mason" company="Orange" title="CEO" website="https://www.apple.com/"/>
@@ -134,27 +134,27 @@ impl Component for Home {
 
                     </div>
                 </div>
-                <div class="p-10 flex justify-center text-sm">
+                <div class="flex justify-center p-10 text-sm">
                     <a href="#"><Button btn_type="button">
                             <p>{"Show more..."}</p>
                         </Button></a>
                 </div>
             </div>
 
-            <div class="relative border-b border-secondary-500/40 shadow-2xl">
+            <div class="relative border-b shadow-2xl border-secondary-500/40">
                 <div class="my-32 mx-32">
                     <Label>
-                        <h1 class="p-6 pl-0 text-left font-bold text-3xl text-white">
+                        <h1 class="p-6 pl-0 text-3xl font-bold text-left text-white">
                             {"A "}
                             <a class="font-black text-primary-700">{"Solution"}</a>
                             {" To Your Obstacle."}
                           </h1>
                     </Label>
                     <Label>
-                        <h3 class="text-left font-normal text-xl max-w-2xl pt-6">
+                        <h3 class="pt-6 max-w-2xl text-xl font-normal text-left">
                             {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
                         </h3>
-                        <h3 class="text-left p-3 pl-0">
+                        <h3 class="p-3 pl-0 text-left">
                             <a href="/about" class="inline-flex text-primary-600 hover:text-accent-accent-dark">{"Learn more about us."} <span><ExternalLinkIcon /></span></a>
                         </h3>
                     </Label>

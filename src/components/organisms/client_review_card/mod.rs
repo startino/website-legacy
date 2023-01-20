@@ -16,11 +16,11 @@ pub fn ClientReviewCard(props: &Props) -> Html {
     } = props;
     let title_at_company = format!("{} of {}", title, company);
     html! {
-    <div class="pt-6 text-left rounded-xl bg-gradient-to-r from-secondary-900/10 to-secondary-900/30 hover:from-accent-900/10 hover:to-accent-900/30">
+    <div class="pt-6 text-left bg-gradient-to-r rounded-xl from-secondary-900/10 to-secondary-900/30 hover:from-accent-900/10 hover:to-accent-900/30">
     <a href={website.to_owned()}>
         <figure class="flex px-6">
             <img class="object-cover w-12 h-12 rounded-full" src="images/logo/square/512.png" width="600" height="800" />
-            <figcaption class=" pl-3">
+            <figcaption class="pl-3">
             <Label>
             <h3 class="text-left">
             {
@@ -41,7 +41,7 @@ pub fn ClientReviewCard(props: &Props) -> Html {
 
         <blockquote class="p-6">
             <Label>
-            <h3 class="text-left font-thin">
+            <h3 class="font-thin text-left">
 
                 {body}
 

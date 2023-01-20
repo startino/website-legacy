@@ -12,7 +12,7 @@ html! {
 <div>
     <label for={label.to_owned()} class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{title}</label>
     <input type="text" id={label.to_owned()}
-        class="bg-secondary-100 border border-secondary-300 text-secondary-900 text-sm text- rounded-lg focus:ring-accent-500 focus:border-accent-500 block w-full p-2 pb-16"
+        class="block p-2 pb-16 w-full text-sm rounded-lg border bg-secondary-100 border-secondary-300 text-secondary-900 text- focus:ring-accent-500 focus:border-accent-500"
         placeholder={place_holder.to_owned()} required={required.to_owned()} />
 </div>
 }
