@@ -10,7 +10,7 @@ pub fn TextLink(props: &Props) -> Html {
     let Props { text, href } = props;
     html! {
     <Label>
-                            <a class="inline dark:text-primary-400 dark:hover:text-accent-400"
+                            <a class="inline text-primary-class hover:text-tertiary-class"
                                 href={href.to_owned()}>
                                 {text.to_owned()}
                             </a>

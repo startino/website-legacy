@@ -8,7 +8,7 @@ use props::Props;
 #[function_component]
 pub fn Page(props: &Props) -> Html {
     html! {
-        <div class="min-h-screen dark:bg-gradient-to-r dark:from-primary-900/20 dark:to-secondary-900/20">
+        <div class="min-h-screen dark:bg-gradient-to-r dark:from-primary-light dark:to-tertiary-light">
             <Header />
             {for props.children.iter()}
             <Footer />

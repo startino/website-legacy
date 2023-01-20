@@ -18,7 +18,7 @@ impl Component for Home {
             <div class="py-40 px-4 sm:px-6 md:px-8 border-b dark:border-secondary-900/40 shadow-2xl">
                 <div class="relative max-w-6xl mx-auto">
                     <Label>
-                        <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl m-5">
+                        <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl m-5 text-secondary-light">
                             {"Futino"}
                         </h1>
                     </Label>
@@ -69,7 +69,7 @@ impl Component for Home {
                             online with beautiful websites and apps that they can customise."}
                         </h3>
                         <h3 class="pt-3 p-5 ">
-                            <a href="/about" class="inline-flex text-primary-700 hover:text-accent-accent-dark">{"Learn more about us."} <span><ExternalLinkIcon /></span></a>
+                            <a href="/about" class="inline-flex">{"Learn more about us."} <span><ExternalLinkIcon /></span></a>
                         </h3>
                     </Label>
                 </div>
