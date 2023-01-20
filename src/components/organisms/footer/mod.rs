@@ -28,7 +28,7 @@ pub fn Footer(props: &Props) -> Html {
             </ul>
         </div>
         <hr class="my-6 sm:mx-auto lg:my-8 border-secondary-300/10" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">{"Unpublished © 2022 "}<a href="#" class="hover:underline text-primary-400 hover:text-accent-400">{"Futino™"}</a>
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">{"Unpublished © 2022 "}<a href="#" class="hover:underline text-primary-light hover:text-accent-400">{"Futino™"}</a>
         </span>
     </footer>
         }

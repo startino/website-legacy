@@ -17,7 +17,7 @@ pub fn Header(props: &Props) -> Html {
                     {for props.children.iter()}
 
                     <div class="flex items-center ml-auto">
-                        <nav class="text-sm font-semibold leading-6 text-primary-400">
+                        <nav class="text-sm font-semibold leading-6 text-primary">
                             <ul class="flex m-auto space-x-8">
                                 <li>
                                     <TextLink text="Home" href="/" />
