@@ -43,4 +43,4 @@ cargo = false
 # uses the build stage, meaning it executes in parallel with all of the existing asset pipelines.
 stage = "pre_build"
 command = "sh"
-command_arguments = ["-c", "npx tailwind -i $TRUNK_SOURCE_DIR/styles/tailwind.css -o ./output.css"]
+command_arguments = ["-c", "npx rustywind --write .", "npx tailwind -i $TRUNK_SOURCE_DIR/styles/tailwind.css -o ./output.css"]
