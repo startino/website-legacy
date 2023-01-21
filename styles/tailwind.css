@@ -6,90 +6,89 @@
 
     /* Primary */ 
         /* Background */
-        .bg-primary-class{
+        .bg-primary{
             @apply bg-primary-light dark:bg-primary-dark;
         }
-        /* Text 
+        /* Text */
         .text-primary{
             @apply text-primary-light dark:text-primary-dark;
         }
-        */
-        .text-on-primary-class
+        .text-on-primary
         {
             @apply text-primary-on-light dark:text-primary-on-dark;
         }
-        .text-primary-container-class{
+        .text-primary-container{
             @apply text-primary-container-light dark:text-primary-container-light;
         }
-        .text-on-primary-container-class{
+        .text-on-primary-container{
             @apply text-primary-container-on-light dark:text-primary-container-on-light;
         }
-        .text-inverse-primary-class{
+        .text-inverse-primary{
             @apply text-primary-inverse-light dark:text-primary-inverse-dark;
         }
 
     /* Secondary */
         /* Background */
-        .bg-secondary-class{
+        .bg-secondary{
             @apply bg-secondary-light dark:bg-secondary-dark
         }
         /* Text */
-        .text-secondary-class{
+        .text-secondary{
             @apply text-secondary-light dark:text-secondary-dark;
         }
-        .text-secondary-on-class
+        .text-secondary-on
         {
             @apply text-secondary-on-light dark:text-secondary-on-dark;
         }
-        .text-secondary-container-class{
+        .text-secondary-container{
             @apply text-secondary-container-light dark:text-secondary-container-light;
         }
-        .text-secondary-container-on-class{
+        .text-secondary-container-on{
             @apply text-secondary-container-on-light dark:text-secondary-container-on-light;
         }
-        .text-secondary-inverse-class{
+        .text-secondary-inverse{
             @apply text-secondary-inverse-light dark:text-secondary-inverse-dark;
         }
 
     /* Tertiary */
         /* Background */
-        .bg-tertiary-class{
+        .bg-tertiary{
             @apply bg-tertiary-light dark:bg-tertiary-dark
         }
         /* Text */
-        .text-tertiary-class{
+        .text-tertiary{
             @apply text-tertiary-light dark:text-tertiary-dark;
         }
-        .text-on-tertiary-class
+        .text-on-tertiary
         {
             @apply text-tertiary-on-light dark:text-tertiary-on-dark;
         }
-        .text-tertiary-container-class{
+        .text-tertiary-container{
             @apply text-tertiary-container-light dark:text-tertiary-container-light;
         }
-        .text-on-tertiary-container-class{
+        .text-on-tertiary-container{
             @apply text-tertiary-container-on-light dark:text-tertiary-container-on-light;
         }
-        .text-inverse-tertiary-class{
+        .text-inverse-tertiary{
             @apply text-tertiary-inverse-light dark:text-tertiary-inverse-dark;
         }
     
      /* Neutral */
         /* Text */
-        .text-neutral-class{
+        .text-neutral{
             @apply text-neutral-light dark:text-neutral-dark;
         }
-        .text-on-neutral-class
+        .text-on-neutral
         {
             @apply text-neutral-on-light dark:text-neutral-on-dark;
         }
-        .text-neutral-container-class{
+        .text-neutral-container{
             @apply text-neutral-container-light dark:text-neutral-container-light;
         }
-        .text-on-neutral-container-class{
+        .text-on-neutral-container{
             @apply text-neutral-container-on-light dark:text-neutral-container-on-light;
         }
-        .text-inverse-neutral-class{
+        .text-inverse-neutral{
             @apply text-neutral-inverse-light dark:text-neutral-inverse-dark;
         }
 

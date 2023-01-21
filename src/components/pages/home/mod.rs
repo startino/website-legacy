@@ -15,7 +15,7 @@ impl Component for Home {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
         <main>
-            <div class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 dark:border-secondary-900/40">
+            <div class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 dark:border-secondary-dark/40">
                 <div class="relative mx-auto max-w-6xl">
                     <Label>
                         <h1 class="m-5 text-4xl font-extrabold sm:text-5xl lg:text-6xl">
@@ -26,7 +26,7 @@ impl Component for Home {
                     <Label>
                         <h2 class="text-lg">
                             {"Dynamically built web-apps with "}
-                            <a class="inline text-primary hover:text-tertiary-class"
+                            <a class="inline text-tertiary hover:text-xl"
                                 href="https://en.wikipedia.org/wiki/Free_and_open-source_software">
                                 {"Free and Open-Source Software!"}
                             </a>
@@ -96,7 +96,7 @@ impl Component for Home {
                         <figcaption class="p-3 font-medium text-left align-text-bottom">
                             <p class="text-white">
                                 {"CEO of "}
-                                <a class="inline font-bold text-primary hover:text-tertiary-class"
+                                <a class="inline font-bold text-primary hover:text-tertiary"
                                     href="https://www.microsoft.com">
                                     {"Apple"}
                                 </a>
