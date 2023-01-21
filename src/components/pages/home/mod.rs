@@ -96,7 +96,7 @@ impl Component for Home {
                         <figcaption class="p-3 font-medium text-left align-text-bottom">
                             <p class="text-white">
                                 {"CEO of "}
-                                <a class="inline font-bold text-primary hover:text-tertiary"
+                                <a class="inline font-bold text-primary-light dark:text-primary-dark hover:text-tertiary"
                                     href="https://www.microsoft.com">
                                     {"Apple"}
                                 </a>
