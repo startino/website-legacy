@@ -98,8 +98,8 @@ module.exports = {
           }
         },
 
-         // Background tones
-         background: {
+        // Background tones
+        background: {
           light:
             "rgb(var(--md-color-background-light)/ <alpha-value>) ",
           dark: "rgb(var(--md-color-background-dark) / <alpha-value>) ",
@@ -110,26 +110,38 @@ module.exports = {
           },
         },
 
-        // On Error tones
-        error:{
+        outline:
+        {
           light:
-          "rgb(var(--md-color-error-light)/ <alpha-value>) ",
-        dark: "rgb(var(--md-color-error-dark) / <alpha-value>) ",
-        on: {
-          light:
-            "rgb(var(--md-color-on-error-light)/ <alpha-value>) ",
-          dark: "rgb(var(--md-color-on-error-dark) / <alpha-value>) ",
+            "rgb(var(--md-color-outline-light)/ <alpha-value>) ",
+          dark: "rgb(var(--md-color-outline-dark) / <alpha-value>) ",
+          variant: {
+            light:
+              "rgb(var(--md-color-outline-variant-light)/ <alpha-value>) ",
+            dark: "rgb(var(--md-color-outline-variant-dark) / <alpha-value>) ",
+          }
         },
-        container: {
+
+        // On Error tones
+        error: {
           light:
-            "rgb(var(--md-color-error-container-light)/ <alpha-value>) ",
-          dark: "rgb(var(--md-color-error-container-light)/ <alpha-value>) ",
+            "rgb(var(--md-color-error-light)/ <alpha-value>) ",
+          dark: "rgb(var(--md-color-error-dark) / <alpha-value>) ",
           on: {
             light:
-              "rgb(var(--md-color-on-error-container-light)/ <alpha-value>) ",
-            dark: "rgb(var(--md-color-on-error-container-dark) / <alpha-value>) ",
+              "rgb(var(--md-color-on-error-light)/ <alpha-value>) ",
+            dark: "rgb(var(--md-color-on-error-dark) / <alpha-value>) ",
           },
-        },
+          container: {
+            light:
+              "rgb(var(--md-color-error-container-light)/ <alpha-value>) ",
+            dark: "rgb(var(--md-color-error-container-light)/ <alpha-value>) ",
+            on: {
+              light:
+                "rgb(var(--md-color-on-error-container-light)/ <alpha-value>) ",
+              dark: "rgb(var(--md-color-on-error-container-dark) / <alpha-value>) ",
+            },
+          },
         },
       },
       fontFamily: {
@@ -143,6 +155,6 @@ module.exports = {
   },
   safelist: ["*"],
   plugins: [
-    
+
   ],
 };

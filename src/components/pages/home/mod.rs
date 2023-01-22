@@ -15,7 +15,7 @@ impl Component for Home {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
         <main>
-            <div class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 dark:border-secondary-dark/40">
+            <div class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 border-primary-light/40 dark:border-primary-dark/40">
                 <div class="relative mx-auto max-w-6xl">
                     <Label>
                         <h1 class="m-5 text-4xl font-extrabold sm:text-5xl lg:text-6xl">
@@ -45,7 +45,7 @@ impl Component for Home {
             </div>
 
              // About us section: will include our staff cards and a brief introduction.
-            <div class="justify-items-center my-10 border-b shadow-2xl border-secondary-light/40 dark:border-secondary-dark/40">
+            <div class="justify-items-center my-10 border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
                 <div class="grid grid-cols-2 justify-items-center">
 
                     <StaffCard name="Jonas Lewis"
@@ -79,7 +79,7 @@ impl Component for Home {
             </div>
 
             // Client review section, will include the most valued reviews at the top.
-            <div class="relative border-b shadow-2xl dark:border-primary/40">
+            <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
                 <div class="mx-auto max-w-4xl">
                     <p class="text-4xl font-bold text-center text-background-on-light dark:text-background-on-dark">
                         {
@@ -144,12 +144,12 @@ impl Component for Home {
                 </div>
             </div>
 
-            <div class="relative border-b shadow-2xl border-secondary-500/40">
+            <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
                 <div class="my-32 mx-32">
                     <Label>
-                        <h1 class="p-6 pl-0 text-3xl font-bold text-left text-white">
+                        <h1 class="p-6 pl-0 text-3xl font-bold text-left text-background-on-light dark:text-background-on-dark">
                             {"A "}
-                            <a class="font-black text-primary-light">{"Solution"}</a>
+                            <a class="font-black text-primary-light dark:text-primary-dark">{"Solution"}</a>
                             {" To Your Obstacle."}
                           </h1>
                     </Label>
@@ -157,10 +157,15 @@ impl Component for Home {
                         <h3 class="pt-6 max-w-2xl text-xl font-normal text-left">
                             {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
                         </h3>
-                        <h3 class="p-3 pl-0 text-left">
-                            <a href="/about" class="inline-flex text-primary-light hover:text-accent-accent-dark">{"Learn more about us."} <span><ExternalLinkIcon /></span></a>
-                        </h3>
                     </Label>
+                    <div class="text-sm pt-10">
+                        <a href="#">
+                            <Button btn_type="button">
+                                <p class="inline-flex items-center gap-x-2">
+                                    {"Learn more"}<span><RightArrow /></span>
+                                </p>
+                            </Button></a>
+                    </div>
                 </div>
 
 

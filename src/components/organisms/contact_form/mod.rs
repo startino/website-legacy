@@ -23,7 +23,7 @@ pub fn ContactForm(props: &Props) -> Html {
                         </div>
 
                         <button type="submit"
-                            class="py-2.5 px-5 w-full text-sm font-medium text-center text-white rounded-lg sm:w-auto focus:ring-4 focus:outline-none bg-accent-700 hover:bg-accent-800 focus:ring-accent-300">
+                            class="py-2.5 px-5 w-full text-sm font-medium text-center rounded-lg sm:w-auto transition duration-300 text-secondary-on-light dark:text-secondary-on-dark hover:text-tertiary-on-light dark:hover:text-tertiary-on-dark bg-secondary-light dark:bg-secondary-dark hover:bg-tertiary-light dark:hover:bg-tertiary-dark">
                             {"Submit"}
                         </button>
                     </form>

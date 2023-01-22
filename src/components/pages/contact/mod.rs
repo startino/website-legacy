@@ -4,7 +4,7 @@ Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
         <main>
 
             // Top section
-            <div class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 border-secondary-500/40">
+            <div class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 border-primary-light/40 dark:border-primary-dark/40">
                 <div class="relative mx-auto max-w-6xl">
                     <Label>
                         <h1 class="m-5 text-8xl font-extrabold text-left">
@@ -26,10 +26,10 @@ Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
             
             // Contact form section
             <div
-                class="grid relative grid-cols-4 gap-5 py-10 px-6 border-b shadow-2xl sm:px-6 md:px-8 border-secondary-500/40">
-                <div class="col-span-1 h-96 bg-primary-800/20">
+                class="grid relative grid-cols-4 gap-5 py-10 px-6 border-b shadow-2xl sm:px-6 md:px-8 border-primary-light/40 dark:border-primary-dark/40">
+                <div class="col-span-1 h-96 bg-surface-light dark:bg-surface-dark">
                     <Label>
-                        <h3 class="m-5 text-4xl font-bold text-left">
+                        <h3 class="m-5 text-4xl font-bold text-left text-surface-on-light dark:text-surface-on-dark">
                             {"Get in touch."}
                         </h3>
                     </Label>
@@ -49,8 +49,8 @@ Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
 
             // FAQ section
             <div
-            class="grid relative grid-cols-4 gap-5 py-10 px-6 border-b shadow-2xl sm:px-6 md:px-8 border-secondary-500/40">
-            <div class="col-span-1 h-80 bg-primary-800/20">
+            class="grid relative grid-cols-4 gap-5 py-10 px-6 border-b shadow-2xl sm:px-6 md:px-8 border-primary-light/40 dark:border-primary-dark/40">
+            <div class="col-span-1 h-80 bg-surface-light dark:bg-surface-dark">
                 <Label>
                     <h3 class="m-5 text-4xl font-bold text-left">
                         {"Frequently asked questions."}
@@ -59,7 +59,7 @@ Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
                 <Label>
                     <h4 class="m-5 text-lg font-thin text-left">
                         {"Can't find the answer you're looking for? "}
-                        <a href="#" class="hover:text-accent-400">
+                        <a href="#" class="text-primary-light dark:text-primary-dark hover:text-secondary-light dark:hover:text-secondary-dark">
                             {"Ask here."}
                         </a>
                     </h4>
