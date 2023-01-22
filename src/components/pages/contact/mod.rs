@@ -1,6 +1,15 @@
-use yew::prelude::*; use crate::components::*; pub struct Contact; impl
-Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
-&Context<Self>) -> Self { Self } fn view(&self, _ctx: &Context<Self>) -> Html { html! {
+use crate::lorc::generic::*;
+use yew::prelude::*;
+
+pub struct Contact;
+impl Component for Contact {
+    type Message = ();
+    type Properties = ();
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self
+    }
+    fn view(&self, _ctx: &Context<Self>) -> Html {
+        html! {
         <main>
 
             // Top section
@@ -23,7 +32,7 @@ Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
                     </Label>
                 </div>
             </div>
-            
+
             // Contact form section
             <div
                 class="grid relative grid-cols-4 gap-5 py-10 px-6 border-b shadow-2xl sm:px-6 md:px-8 border-primary-light/40 dark:border-primary-dark/40">
@@ -113,7 +122,9 @@ Component for Contact { type Message = (); type Properties = (); fn create(_ctx:
 
             </div>
         </div>
-           
+
         </main>
 
-        } } }
+        }
+    }
+}

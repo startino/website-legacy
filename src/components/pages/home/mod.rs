@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::*;
+use crate::lorc::generic::*;
 
 pub struct Home;
 
@@ -69,12 +69,12 @@ impl Component for Home {
                             online with beautiful websites and apps that they can customise."}
                         </h3>
                     </Label>
-                   
+
                         <h3 class="p-5 pt-3 inline-flex text-secondary-light dark:text-secondary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark">
                             <TextLink href="/about" text="Learn more about us."/><span><ExternalLinkIcon /></span>
                         </h3>
-                    
-                       
+
+
                 </div>
             </div>
 

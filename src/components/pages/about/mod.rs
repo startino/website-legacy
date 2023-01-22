@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::*;
+use crate::lorc::generic::organisms::StaffCard;
 
 pub struct About;
 impl Component for About {
@@ -51,7 +51,7 @@ impl Component for About {
                             ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
                             </p>
                             <p class="text-lg">
-                                {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis 
+                                {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis
                                 ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
                                 </p>
                                 <p class="text-lg">
