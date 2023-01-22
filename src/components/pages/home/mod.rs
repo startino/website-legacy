@@ -45,7 +45,7 @@ impl Component for Home {
             </div>
 
              // About us section: will include our staff cards and a brief introduction.
-            <div class="justify-items-center my-10 border-b shadow-2xl border-secondary-500/40">
+            <div class="justify-items-center my-10 border-b shadow-2xl border-secondary-light/40 dark:border-secondary-dark/40">
                 <div class="grid grid-cols-2 justify-items-center">
 
                     <StaffCard name="Jonas Lewis"
@@ -61,29 +61,32 @@ impl Component for Home {
                         </p>
                         </StaffCard>
                 </div>
-                <div class="mx-auto max-w-2xl">
+                <div class="mx-auto max-w-2xl align-middle text-center">
                     <Label>
                         <h3 class="p-6 text-2xl">
                             {"Futino creates and maintains dynamic web-apps that don't rely on proprietary
                             subscription-based solutions. We help growing companies and startups to build their presence
                             online with beautiful websites and apps that they can customise."}
                         </h3>
-                        <h3 class="p-5 pt-3">
-                            <a href="/about" class="inline-flex">{"Learn more about us."} <span><ExternalLinkIcon /></span></a>
-                        </h3>
                     </Label>
+                   
+                        <h3 class="p-5 pt-3 inline-flex text-secondary-light dark:text-secondary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark">
+                            <TextLink href="/about" text="Learn more about us."/><span><ExternalLinkIcon /></span>
+                        </h3>
+                    
+                       
                 </div>
             </div>
 
             // Client review section, will include the most valued reviews at the top.
-            <div class="relative border-b shadow-2xl dark:border-primary-500/40">
+            <div class="relative border-b shadow-2xl dark:border-primary/40">
                 <div class="mx-auto max-w-4xl">
-                    <p class="text-4xl font-bold text-center dark:text-white">
+                    <p class="text-4xl font-bold text-center text-background-on-light dark:text-background-on-dark">
                         {
                         "How would you thrive without Futino?"
                         }
                     </p>
-                    <p class="p-6 text-xl text-center dark:text-white text-thin">
+                    <p class="p-6 text-xl text-center text-background-on-light dark:text-background-on-dark text-thin">
                         {
                         " \"The best solutions company on the planet. If you have a small business or are wanting to
                         start one,
@@ -96,13 +99,13 @@ impl Component for Home {
                         <figcaption class="p-3 font-medium text-left align-text-bottom">
                             <p class="text-white">
                                 {"CEO of "}
-                                <a class="inline font-bold text-primary-light dark:text-primary-dark hover:text-tertiary"
+                                <a class="inline font-bold text-primary-light dark:text-primary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark"
                                     href="https://www.microsoft.com">
                                     {"Apple"}
                                 </a>
                             </p>
 
-                            <p class="text-primary-light dark:hover:text-accent-accent-dark">
+                            <p class="text-primary-light dark:text-primary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark">
                                 <a href="https://en.wikipedia.org/wiki/Jeff_Bezos">
                                     {"Elon Musk"}
                                 </a>

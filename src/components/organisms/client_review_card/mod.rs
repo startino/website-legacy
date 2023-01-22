@@ -16,7 +16,7 @@ pub fn ClientReviewCard(props: &Props) -> Html {
     } = props;
     let title_at_company = format!("{} of {}", title, company);
     html! {
-    <div class="pt-6 text-left bg-gradient-to-r rounded-xl from-secondary-900/10 to-secondary-900/30 hover:from-accent-900/10 hover:to-accent-900/30">
+    <div class="pt-6 text-left bg-gradient-to-r rounded-xl from-primary-light/20 to-primary-light/30 hover:from-tertiary-light/20 hover:to-tertiary-light/30 dark:from-primary-dark/20 dark:to-primary-dark/30 dark:hover:from-tertiary-dark/20 dark:hover:to-tertiary-dark/30 ">
     <a href={website.to_owned()}>
         <figure class="flex px-6">
             <img class="object-cover w-12 h-12 rounded-full" src="images/logo/square/512.png" width="600" height="800" />

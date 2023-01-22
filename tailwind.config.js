@@ -75,7 +75,7 @@ module.exports = {
         },
 
         // Neutral tones (md3 names them as 'surface')
-        neutral: {
+        surface: {
           light: "rgb(var(--md-color-surface-light)/ <alpha-value>) ",
           dark: "rgb(var(--md-color-surface-dark) / <alpha-value>) ",
           on: {
@@ -86,16 +86,6 @@ module.exports = {
             light: "rgb(var(--md-color-on-surface-light)/ <alpha-value>) ",
             dark: "rgb(var(--md-color-on-surface-dark) / <alpha-value>) ",
           },
-          container: {
-            light:
-              "rgb(var(--md-color-neutral-container-light)/ <alpha-value>) ",
-            dark: "rgb(var(--md-color-neutral-container-dark) / <alpha-value>) ",
-            on: {
-              light:
-                "rgb(var(--md-color-on-neutral-container-light)/ <alpha-value>) ",
-              dark: "rgb(var(--md-color-on-neutral-container-dark) / <alpha-value>) ",
-            },
-          },
           // Neutral variant tones
           variant:
           {
@@ -104,16 +94,6 @@ module.exports = {
             on: {
               light: "rgb(var(--md-color-on-neutral-light)/ <alpha-value>) ",
               dark: "rgb(var(--md-color-on-neutral-dark) / <alpha-value>) ",
-            },
-            container: {
-              light:
-                "rgb(var(--md-color-surface-variant-light)/ <alpha-value>) ",
-              dark: "rgb(var(--md-color-surface-variant-dark) / <alpha-value>) ",
-              on: {
-                light:
-                  "rgb(var(--md-color-on-surface-variant-light)/ <alpha-value>) ",
-                dark: "rgb(var(--md-color-on-surface-variant-dark) / <alpha-value>) ",
-              },
             },
           }
         },
