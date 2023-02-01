@@ -1,6 +1,8 @@
 use yew::prelude::*;
+use yew_router::prelude::*;
 
 use crate::lorc::generic::*;
+use crate::{atoms::*, Route};
 
 pub struct Home;
 
@@ -13,6 +15,13 @@ impl Component for Home {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
+        let navigator: Navigator = _ctx.link().navigator().unwrap();
+        let go_contact_page =
+            ButtonOptions::route_button(navigator, RouteType::Route(Route::Contact));
+
+        let navigator: Navigator = _ctx.link().navigator().unwrap();
+        let go_about_page = ButtonOptions::route_button(navigator, RouteType::Route(Route::About));
+
         html! {
         <main>
             <div class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 border-primary-light/40 dark:border-primary-dark/40">
@@ -34,10 +43,10 @@ impl Component for Home {
                     </Label>
 
                     <div class="flex justify-center mt-6 space-x-6 text-sm sm:mt-10">
-                        <a href="/contact"><Button btn_type="button">
+                        <a href="/contact"><Button options={go_contact_page}>
                                 <p>{"Contact Us!"}</p>
                             </Button></a>
-                        <a href="/about"><Button btn_type="button">
+                        <a href="/about"><Button options={go_about_page}>
                                 <p>{"Who Are We?"}</p>
                             </Button></a>
                     </div>
@@ -138,12 +147,13 @@ impl Component for Home {
                     </div>
                 </div>
                 <div class="flex justify-center p-10 text-sm">
-                    <a href="#"><Button btn_type="button">
+                    <a href="#"><Button options={go_about_page}>
                             <p>{"Show more..."}</p>
                         </Button></a>
                 </div>
             </div>
 
+            // What we do
             <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
                 <div class="my-32 mx-32">
                     <Label>
@@ -153,14 +163,24 @@ impl Component for Home {
                             {" To Your Obstacle."}
                           </h1>
                     </Label>
-                    <Label>
-                        <h3 class="pt-6 max-w-2xl text-xl font-normal text-left">
-                            {"Lorem ipsum dolor sit amet fermentum ut curabitur maecenas facilisis ullamcorper ornare arcu amet dui habitasse placerat suspendisse vulputate nisl."}
+                        <h3 class="pt-6 max-w-3xl text-xl font-normal text-left text-background-on-light dark:text-background-on-dark">
+                            {"We provide full stack, open-source web-applications to "}
+                            <span class="text-primary-light dark:text-primary-dark font-bold">{"boost"}</span>
+                            {" your business to the top of it's potential.
+                            We use the "}
+                            <span class="text-primary-light dark:text-primary-dark font-bold">{"fastest"}</span>
+                            {" and most "}
+                            <span class="text-primary-light dark:text-primary-dark font-bold">{"secured"}</span>
+                            {" programming languages while also having a workflow of "}
+                            <span class="text-primary-light dark:text-primary-dark font-bold">{"pure efficiency"}</span>
+                            {" using Tailwind CSS."}
                         </h3>
-                    </Label>
+                        <div class="flex flex-col">
+                            <RustLogo />
+                        </div>
                     <div class="text-sm pt-10">
                         <a href="#">
-                            <Button btn_type="button">
+                            <Button options={go_about_page}>
                                 <p class="inline-flex items-center gap-x-2">
                                     {"Learn more"}<span><RightArrow /></span>
                                 </p>
