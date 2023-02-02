@@ -46,7 +46,7 @@ impl Component for Home {
                         <a href="/contact"><Button options={go_contact_page}>
                                 <p>{"Contact Us!"}</p>
                             </Button></a>
-                        <a href="/about"><Button options={go_about_page}>
+                        <a href="/about"><Button options={go_about_page.clone()}>
                                 <p>{"Who Are We?"}</p>
                             </Button></a>
                     </div>
@@ -147,7 +147,7 @@ impl Component for Home {
                     </div>
                 </div>
                 <div class="flex justify-center p-10 text-sm">
-                    <a href="#"><Button options={go_about_page}>
+                    <a href="#"><Button options={go_about_page.clone()}>
                             <p>{"Show more..."}</p>
                         </Button></a>
                 </div>
@@ -180,7 +180,7 @@ impl Component for Home {
                         </div>
                     <div class="text-sm pt-10">
                         <a href="#">
-                            <Button options={go_about_page}>
+                            <Button options={go_about_page.clone()}>
                                 <p class="inline-flex items-center gap-x-2">
                                     {"Learn more"}<span><RightArrow /></span>
                                 </p>
