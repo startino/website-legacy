@@ -175,8 +175,9 @@ impl Component for Home {
                             <span class="text-primary-light dark:text-primary-dark font-bold">{"pure efficiency"}</span>
                             {" using Tailwind CSS."}
                         </h3>
-                        <div class="flex flex-col">
+                        <div class="flex flex-row gap-x-5 items-center">
                             <RustLogo />
+                            <TailwindLogo />
                         </div>
                     <div class="text-sm pt-10">
                         <a href="#">
