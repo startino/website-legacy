@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use crate::lorc::generic::*;
+use crate::lorc::generic::{Icon, IconType, *};
 use crate::{atoms::*, Route};
 
 pub struct Home;
@@ -43,12 +43,16 @@ impl Component for Home {
                     </Label>
 
                     <div class="flex justify-center mt-6 space-x-6 text-sm sm:mt-10">
-                        <a href="/contact"><Button options={go_contact_page}>
+                        <a href="/contact">
+                            <Button options={go_contact_page}>
                                 <p>{"Contact Us!"}</p>
-                            </Button></a>
-                        <a href="/about"><Button options={go_about_page.clone()}>
+                            </Button>
+                        </a>
+                        <a href="/about">
+                            <Button options={go_about_page.clone()}>
                                 <p>{"Who Are We?"}</p>
-                            </Button></a>
+                            </Button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -57,18 +61,16 @@ impl Component for Home {
             <div class="justify-items-center my-10 border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
                 <div class="grid grid-cols-2 justify-items-center">
 
-                    <StaffCard name="Jonas Lewis"
-                        title="Lead Developer, Co-Founder, & Co-Owner" >
+                    <StaffCard name="Jonas Lewis" title="Lead Developer, Co-Founder, & Co-Owner" >
                         <p>
-                        {"This is some text that will be read but will be useless."}
+                            {"This is some text that will be read but will be useless."}
                         </p>
-                        </StaffCard>
-                        <StaffCard name="Jonas Lewis"
-                        title="Lead Developer, Co-Founder, & Co-Owner" >
+                    </StaffCard>
+                    <StaffCard name="Jonas Lewis" title="Lead Developer, Co-Founder, & Co-Owner" >
                         <p>
-                        {"This is some text that will be read but will be useless."}
+                            {"This is some text that will be read but will be useless."}
                         </p>
-                        </StaffCard>
+                    </StaffCard>
                 </div>
                 <div class="mx-auto max-w-2xl align-middle text-center">
                     <Label>
@@ -79,8 +81,11 @@ impl Component for Home {
                         </h3>
                     </Label>
 
-                        <h3 class="p-5 pt-3 inline-flex text-secondary-light dark:text-secondary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark">
-                            <TextLink href="/about" text="Learn more about us."/><span><ExternalLinkIcon /></span>
+                        <h3 class="p-5 pt-3 items-center inline-flex text-secondary-light dark:text-secondary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark">
+                            <TextLink href="/about" text="Learn more about us."/>
+                            <span>
+                                <Icon icon={IconType::ExternalLinkIcon} height="12px" width="12px" color="currentColor"/>
+                            </span>
                         </h3>
 
 
@@ -176,16 +181,20 @@ impl Component for Home {
                             {" using Tailwind CSS."}
                         </h3>
                         <div class="flex flex-row gap-x-5 items-center">
-                            <RustLogo />
-                            <TailwindLogo />
+                            <crate::atoms::Icon icon={crate::atoms::IconType::RustLogo} height="64" width="64" color="red" />
+                            <crate::atoms::Icon icon={crate::atoms::IconType::TailwindLogo} height="64" width="128" color="black" />
                         </div>
                     <div class="text-sm pt-10">
-                        <a href="#">
                             <Button options={go_about_page.clone()}>
-                                <p class="inline-flex items-center gap-x-2">
-                                    {"Learn more"}<span><RightArrow /></span>
+                                <p class="inline-flex items-center gap-x-2 last:hover:translate-x-5">
+                                    {"Learn more"}
+                                    <span>
+                                    <div id="arrow" class="transition-transform">
+                                        <Icon icon={IconType::RightArrow} height="12" width ="12" color="currentColor"/>
+                                    </div>
+                                    </span>
                                 </p>
-                            </Button></a>
+                            </Button>
                     </div>
                 </div>
 

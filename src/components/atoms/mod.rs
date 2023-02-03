@@ -1,3 +1,3 @@
 mod svg_icons;
-pub use svg_icons::RustLogo;
-pub use svg_icons::TailwindLogo;
+pub use svg_icons::Icon;
+pub use svg_icons::IconType;
