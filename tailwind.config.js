@@ -177,6 +177,5 @@ module.exports = {
   },
   safelist: ["*"],
   plugins: [
-    require('tailwind-children'),
   ],
 };

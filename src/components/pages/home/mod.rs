@@ -23,7 +23,7 @@ impl Component for Home {
         let go_about_page = ButtonOptions::route_button(navigator, RouteType::Route(Route::About));
 
         html! {
-        <main>
+        <>
             <div class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 border-primary-light/40 dark:border-primary-dark/40">
                 <div class="relative mx-auto max-w-6xl">
                     <Label>
@@ -34,11 +34,7 @@ impl Component for Home {
 
                     <Label>
                         <h2 class="text-lg">
-                            {"Dynamically built web-apps with "}
-                            <a class="inline text-tertiary hover:text-xl"
-                                href="https://en.wikipedia.org/wiki/Free_and_open-source_software">
-                                {"Free and Open-Source Software!"}
-                            </a>
+                            {"Launch Your Business's Online Presence with Confidence And Trust"}
                         </h2>
                     </Label>
 
@@ -53,6 +49,61 @@ impl Component for Home {
                                 <p>{"Who Are We?"}</p>
                             </Button>
                         </a>
+                    </div>
+                </div>
+            </div>
+
+            // Why choose us section
+            <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
+                    <H1>
+                        {"Why choose us?"}
+                    </H1>
+                    <h3 class="p-6 pl-0 text-xl text-center text-background-on-light dark:text-background-on-dark">
+                        {"In today's advanced digital landscape, it is vital to have a professional, beautiful, and user-friendly website for your business.
+                        We help save you "}
+                        <span class="text-primary-light dark:text-primary-dark font-bold">{"Time"}</span>
+                        {", "}
+                        <span class="text-primary-light dark:text-primary-dark font-bold">{"Money"}</span>
+                        {", and "}
+                        <span class="text-primary-light dark:text-primary-dark font-bold">{"Talent"}</span>
+
+                    </h3>
+                <div class="mx-20 my-20 grid grid-cols-3 gap-x-7 [&>*]:rounded [&>*]:border-outline-light [&>*]:dark:border-outline-dark [&>*]:bg-surface-light [&>*]:dark:bg-surface-dark [&>*]:shadow-md [&>*]:flex [&>*]:flex-col">
+                    <div class="">
+                        <h2 class="p-6 pl-0 text-3xl font-bold text-center text-background-on-light dark:text-background-on-dark">
+                            {"Time"}
+                        </h2>
+                        <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-4 px-10">
+                            {
+                                "Time is money, especially for startups. That's why at Futino, we prioritize speed and efficiency in everything we do. 
+                                Our streamlined process and experienced team ensure that creating a custom, professional website for your startup is a fast and
+                                hassle-free experience. Say goodbye to the endless meetings, multiple revisions, and long wait times of traditional website development."
+                            }
+                        </p>
+                    </div>
+                    <div class="">
+                        <h2 class="p-6 pl-0 text-3xl font-bold text-center text-background-on-light dark:text-background-on-dark">
+                            {"Money"}
+                        </h2>
+                        <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-4 px-10">
+                            {
+                                "Don't let the high costs of traditional website development hold your startup back.
+                                With Futino, you'll get a custom, professional website that not only meets your needs, but exceeds your expectations. 
+                                Our expert team uses a streamlined process to deliver a website that is both affordable and fast."
+                            }
+                        </p>
+                    </div>
+                    <div class="">
+                        <h2 class="p-6 pl-0 text-3xl font-bold text-center text-background-on-light dark:text-background-on-dark">
+                            {"Talent"}
+                        </h2>
+                        <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-4 px-10">
+                            {
+                                "Trust our skilled team to create a custom, professional website for your startup. 
+                                Our web designers and developers have the expertise to deliver a visually stunning, functional, 
+                                and user-friendly website that sets you apart. Choose Futino for a website that showcases your skills."
+                            }
+                        </p>
                     </div>
                 </div>
             </div>
@@ -169,9 +220,7 @@ impl Component for Home {
                           </h1>
                     </Label>
                         <h3 class="pt-6 max-w-3xl text-xl font-normal text-left text-background-on-light dark:text-background-on-dark">
-                            {"We provide full stack, open-source web-applications to "}
-                            <span class="text-primary-light dark:text-primary-dark font-bold">{"boost"}</span>
-                            {" your business to the top of it's potential.
+                            {"We develop full stack, open-source web-applications to build your business to most of it's potential.
                             We use the "}
                             <span class="text-primary-light dark:text-primary-dark font-bold">{"fastest"}</span>
                             {" and most "}
@@ -186,12 +235,10 @@ impl Component for Home {
                         </div>
                     <div class="text-sm pt-10">
                             <Button options={go_about_page.clone()}>
-                                <p class="inline-flex items-center gap-x-2 last:hover:translate-x-5">
+                                <p class="group inline-flex items-center gap-x-2 ">
                                     {"Learn more"}
-                                    <span>
-                                    <div id="arrow" class="transition-transform">
+                                    <span class="transition-transform group-hover:translate-x-3">
                                         <Icon icon={IconType::RightArrow} height="12" width ="12" color="currentColor"/>
-                                    </div>
                                     </span>
                                 </p>
                             </Button>
@@ -200,10 +247,7 @@ impl Component for Home {
 
 
             </div>
-
-
-        </main>
-
+        </>
         }
     }
 }
