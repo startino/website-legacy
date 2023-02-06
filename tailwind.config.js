@@ -21,7 +21,8 @@ module.exports = {
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
-        slideDown: "slideDown 5s ease-in-out 1"
+        slideDown: "slideDown 5s ease-in-out 1",
+        scroll: "scroll 5s ease-in-out"
       },
       keyframes: {
         wiggle: {
@@ -32,7 +33,10 @@ module.exports = {
           '0%, 100%': {transform: 'translate(0%,-200%)', opacity: 0},
           '1%, 99%': {opacity: 1},
           '20%, 70%': {transform: 'translate(0%, 0%)'},
-
+        },
+        scroll: {
+          '0%': {transform: 'translateY(0%)'},
+          '100%': {transform:'translateY(100%)'}
         }
       },
       

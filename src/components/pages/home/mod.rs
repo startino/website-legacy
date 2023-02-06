@@ -209,6 +209,37 @@ impl Component for Home {
                 </div>
             </div>
 
+            <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
+                <div class="mx-20 my-20">
+                    <h1 class="p-12 mx-10 text-8xl text-left font-bold text-background-on-light dark:text-background-on-dark">
+                        {"Our Work"}
+                    </h1>
+                    <div class="grid grid-cols-2 gap-y-12 gap-x-5 first-letter:[&>*]:p-12 [&>*]:flex [&>*]:flex-col">
+                        <div class="">
+                            <iframe class="border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
+                            <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
+                                {"KebabCorner"}
+                            </h3>
+                        </div> 
+                        <div class="">
+                            <iframe class="border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
+                            <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
+                                {"Hema Gym"}
+                            </h3>
+                        </div> 
+                        <div class="">
+                            <div class="overflow-y-auto">
+                                <img class="object-none object-top h-110 w-56 transition-transform sticky hover:animate-scroll" decoding="async" width="440" height="4968" src="https://i0.wp.com/www.doublepoint.studio/wp-content/uploads/2021/09/lebootcamp-pageaccueil.png?fit=1400%2C4968&amp;ssl=1" loading="lazy"/>
+                            </div>
+                            
+                            <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
+                                {"Little Brother"}
+                            </h3>
+                        </div>      
+                    </div>
+                </div>
+            </div>
+
             // What we do
             <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
                 <div class="my-32 mx-32">
