@@ -209,6 +209,7 @@ impl Component for Home {
                 </div>
             </div>
 
+            // Our Work
             <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
                 <div class="mx-20 my-20">
                     <h1 class="p-12 mx-10 text-8xl text-left font-bold text-background-on-light dark:text-background-on-dark">
@@ -228,8 +229,8 @@ impl Component for Home {
                             </h3>
                         </div> 
                         <div class="">
-                            <div class="overflow-y-auto">
-                                <img class="object-none object-top h-110 w-56 transition-transform sticky hover:animate-scroll" decoding="async" width="440" height="4968" src="https://i0.wp.com/www.doublepoint.studio/wp-content/uploads/2021/09/lebootcamp-pageaccueil.png?fit=1400%2C4968&amp;ssl=1" loading="lazy"/>
+                            <div class="">
+                                <img class="object-none object-top h-110 w-56 transition-transform duration-700 hover:-translate-y-full" decoding="async" width="440" height="4968" src="https://i0.wp.com/www.doublepoint.studio/wp-content/uploads/2021/09/lebootcamp-pageaccueil.png?fit=1400%2C4968&amp;ssl=1" loading="lazy"/>
                             </div>
                             
                             <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
