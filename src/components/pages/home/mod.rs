@@ -75,7 +75,7 @@ impl Component for Home {
                         </h2>
                         <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-4 px-10">
                             {
-                                "Time is money, especially for startups. That's why at Futino, we prioritize speed and efficiency in everything we do. 
+                                "Time is money, especially for startups. That's why at Futino, we prioritize speed and efficiency in everything we do.
                                 Our streamlined process and experienced team ensure that creating a custom, professional website for your startup is a fast and
                                 hassle-free experience. Say goodbye to the endless meetings, multiple revisions, and long wait times of traditional website development."
                             }
@@ -99,7 +99,7 @@ impl Component for Home {
                         </h2>
                         <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-4 px-10">
                             {
-                                "Trust our skilled team to create a custom, professional website for your startup. 
+                                "Trust our skilled team to create a custom, professional website for your startup.
                                 Our web designers and developers have the expertise to deliver a visually stunning, functional, 
                                 and user-friendly website that sets you apart. Choose Futino for a website that showcases your skills."
                             }
@@ -211,32 +211,29 @@ impl Component for Home {
 
             // Our Work
             <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
-                <div class="mx-20 my-20">
-                    <h1 class="p-12 mx-10 text-8xl text-left font-bold text-background-on-light dark:text-background-on-dark">
+                <div class="mx-56 my-20">
+                    <h1 class="p-12 pl-0 text-8xl text-left font-bold text-background-on-light dark:text-background-on-dark">
                         {"Our Work"}
                     </h1>
-                    <div class="grid grid-cols-2 gap-y-12 gap-x-5 first-letter:[&>*]:p-12 [&>*]:flex [&>*]:flex-col">
+                    <div class="grid grid-cols-2 justify-between gap-y-12 gap-x-5 first-letter:[&>*]:p-12 [&>*]:flex [&>*]:flex-col [&>*]:rounded-lg">
                         <div class="">
-                            <iframe class="border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
+                            <iframe class=" border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
                             <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
                                 {"KebabCorner"}
                             </h3>
-                        </div> 
+                        </div>
                         <div class="">
                             <iframe class="border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
                             <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
                                 {"Hema Gym"}
                             </h3>
-                        </div> 
+                        </div>
                         <div class="">
-                            <div class="">
-                                <img class="object-none object-top h-110 w-56 transition-transform duration-700 hover:-translate-y-full" decoding="async" width="440" height="4968" src="https://i0.wp.com/www.doublepoint.studio/wp-content/uploads/2021/09/lebootcamp-pageaccueil.png?fit=1400%2C4968&amp;ssl=1" loading="lazy"/>
-                            </div>
-                            
+                            <iframe class="border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
                             <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
                                 {"Little Brother"}
                             </h3>
-                        </div>      
+                        </div>
                     </div>
                 </div>
             </div>
