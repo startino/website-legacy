@@ -215,20 +215,20 @@ impl Component for Home {
                     <h1 class="p-12 pl-0 text-8xl text-left font-bold text-background-on-light dark:text-background-on-dark">
                         {"Our Work"}
                     </h1>
-                    <div class="grid grid-cols-2 justify-between gap-y-12 gap-x-5 first-letter:[&>*]:p-12 [&>*]:flex [&>*]:flex-col [&>*]:rounded-lg">
-                        <div class="">
-                            <iframe class=" border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
+                    <div class="grid grid-cols-2 gap-y-12 gap-x-5 first-letter:[&>*]:p-12 ">
+                        <div class="flex flex-col rounded-lg justify-items-center">
+                            <iframe class="justify-self-center border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
                             <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
                                 {"KebabCorner"}
                             </h3>
                         </div>
-                        <div class="">
+                        <div class="flex flex-col rounded-lg justify-items-center">
                             <iframe class="border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
                             <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
                                 {"Hema Gym"}
                             </h3>
                         </div>
-                        <div class="">
+                        <div class="flex flex-col rounded-lg justify-items-center">
                             <iframe class="border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
                             <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
                                 {"Little Brother"}
@@ -272,9 +272,31 @@ impl Component for Home {
                                 </p>
                             </Button>
                     </div>
+                </div> 
+
+
+            </div>
+
+            // Contact section
+            <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
+                <div class="my-32 mx-32">
+                    <h1 class="p-6 pl-0 text-3xl font-bold text-left text-background-on-light dark:text-background-on-dark">
+                        {"Unlock Your Startup's Potential"}
+                    </h1>
+                    <h3 class="max-w-3xl text-xl font-normal text-left text-background-on-light dark:text-background-on-dark">
+                        {"Transform Your Online Presence and Drive Success with Custom Website Solutions"}
+                    </h3>
+                    <div class="text-sm pt-10">
+                        <Button options={go_about_page.clone()}>
+                            <p class="group inline-flex items-center gap-x-2 ">
+                                {"Contact Us Now"}
+                                <span class="transition-transform group-hover:translate-x-3">
+                                    <Icon icon={IconType::RightArrow} height="12" width ="12" color="currentColor"/>
+                                </span>
+                            </p>
+                        </Button>
+                    </div>
                 </div>
-
-
             </div>
         </>
         }
