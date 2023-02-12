@@ -211,28 +211,32 @@ impl Component for Home {
                     <H1 class="text-left font-bold p-12">
                         {"Our Work"}
                     </H1>
-                    <div class="grid grid-cols-2 gap-y-12 gap-x-5 [&>*]:p-12">
-                        <div class="place-self-start">
-                            <iframe class="rounded-lg border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
-                            <a href="https://www.doublepoint.studio/" class="bg-secondary-light/50 dark:bg-primary-dark/50 rounded-b rounded-lg">
-                                <H3 class="font-normal" color={HeaderColor::OnPrimary}>
-                                    {"KebabCorner"}
-                                </H3>
-                                
-                            </a>
-                            
+                    <div class="grid grid-cols-2 gap-y-24 gap-x-5">
+                        <div class="place-self-start max-w-[500px]">
+                            <iframe class="rounded-t-lg border-outline-light dark:border-outline-dark" height="600" width="500" src="https://www.doublepoint.studio/"/>
+                            <div class="rounded-b-lg bg-gradient-to-r  from-primary-light/20 to-primary-light/30 hover:from-tertiary-light/20 hover:to-tertiary-light/30 dark:from-primary-dark/20 dark:to-primary-dark/30 dark:hover:from-tertiary-dark/20 dark:hover:to-tertiary-dark/30 ">
+                                <a href="https://www.doublepoint.studio/" >
+                                    <H3 class="text-left" color={HeaderColor::OnBackground}>
+                                        {"Kebab Corner"}
+                                    </H3>
+                                    <p class="py-3 px-6 font-light text-xl text-background-on-light dark:text-background-on-dark">
+                                        {"blah blah some nice words about futino and how we're the best and how we helped them x1000 they're business."}
+                                    </p>
+                                </a>
+                            </div>
                         </div>
-                        <div class="place-self-end">
-                            <iframe class="border-outline-light rounded-lg dark:border-outline-dark justify-items-center align-middle" height="600" width="400" src="https://www.doublepoint.studio/"/>
-                            <H3 class="text-left font-normal">
-                                {"Hema Gym"}
-                            </H3>
-                        </div>
-                        <div class="place-self-start">
-                            <iframe class="border-outline-light rounded-lg dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
-                            <H3 class="text-left font-normal">
-                                {"Little Brother"}
-                            </H3>
+                        <div class="place-self-end max-w-[500px]">
+                            <iframe class="rounded-t-lg border-outline-light dark:border-outline-dark" height="600" width="500" src="https://www.doublepoint.studio/"/>
+                            <div class="rounded-b-lg bg-gradient-to-r from-primary-light/20 to-primary-light/30 hover:from-tertiary-light/20 hover:to-tertiary-light/30 dark:from-primary-dark/20 dark:to-primary-dark/30 dark:hover:from-tertiary-dark/20 dark:hover:to-tertiary-dark/30 ">
+                                <a href="https://www.doublepoint.studio/" >
+                                    <H3 class="text-left" color={HeaderColor::OnBackground}>
+                                        {"Kebab Corner"}
+                                    </H3>
+                                    <p class="py-3 px-6 font-light text-xl text-background-on-light dark:text-background-on-dark">
+                                        {"blah blah some nice words about futino and how we're the best and how we helped them x1000 they're business."}
+                                    </p>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -280,21 +284,58 @@ impl Component for Home {
             // Contact section
             <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
                 <div class="my-32 mx-32">
-                    <h1 class="p-6 pl-0 text-3xl font-bold text-left text-background-on-light dark:text-background-on-dark">
-                        {"Unlock Your Startup's Potential"}
-                    </h1>
-                    <h3 class="max-w-3xl text-xl font-normal text-left text-background-on-light dark:text-background-on-dark">
-                        {"Contact Us to Boost Your Startup's Potential"}
-                    </h3>
-                    <div class="text-sm pt-10">
-                        <Button options={go_about_page.clone()}>
-                            <p class="group inline-flex items-center gap-x-2 ">
-                                {"Contact Us Now"}
-                                <span class="transition-transform group-hover:translate-x-3">
-                                    <Icon icon={IconType::RightArrow} height="12" width ="12" color="currentColor"/>
-                                </span>
-                            </p>
-                        </Button>
+                    <div class="grid grid-cols-2 gap-x-10">
+                        // Left side
+                        <div>
+                            <H1>
+                                {"Unlock Your Startup's Potential"}
+                            </H1>
+                            <H3 class="max-w-3xl text-center">
+                                {"Contact Us to Boost Your Startup's Potential"}
+                            </H3>
+                            <div class="p-12 grid grid-flow-col gap-x-5 auto-cols-max place-items-center">
+                                // Office Location
+                                <a class="flex flex-col place-items-center rounded-xl h-56 w-56 bg-surface-light dark:bg-surface-dark" href="/contact">
+                                    <Icon class="p-3" icon={IconType::LocationIcon} height="64px" width="64px"/>
+                                    <H3 class="py-2 text-center font-semibold" color={HeaderColor::OnSurface}>
+                                        {"Main Office"}
+                                    </H3>
+                                    <H4 class="py-2 text-center font-light" color={HeaderColor::OnSurface}>
+                                        {
+                                            "Mui Wo, Ferry Pier 86, Hong Kong"
+                                        }
+                                    </H4>
+                                </a>
+                                // Phone number
+                                <a class="flex flex-col place-items-center rounded-xl h-56 w-56 bg-surface-light dark:bg-surface-dark" href="/contact">
+                                    <Icon class="p-3" icon={IconType::LocationIcon} height="64px" width="64px"/>
+                                    <H3 class="py-2 text-center font-semibold" color={HeaderColor::OnSurface}>
+                                        {"Phone Number"}
+                                    </H3>
+                                    <H4 class="py-2 text-center font-light" color={HeaderColor::OnSurface}>
+                                        {
+                                            "+852 9747 3013"
+                                        }
+                                    </H4>
+                                </a>
+                                // Email
+                                <a class="flex flex-col place-items-center rounded-xl h-56 w-56 bg-surface-light dark:bg-surface-dark" href="/contact">
+                                    <Icon class="p-3" icon={IconType::LocationIcon} height="64px" width="64px"/>
+                                    <H3 class="py-2 text-center font-semibold" color={HeaderColor::OnSurface}>
+                                        {"Email"}
+                                    </H3>
+                                    <H4 class="py-2 text-center font-light" color={HeaderColor::OnSurface}>
+                                        {
+                                            "contact@futino.com"
+                                        }
+                                    </H4>
+                                </a>
+
+
+                            </div>
+                        </div>
+                        // Right side
+                        <ContactForm />
                     </div>
                 </div>
             </div>

@@ -11,6 +11,9 @@ pub use h2::H2;
 mod h3;
 pub use h3::H3;
 
+mod h4;
+pub use h4::H4;
+
 mod p;
 pub use p::P;
 
