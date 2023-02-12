@@ -122,18 +122,12 @@ impl Component for Home {
                     </StaffCard>
                 </div>
                 <div class="mx-auto max-w-2xl align-middle text-center">
-                        <H3>
-                            {"Futino creates and maintains dynamic web-apps that don't rely on proprietary
-                            subscription-based solutions. We help growing companies and startups to build their presence
-                            online with beautiful websites and apps that they can customise."}
-                        </H3>
-
-                        <h3 class="p-5 pt-3 items-center inline-flex text-secondary-light dark:text-secondary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark">
-                            <TextLink href="/about" text="Learn more about us."/>
-                            <span>
-                                <Icon icon={IconType::ExternalLinkIcon} height="12px" width="12px" color="currentColor"/>
-                            </span>
-                        </h3>
+                    <h3 class="p-5 pt-3 items-center inline-flex text-secondary-light dark:text-secondary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark">
+                        <TextLink href="/about" text="Learn more about us."/>
+                        <span>
+                            <Icon icon={IconType::ExternalLinkIcon} height="12px" width="12px" color="currentColor"/>
+                        </span>
+                    </h3>
 
 
                 </div>
