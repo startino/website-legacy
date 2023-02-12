@@ -26,17 +26,13 @@ impl Component for Home {
         <>
             <div class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 border-primary-light/40 dark:border-primary-dark/40">
                 <div class="relative mx-auto max-w-6xl">
-                    <Label>
-                        <h1 class="m-5 text-4xl font-extrabold sm:text-5xl lg:text-6xl">
-                            {"Futino"}
-                        </h1>
-                    </Label>
+                    <H1>
+                        {"Futino"}
+                    </H1>
 
-                    <Label>
-                        <h2 class="text-lg">
-                            {"Launch Your Business's Online Presence with Confidence And Trust"}
-                        </h2>
-                    </Label>
+                    <H3>
+                        {"Launch Your Business's Online Presence with Confidence And Trust"}
+                    </H3>
 
                     <div class="flex justify-center mt-6 space-x-6 text-sm sm:mt-10">
                         <a href="/contact">
@@ -58,22 +54,24 @@ impl Component for Home {
                     <H1>
                         {"Why choose us?"}
                     </H1>
-                    <h3 class="p-6 pl-0 text-xl text-center text-background-on-light dark:text-background-on-dark">
-                        {"In today's advanced digital landscape, it is vital to have a professional, beautiful, and user-friendly website for your business.
-                        We help save you "}
-                        <span class="text-primary-light dark:text-primary-dark font-bold">{"Time"}</span>
-                        {", "}
-                        <span class="text-primary-light dark:text-primary-dark font-bold">{"Money"}</span>
-                        {", and "}
-                        <span class="text-primary-light dark:text-primary-dark font-bold">{"Talent"}</span>
+                    <div class="max-w-5xl mx-auto">
+                        <H3>
+                            {"In today's advanced digital landscape, it is vital to have a professional, beautiful, and user-friendly website for your business.
+                            We help save you "}
+                            <span class="text-primary-light dark:text-primary-dark font-bold">{"Time"}</span>
+                            {", "}
+                            <span class="text-primary-light dark:text-primary-dark font-bold">{"Money"}</span>
+                            {", and "}
+                            <span class="text-primary-light dark:text-primary-dark font-bold">{"Talent"}</span>
 
-                    </h3>
+                        </H3>
+                    </div>
                 <div class="mx-20 my-20 grid grid-cols-3 gap-x-7 [&>*]:rounded [&>*]:border-outline-light [&>*]:dark:border-outline-dark [&>*]:bg-surface-light [&>*]:dark:bg-surface-dark [&>*]:shadow-md [&>*]:flex [&>*]:flex-col">
                     <div class="">
-                        <h2 class="p-6 pl-0 text-3xl font-bold text-center text-background-on-light dark:text-background-on-dark">
+                        <H2>
                             {"Time"}
-                        </h2>
-                        <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-4 px-10">
+                        </H2>
+                        <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-6 px-10">
                             {
                                 "Time is money, especially for startups. That's why at Futino, we prioritize speed and efficiency in everything we do.
                                 Our streamlined process and experienced team ensure that creating a custom, professional website for your startup is a fast and
@@ -82,10 +80,10 @@ impl Component for Home {
                         </p>
                     </div>
                     <div class="">
-                        <h2 class="p-6 pl-0 text-3xl font-bold text-center text-background-on-light dark:text-background-on-dark">
+                        <H2>
                             {"Money"}
-                        </h2>
-                        <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-4 px-10">
+                        </H2>
+                        <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-6 px-10">
                             {
                                 "Don't let the high costs of traditional website development hold your startup back.
                                 With Futino, you'll get a custom, professional website that not only meets your needs, but exceeds your expectations. 
@@ -94,10 +92,10 @@ impl Component for Home {
                         </p>
                     </div>
                     <div class="">
-                        <h2 class="p-6 pl-0 text-3xl font-bold text-center text-background-on-light dark:text-background-on-dark">
+                        <H2>
                             {"Talent"}
-                        </h2>
-                        <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-4 px-10">
+                        </H2>
+                        <p class="text-center text-xl text-surface-on-light dark:text-surface-on-dark py-6 px-10">
                             {
                                 "Trust our skilled team to create a custom, professional website for your startup.
                                 Our web designers and developers have the expertise to deliver a visually stunning, functional, 
@@ -124,13 +122,11 @@ impl Component for Home {
                     </StaffCard>
                 </div>
                 <div class="mx-auto max-w-2xl align-middle text-center">
-                    <Label>
-                        <h3 class="p-6 text-2xl">
+                        <H3>
                             {"Futino creates and maintains dynamic web-apps that don't rely on proprietary
                             subscription-based solutions. We help growing companies and startups to build their presence
                             online with beautiful websites and apps that they can customise."}
-                        </h3>
-                    </Label>
+                        </H3>
 
                         <h3 class="p-5 pt-3 items-center inline-flex text-secondary-light dark:text-secondary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark">
                             <TextLink href="/about" text="Learn more about us."/>
@@ -211,28 +207,32 @@ impl Component for Home {
 
             // Our Work
             <div class="relative border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40">
-                <div class="mx-56 my-20">
-                    <h1 class="p-12 pl-0 text-8xl text-left font-bold text-background-on-light dark:text-background-on-dark">
+                <div class="mx-64 my-20">
+                    <H1 class="text-left font-bold p-12">
                         {"Our Work"}
-                    </h1>
-                    <div class="grid grid-cols-2 gap-y-12 gap-x-5 first-letter:[&>*]:p-12 ">
-                        <div class="flex flex-col rounded-lg justify-items-center">
-                            <iframe class="justify-self-center border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
-                            <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
-                                {"KebabCorner"}
-                            </h3>
+                    </H1>
+                    <div class="grid grid-cols-2 gap-y-12 gap-x-5 [&>*]:p-12">
+                        <div class="place-self-start">
+                            <iframe class="rounded-lg border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
+                            <a href="https://www.doublepoint.studio/" class="bg-secondary-light/50 dark:bg-primary-dark/50 rounded-b rounded-lg">
+                                <H3 class="font-normal" color={HeaderColor::OnPrimary}>
+                                    {"KebabCorner"}
+                                </H3>
+                                
+                            </a>
+                            
                         </div>
-                        <div class="flex flex-col rounded-lg justify-items-center">
-                            <iframe class="border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
-                            <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
+                        <div class="place-self-end">
+                            <iframe class="border-outline-light rounded-lg dark:border-outline-dark justify-items-center align-middle" height="600" width="400" src="https://www.doublepoint.studio/"/>
+                            <H3 class="text-left font-normal">
                                 {"Hema Gym"}
-                            </h3>
+                            </H3>
                         </div>
-                        <div class="flex flex-col rounded-lg justify-items-center">
-                            <iframe class="border-outline-light dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
-                            <h3 class="text-3xl text-left font-bold text-background-on-light dark:text-background-on-dark">
+                        <div class="place-self-start">
+                            <iframe class="border-outline-light rounded-lg dark:border-outline-dark" height="600" width="400" src="https://www.doublepoint.studio/"/>
+                            <H3 class="text-left font-normal">
                                 {"Little Brother"}
-                            </h3>
+                            </H3>
                         </div>
                     </div>
                 </div>
@@ -272,7 +272,7 @@ impl Component for Home {
                                 </p>
                             </Button>
                     </div>
-                </div> 
+                </div>
 
 
             </div>
@@ -284,7 +284,7 @@ impl Component for Home {
                         {"Unlock Your Startup's Potential"}
                     </h1>
                     <h3 class="max-w-3xl text-xl font-normal text-left text-background-on-light dark:text-background-on-dark">
-                        {"Transform Your Online Presence and Drive Success with Custom Website Solutions"}
+                        {"Contact Us to Boost Your Startup's Potential"}
                     </h3>
                     <div class="text-sm pt-10">
                         <Button options={go_about_page.clone()}>
