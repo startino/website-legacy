@@ -289,7 +289,7 @@ impl Component for Home {
                             </H3>
                             <div class="p-12 grid grid-flow-col gap-x-5 auto-cols-max place-items-center">
                                 // Office Location
-                                <a class="flex flex-col place-items-center rounded-xl h-56 w-56 bg-surface-light dark:bg-surface-dark" href="/contact">
+                                <a class="flex flex-col place-items-center rounded-xl h-56 w-56 lg:h-40 lg:w-40 bg-surface-light dark:bg-surface-dark" href="/contact">
                                     <Icon class="p-3" icon={IconType::LocationIcon} height="64px" width="64px"/>
                                     <H3 class="py-2 text-center font-semibold" color={HeaderColor::OnSurface}>
                                         {"Main Office"}
@@ -301,7 +301,7 @@ impl Component for Home {
                                     </H4>
                                 </a>
                                 // Phone number
-                                <a class="flex flex-col place-items-center rounded-xl h-56 w-56 bg-surface-light dark:bg-surface-dark" href="/contact">
+                                <a class="flex flex-col place-items-center rounded-xl h-56 w-56 lg:h-40 lg:w-40 bg-surface-light dark:bg-surface-dark" href="/contact">
                                     <Icon class="p-3" icon={IconType::LocationIcon} height="64px" width="64px"/>
                                     <H3 class="py-2 text-center font-semibold" color={HeaderColor::OnSurface}>
                                         {"Phone Number"}
@@ -313,7 +313,7 @@ impl Component for Home {
                                     </H4>
                                 </a>
                                 // Email
-                                <a class="flex flex-col place-items-center rounded-xl h-56 w-56 bg-surface-light dark:bg-surface-dark" href="/contact">
+                                <a class="flex flex-col place-items-center rounded-xl h-56 w-56 lg:h-40 lg:w-40 bg-surface-light dark:bg-surface-dark" href="/contact">
                                     <Icon class="p-3" icon={IconType::LocationIcon} height="64px" width="64px"/>
                                     <H3 class="py-2 text-center font-semibold" color={HeaderColor::OnSurface}>
                                         {"Email"}
