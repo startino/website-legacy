@@ -7,24 +7,36 @@
 
 		<script>
 			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-			if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-				document.documentElement.classList.add('dark')
+			if (
+				localStorage.theme === 'dark' ||
+				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.classList.add('dark');
 			} else {
-				document.documentElement.classList.remove('dark')
+				document.documentElement.classList.remove('dark');
 			}
 			// Whenever the user explicitly chooses light mode
 			// localStorage.theme = 'light'
-	
+
 			// Whenever the user explicitly chooses dark mode
 			// localStorage.theme = 'dark'
-	
+
 			// Whenever the user explicitly chooses to respect the OS preference
 			// localStorage.removeItem('theme')
 		</script>
 
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover" class="text-background-on-light dark:text-background-on-dark bg-background-light dark:bg-background-dark">
-		<div style="display: contents">%sveltekit.body%</div>
+	<body
+		data-sveltekit-preload-data="hover"
+		class="text-background-on-light dark:text-background-on-dark bg-background-light dark:bg-background-dark"
+	>
+		<div style="display: contents">
+			<div
+				class="text-center min-h-screen bg-gradient-to-r from-background-light to-secondary-light/5 dark:from-background-dark dark:to-secondary-dark/5"
+			>
+				%sveltekit.body%
+			</div>
+		</div>
 	</body>
 </html>

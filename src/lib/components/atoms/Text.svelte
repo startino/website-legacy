@@ -1,21 +1,20 @@
 <script lang="ts">
+	enum TextType {
+		Display,
+		Headline,
+		Title,
+		Label,
+		Body
+	}
+	enum TextSize {
+		Large,
+		Medium,
+		Small
+	}
 
-    enum TextType {
-        Display,
-        Headline,
-        Title,
-        Label,
-        Body,
-    }
-    enum TextSize {
-        Large,
-        Medium,
-        Small
-    }
-
-    export let textType;
-    export let textSize;
-/*
+	export let textType;
+	export let textSize;
+	/*
     let text = document.getElementById("text");
 
     switch(textType) {
@@ -44,9 +43,8 @@
         case TextSize.Small:
             break;
     }*/
-
 </script>
 
-<div id="text" class="text-black dark:text-white">
-    <slot />
+<div id="text" class="{$$props.class}">
+	<slot />
 </div>
