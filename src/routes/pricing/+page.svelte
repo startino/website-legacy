@@ -5,6 +5,30 @@
     import ChoiceButton from '$lib/components/molecules/ChoiceButton.svelte';
     import OfferText from '$lib/components/molecules/OfferText.svelte';
     import Button from '$lib/components/atoms/Button.svelte';
+	import HostingTab from '$lib/components/organisms/HostingTab.svelte';
+	import MarketingTab from '$lib/components/organisms/MarketingTab.svelte';
+	import PartnershipTab from '$lib/components/organisms/PartnershipTab.svelte';
+	import Tabs from '$lib/components/organisms/Tabs.svelte';
+	import CommisionTab from '$lib/components/organisms/CommisionTab.svelte';
+
+    let tabs = [
+    { label: "Hosting Plans",
+		 value: 1,
+		 component: HostingTab
+		},
+    { label: "Marketing Plans",
+		 value: 2,
+		 component: MarketingTab
+		},
+    { label: "Commission",
+		 value: 3,
+		 component: CommisionTab
+		},
+        { label: "Partnership",
+		 value: 4,
+		 component: PartnershipTab
+		}
+  ];
 </script>
 
 <Header />
@@ -39,30 +63,15 @@
         </div>
 
         <!-- Plans -->
-        <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-            <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
-                <li class="mr-2" role="presentation">
-                    <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Hosting Plans</button>
-                </li>
-                <li class="mr-2" role="presentation">
-                    <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Marketing Plans</button>
-                </li>
-                <li class="mr-2" role="presentation">
-                    <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Commission</button>
-                </li>
-                <li role="presentation">
-                    <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Partnership</button>
-                </li>
-            </ul>
-        </div>
-        <div id="myTabContent">
+        <Tabs {tabs}/>
+        <!-- <div id="myTabContent">
             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
             </div>
             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                 <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
             </div>
-        </div>
+        </div> -->
 	</div>
 </main>
 
