@@ -1,21 +1,22 @@
 <script lang="ts">
-	import Button from '../atoms/Button.svelte';
 	import PlanCard from '../molecules/PlanCard.svelte';
 
 	export let plans = [
 		{
 			label: 'Basic',
-			unit: '$',
+			prefix: '$',
 			cost: 14,
 			note: '/mo',
+			subtext: '+ $0.0074/impression',
 			features: ['Campaign Setup', 'Social Media Marketing'],
 			value: 1
 		},
 		{
 			label: 'Standard',
-			unit: '$',
+			prefix: '$',
 			cost: 28,
 			note: '/mo',
+			subtext: '+ $0.005/impression',
 			features: [
 				'Campaign Setup',
 				'Social Media Marketing',
@@ -26,9 +27,10 @@
 		},
 		{
 			label: 'Business',
-			unit: '$',
+			prefix: '$',
 			cost: 85,
 			note: '/mo',
+			subtext: '+ $0.0035/impression',
 			features: [
 				'Campaign Setup',
 				'Social Media Marketing',
@@ -40,9 +42,10 @@
 		},
 		{
 			label: 'Enterprise',
-			unit: '$',
+			prefix: '$',
 			cost: 257,
 			note: '/mo',
+			subtext: '+ $0.0026/impression',
 			features: [
 				'Campaign Setup',
 				'Social Media Marketing',
@@ -66,13 +69,12 @@
 		{#each plans as plan}
 			<li>
 				<button
-					class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-dark/20 {activeTabValue ===
+					class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-light/20 dark:bg-surface-variant-dark/20 {activeTabValue ===
 					plan.value
 						? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
 						: 'hover:border-2 rounded-xl'}"
 					on:click={handleClick(plan.value)}
 					type="button"
-					role="plan"
 					aria-controls="profile"
 					aria-selected="false"
 				>

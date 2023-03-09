@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Button from '../atoms/Button.svelte';
 	import PlanCard from '../molecules/PlanCard.svelte';
 
 	export let plans = [
 		{
 			label: 'Commision',
-			unit: '$',
+			prefix: '$',
 			cost: 45,
 			note: '/hour',
+			subtext: '',
 			features: [],
 			value: 1
 		}
@@ -24,13 +24,12 @@
 		{#each plans as plan}
 			<li>
 				<button
-					class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-dark/20 {activeTabValue ===
+					class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-light/20 dark:bg-surface-variant-dark/20 {activeTabValue ===
 					plan.value
 						? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
 						: 'hover:border-2 rounded-xl'}"
 					on:click={handleClick(plan.value)}
 					type="button"
-					role="plan"
 				>
 					<PlanCard {plan} />
 				</button>
