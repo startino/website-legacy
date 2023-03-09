@@ -4,7 +4,7 @@
 
 </script>
 
-<div class="flex flex-col space-y-10 xl:w-64 lg:w-48 sm:w-32">
+<div class="flex flex-col space-y-10 p-7 xl:w-[300px] lg:w-[200px] md:w-[160px] sm:w-[100px]">
     <h1 class="headline-small">
         {$$props.plan.label}
     </h1>
@@ -12,11 +12,11 @@
         ${$$props.plan.cost}
     </h1>
     <Button>
-        <p class="body-small font-ubuntu">
+        <p class="body-small">
             Get Started
         </p>
     </Button>
-    <ul class="space-y-1">
+    <ul class="flex flex-col space-y-2">
         {#each $$props.plan.features as feature}
         <li data-icon="✔️" class="text-left body-medium">
             {feature}
