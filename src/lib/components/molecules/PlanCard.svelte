@@ -15,9 +15,9 @@
 		</p>
 	</div>
 
-	<Button>
+	<!-- <Button>
 		<p class="title-large text-primary-on-light dark:text-primary-on-dark">Get Started</p>
-	</Button>
+	</Button> -->
 	<ul class="flex flex-col space-y-2">
 		{#each $$props.plan.features as feature}
 			<li class="whitespace-pre text-left title-medium">

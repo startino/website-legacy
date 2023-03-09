@@ -17,9 +17,9 @@
 	>
 		{#each promotions as promotion}
 			<li
-				class="{activeTabValue === promotion.value
+				class={activeTabValue === promotion.value
 					? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark'
-					: 'hover:border-2 rounded-xl'}"
+					: 'hover:border-2 rounded-xl'}
 			>
 				<button on:click={handleClick(promotion.value)}>
 					<Promotion name="billing" for={promotion.for} text={promotion.label}>
