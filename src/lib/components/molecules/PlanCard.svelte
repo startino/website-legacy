@@ -15,7 +15,8 @@
 	<ul class="flex flex-col space-y-2">
 		{#each $$props.plan.features as feature}
 			<li class="whitespace-pre text-left body-medium">
-				{"  •  "} {feature}
+				{'  •  '}
+				{feature}
 			</li>
 		{/each}
 	</ul>
