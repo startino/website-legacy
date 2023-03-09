@@ -18,11 +18,11 @@
 	const handleClick = (tabValue: number) => () => (activeTabValue = tabValue);
 </script>
 
-<div class="flex flex-col place-items-center">
-	<h1 class="title-large pb-20 text-center">
+<div class="grid space-y-10 place-items-center">
+	<h1 class="title-large">
 		Need some work done? We'll do it.
 	</h1>
-	<ul class="">
+	<ul class="flex flex-col xl:flex-row space-y-5 xl:space-x-5 xl:space-y-0">
 		{#each plans as plan}
 			<li>
 				<button
