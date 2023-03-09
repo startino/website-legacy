@@ -33,7 +33,7 @@
 			value: 3
 		},
 		{
-			label: 'Premium',
+			label: 'Enterprise',
 			unit: '$',
 			cost: 783,
 			note: '/mo',
@@ -43,7 +43,7 @@
 				'8 Maintenance Work',
 				'8 hours Developement Work'
 			],
-			value: 3
+			value: 4
 		}
 	];
 
@@ -56,23 +56,23 @@
 	<h1 class="title-large">
 		Experience Lightning-Fast Website Hosting with Our Reliable and Secure Services.
 	</h1>
-	<ul class="flex flex-col xl:flex-row space-y-5 xl:space-x-5 xl:space-y-0">
+	<ul class="flex flex-col justify-center xl:flex-row space-y-5 xl:space-x-5 xl:space-y-0">
 		{#each plans as plan}
-			<li>
-				<button
-					class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-dark/20 {activeTabValue ===
-					plan.value
-						? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
-						: 'hover:border-2 rounded-xl'}"
-					on:click={handleClick(plan.value)}
-					type="button"
-					role="plan"
-					aria-controls="profile"
-					aria-selected="false"
-				>
-					<PlanCard {plan} />
-				</button>
-			</li>
+		<li class="justify-center flex-1">
+			<button
+				class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-dark/20 {activeTabValue ===
+				plan.value
+					? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
+					: 'hover:border-2 rounded-xl'}"
+				on:click={handleClick(plan.value)}
+				type="button"
+				role="plan"
+				aria-controls="profile"
+				aria-selected="false"
+			>
+				<PlanCard {plan} />
+			</button>
+		</li>
 		{/each}
 	</ul>
 </div>
