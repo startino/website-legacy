@@ -45,6 +45,6 @@
     }*/
 </script>
 
-<div id="text" class="{$$props.class}">
+<div id="text" class={$$props.class}>
 	<slot />
 </div>

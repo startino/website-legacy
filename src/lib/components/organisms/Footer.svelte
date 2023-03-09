@@ -3,7 +3,9 @@
 	import Logo from '$lib/components/atoms/Logo.svelte';
 </script>
 
-<footer class="{$$props.class} pt-20 p-6 border-t border-secondary-light/10 dark:border-secondary-dark/10">
+<footer
+	class="{$$props.class} pt-20 p-6 border-t border-secondary-light/10 dark:border-secondary-dark/10"
+>
 	<div
 		class="sm:flex sm:justify-between sm:items-center md:px-10 lg:px-20 xl:px-40 px-auto md:px-auto"
 	>

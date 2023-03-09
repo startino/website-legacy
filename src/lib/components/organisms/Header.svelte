@@ -18,22 +18,34 @@
 				<nav class="text-sm font-semibold leading-6">
 					<ul class="flex m-auto space-x-8">
 						<li>
-							<a class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark" href="{base}/">
+							<a
+								class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark"
+								href="{base}/"
+							>
 								Home
 							</a>
 						</li>
 						<li>
-							<a class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark" href="{base}/contact">
+							<a
+								class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark"
+								href="{base}/contact"
+							>
 								Contact
 							</a>
 						</li>
 						<li>
-							<a class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark" href="{base}/about">
+							<a
+								class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark"
+								href="{base}/about"
+							>
 								About
 							</a>
 						</li>
-                        <li>
-							<a class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark" href="{base}/pricing">
+						<li>
+							<a
+								class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark"
+								href="{base}/pricing"
+							>
 								Pricing
 							</a>
 						</li>
@@ -47,5 +59,3 @@
 		</div>
 	</div>
 </div>
-
-

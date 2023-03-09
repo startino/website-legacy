@@ -11,11 +11,9 @@
 	class="py-40 px-4 border-b shadow-2xl sm:px-6 md:px-8 border-primary-light/40 dark:border-primary-dark/40"
 >
 	<div class="grid justify-items-center space-y-6 mx-auto max-w-6xl">
-		<h1 class="text-6xl">Futino</h1>
+		<h1 class="display-large">Futino</h1>
 
-		<h3 class="text-2xl">
-			Launch Your Business's Online Presence with Confidence And Trust
-		</h3>
+		<h3 class="text-2xl">Launch Your Business's Online Presence with Confidence And Trust</h3>
 
 		<div class="space-x-6">
 			<a href="{base}/contact">
