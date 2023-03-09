@@ -20,7 +20,7 @@
 			value: 2
 		},
 		{
-			label: 'Premium',
+			label: 'Business',
 			unit: '$',
 			cost: 261,
 			note: '/mo',
