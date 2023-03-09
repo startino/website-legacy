@@ -16,7 +16,7 @@
 			unit: '$',
 			cost: 87,
 			note: '/mo',
-			features: ['Hosting', 'Priority Customer Suport', '1hr Maintenance Work'],
+			features: ['Hosting', 'Priority Customer Suport', '2 hours Maintenance Work'],
 			value: 2
 		},
 		{
@@ -27,8 +27,8 @@
 			features: [
 				'Hosting',
 				'Priority Customer Suport',
-				'8hrs Maintenance Work',
-				'8hrs Developement Work'
+				'4 hours Maintenance Work',
+				'2 hours Developement Work'
 			],
 			value: 3
 		},
@@ -40,8 +40,8 @@
 			features: [
 				'Hosting',
 				'Priority Customer Suport',
-				'8hrs Maintenance Work',
-				'8hrs Developement Work'
+				'8 Maintenance Work',
+				'8 hours Developement Work'
 			],
 			value: 3
 		}
@@ -55,8 +55,7 @@
 <div class="flex flex-col p-3 place-items-center">
 	<h1 class="title-large pb-20 text-center max-w-2xl ">
 		<!--page is formatted quite weirdly and this text was overlappign with the cards so i had to add padding on bottom-->
-		Experience Lightning-Fast Website Hosting with Our Reliable and Secure Services. Our Edge Computing
-		will never leave you on the edge.
+		Experience Lightning-Fast Website Hosting with Our Reliable and Secure Services.
 	</h1>
 	<p class="body-small italic text-background-on-light/50 dark:text-background-on-dark/50" />
 	<ul class="flex space-x-10 text-center">
