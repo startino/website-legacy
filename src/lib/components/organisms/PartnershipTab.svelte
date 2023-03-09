@@ -5,7 +5,9 @@
 	export let plans = [
 		{
 			label: 'Partnership',
-			cost: '3.8% of your revenue',
+			unit: '',
+			cost: '3.8%',
+			note: 'of gross revenue',
 			features: [
 				'50% off Hosting Plans',
 				'50% off Marketing Plans',
@@ -29,13 +31,12 @@
 	</h1>
 	<ul class="">
 		{#each plans as plan}
-			<li
-				class="shadow-xl place-self-center {activeTabValue === plan.value
-					? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
-					: 'hover:border-2 rounded-xl'}"
-			>
+			<li>
 				<button
-					class="p-4 rounded-t-lg "
+					class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-dark/20 {activeTabValue ===
+					plan.value
+						? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
+						: 'hover:border-2 rounded-xl'}"
 					on:click={handleClick(plan.value)}
 					type="button"
 					role="plan"

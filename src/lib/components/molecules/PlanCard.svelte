@@ -3,18 +3,24 @@
 </script>
 
 <div class="flex flex-col space-y-10 p-7 xl:w-[300px] lg:w-[200px] md:w-[160px] sm:w-[100px]">
-	<h1 class="headline-small">
+	<h1 class="headline-large">
 		{$$props.plan.label}
 	</h1>
-	<h1 class="headline-large">
-		${$$props.plan.cost}
-	</h1>
+	<div class="flex justify-center flex-row">
+		<h1 class="display-medium">
+			{$$props.plan.unit}{$$props.plan.cost}
+		</h1>
+		<p class="body-large italics pt-8">
+			{$$props.plan.note}
+		</p>
+	</div>
+
 	<Button>
-		<p class="body-small">Get Started</p>
+		<p class="title-large text-primary-on-light dark:text-primary-on-dark">Get Started</p>
 	</Button>
 	<ul class="flex flex-col space-y-2">
 		{#each $$props.plan.features as feature}
-			<li class="whitespace-pre text-left body-medium">
+			<li class="whitespace-pre text-left title-medium">
 				{'  •  '}
 				{feature}
 			</li>

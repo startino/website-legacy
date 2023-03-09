@@ -5,7 +5,7 @@
 	const handleClick = (tabValue: number) => () => (activeTabValue = tabValue);
 </script>
 
-<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+<div class="mb-4 border-b border-secondary-light/20 dark:border-secondary-dark/20">
 	<ul
 		class="flex flex-wrap -mb-px text-sm font-medium text-center"
 		id="myTab"

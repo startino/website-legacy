@@ -4,13 +4,6 @@
 @tailwind utilities;
 
 @layer components {
-	ul li::before {
-		content: attr(data-icon);
-		padding-right: 5px;
-		/* em is used to make it 1.25x the font size */
-		font-size: 0.9em;
-	}
-
 	.text-primary {
 		@apply text-primary-on-light;
 		@apply dark:text-primary-on-dark;

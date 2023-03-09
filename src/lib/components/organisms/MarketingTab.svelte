@@ -5,47 +5,53 @@
 	export let plans = [
 		{
 			label: 'Basic',
-			cost: 19,
-			features: [
-				' Initial Setup',
-				'Campaign Setup',
-				'24/7 Live data dashboard',
-				'Search Engine Optimization',
-				'Social Media Marketing',
-				'20 000 Ad Impressions'
-			],
+			unit: '$',
+			cost: 14,
+			note: '/mo',
+			features: ['Campaign Setup', 'Social Media Marketing'],
 			value: 1
 		},
 		{
 			label: 'Standard',
-			cost: 30,
+			unit: '$',
+			cost: 28,
+			note: '/mo',
 			features: [
-				' Initial Setup',
 				'Campaign Setup',
-				'24/7 Live data dashboard',
-				'Search Engine Optimization',
 				'Social Media Marketing',
-				'80 000 Ad Impressions',
-				'Regular Meetings: Yearly',
-				'Consulting & strategy development'
+				'Search Engine Optimization',
+				'Regular Meetings: Yearly'
 			],
 			value: 2
 		},
 		{
-			label: 'Optimised',
-			cost: 70,
+			label: 'Business',
+			unit: '$',
+			cost: 85,
+			note: '/mo',
 			features: [
-				' Initial Setup 10-12 Days',
 				'Campaign Setup',
-				'24/7 Live data dashboard',
-				'Search Engine Optimization',
 				'Social Media Marketing',
-				'120 000 Ad Impressions',
-				'Regular Meetings: Quarterly',
-				'Consulting & strategy development',
-				'Social Media Presence'
+				'Search Engine Optimization',
+				'Regular Meetings: Biannually',
+				'Consulting & strategy development'
 			],
 			value: 3
+		},
+		{
+			label: 'Enterprise',
+			unit: '$',
+			cost: 257,
+			note: '/mo',
+			features: [
+				'Campaign Setup',
+				'Social Media Marketing',
+				'Search Engine Optimization',
+				'Regular Meetings: Quarterly',
+				'Consulting & strategy development',
+				'Social Media Management'
+			],
+			value: 4
 		}
 	];
 
@@ -61,13 +67,12 @@
 	</h1>
 	<ul class="flex space-x-10 text-center">
 		{#each plans as plan}
-			<li
-				class="shadow-xl {activeTabValue === plan.value
-					? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
-					: 'hover:border-2 rounded-xl'}"
-			>
+			<li>
 				<button
-					class="inline-block p-4 rounded-t-lg "
+					class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-dark/20 {activeTabValue ===
+					plan.value
+						? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
+						: 'hover:border-2 rounded-xl'}"
 					on:click={handleClick(plan.value)}
 					type="button"
 					role="plan"

@@ -5,19 +5,25 @@
 	export let plans = [
 		{
 			label: 'Basic',
+			unit: '$',
 			cost: 29,
+			note: '/mo',
 			features: ['Hosting', 'Customer Support'],
 			value: 1
 		},
 		{
 			label: 'Standard',
+			unit: '$',
 			cost: 87,
+			note: '/mo',
 			features: ['Hosting', 'Priority Customer Suport', '1hr Maintenance Work'],
 			value: 2
 		},
 		{
 			label: 'Premium',
+			unit: '$',
 			cost: 261,
+			note: '/mo',
 			features: [
 				'Hosting',
 				'Priority Customer Suport',
@@ -28,7 +34,9 @@
 		},
 		{
 			label: 'Premium',
+			unit: '$',
 			cost: 783,
+			note: '/mo',
 			features: [
 				'Hosting',
 				'Priority Customer Suport',
@@ -50,15 +58,15 @@
 		Experience Lightning-Fast Website Hosting with Our Reliable and Secure Services. Our Edge Computing
 		will never leave you on the edge.
 	</h1>
+	<p class="body-small italic text-background-on-light/50 dark:text-background-on-dark/50" />
 	<ul class="flex space-x-10 text-center">
 		{#each plans as plan}
-			<li
-				class="shadow-xl {activeTabValue === plan.value
-					? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
-					: 'hover:border-2 rounded-xl'}"
-			>
+			<li>
 				<button
-					class="inline-block p-4 rounded-t-lg "
+					class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-dark/20 {activeTabValue ===
+					plan.value
+						? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
+						: 'hover:border-2 rounded-xl'}"
 					on:click={handleClick(plan.value)}
 					type="button"
 					role="plan"
