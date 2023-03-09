@@ -16,16 +16,16 @@
 		<h3 class="text-2xl">Launch Your Business's Online Presence with Confidence And Trust</h3>
 
 		<div class="space-x-6">
-			<a href="{base}/contact">
+			<a href="{base}/pricing">
 				<Button>
-					<p>Contact Us!</p>
+					<p>Check the Pricing!</p>
 				</Button>
 			</a>
-			<a href="{base}/about">
+			<!-- <a href="{base}/about">
 				<Button>
 					<p>Who Are We?</p>
 				</Button>
-			</a>
+			</a> -->
 		</div>
 	</div>
 </main>

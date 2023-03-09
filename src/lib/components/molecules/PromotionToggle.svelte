@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ChoiceButton from './ChoiceButton.svelte';
+	import Promotion from './Promotion.svelte';
 	import OfferText from './OfferText.svelte';
 
 	export let promotions: any[] = [];
@@ -8,7 +8,7 @@
 	const handleClick = (tabValue: number) => () => (activeTabValue = tabValue);
 </script>
 
-<div class="border rounded-lg border-gray-200 dark:border-gray-700">
+<div class="p-2 border rounded-2xl border-secondary-light/20 dark:border-secondary-dark/20">
 	<ul
 		class="flex flex-wrap text-sm text-center space-x-7"
 		id="myTab"
@@ -22,7 +22,7 @@
 					: 'hover:border-2 rounded-xl'}"
 			>
 				<button on:click={handleClick(promotion.value)}>
-					<ChoiceButton name="billing" for={promotion.for} text={promotion.label}>
+					<Promotion name="billing" for={promotion.for} text={promotion.label}>
 						<!--ChoiceButton Probably shouldn't be inside of another button but idk how to pass onclick listener so...-->
 						{#if promotion.discount == ''}
 							<h1 class="body-large">
@@ -35,7 +35,7 @@
 								</h1>
 							</OfferText>
 						{/if}
-					</ChoiceButton>
+					</Promotion>
 				</button>
 			</li>
 		{/each}

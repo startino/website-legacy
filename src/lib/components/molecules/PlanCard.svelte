@@ -14,8 +14,8 @@
 	</Button>
 	<ul class="flex flex-col space-y-2">
 		{#each $$props.plan.features as feature}
-			<li data-icon="✔️" class="text-left body-medium">
-				{feature}
+			<li class="whitespace-pre text-left body-medium">
+				{"  •  "} {feature}
 			</li>
 		{/each}
 	</ul>

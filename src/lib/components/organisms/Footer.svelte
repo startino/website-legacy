@@ -13,7 +13,7 @@
 		<ul
 			class="flex flex-wrap items-center mb-6 space-x-6 text-sm  sm:mb-0 text-background-on-light dark:text-background-on-dark"
 		>
-			<li>
+			<!-- <li>
 				<a
 					class="inline text-secondary-light dark:text-secondary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark"
 					href={base}
@@ -28,13 +28,13 @@
 				>
 					Licensing
 				</a>
-			</li>
+			</li> -->
 			<li>
 				<a
 					class="inline text-secondary-light dark:text-secondary-dark hover:text-tertiary-light dark:hover:text-tertiary-dark"
 					href={base}
 				>
-					Contact
+					Pricing
 				</a>
 			</li>
 		</ul>

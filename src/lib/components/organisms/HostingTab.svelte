@@ -11,13 +11,24 @@
 		},
 		{
 			label: 'Standard',
-			cost: 59,
+			cost: 87,
 			features: ['Hosting', 'Priority Customer Suport', '1hr Maintenance Work'],
 			value: 2
 		},
 		{
 			label: 'Premium',
-			cost: 169,
+			cost: 261,
+			features: [
+				'Hosting',
+				'Priority Customer Suport',
+				'8hrs Maintenance Work',
+				'8hrs Developement Work'
+			],
+			value: 3
+		},
+		{
+			label: 'Premium',
+			cost: 783,
 			features: [
 				'Hosting',
 				'Priority Customer Suport',

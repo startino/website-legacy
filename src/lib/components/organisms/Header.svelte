@@ -24,7 +24,7 @@
 							>
 								Home
 							</a>
-						</li>
+						<!-- </li>
 						<li>
 							<a
 								class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark"
@@ -40,7 +40,7 @@
 							>
 								About
 							</a>
-						</li>
+						</li> -->
 						<li>
 							<a
 								class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark"

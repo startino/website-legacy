@@ -2,15 +2,12 @@
 	import { base } from '$app/paths';
 	import Header from '$lib/components/organisms/Header.svelte';
 	import Footer from '$lib/components/organisms/Footer.svelte';
-	import ChoiceButton from '$lib/components/molecules/ChoiceButton.svelte';
-	import OfferText from '$lib/components/molecules/OfferText.svelte';
-	import Button from '$lib/components/atoms/Button.svelte';
 	import HostingTab from '$lib/components/organisms/HostingTab.svelte';
 	import MarketingTab from '$lib/components/organisms/MarketingTab.svelte';
 	import PartnershipTab from '$lib/components/organisms/PartnershipTab.svelte';
 	import Tabs from '$lib/components/organisms/Tabs.svelte';
 	import CommisionTab from '$lib/components/organisms/CommisionTab.svelte';
-	import PromotionsSlider from '$lib/components/molecules/PromotionsSlider.svelte';
+	import PromotionToggle from '$lib/components/molecules/PromotionToggle.svelte';
 
 	let tabs = [
 		{ label: 'Hosting Plans', value: 1, component: HostingTab },
@@ -36,7 +33,7 @@
 
 		<h3 class="text-2xl">Consider some of our offers:</h3>
 
-		<PromotionsSlider {promotions} />
+		<PromotionToggle {promotions} />
 
 		<Tabs {tabs} />
 	</div>
