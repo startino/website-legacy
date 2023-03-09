@@ -61,11 +61,11 @@
 </script>
 
 <div class="flex flex-col p-3 place-items-center">
-	<h1 class="title-large pb-20 text-center max-w-2xl ">
+	<h1 class="title-large pb-20 text-center">
 		<!--page is formatted quite weirdly and this text was overlappign with the cards so i had to add padding on bottom-->
 		Maximize Your Reach with Tailored Digital Marketing.
 	</h1>
-	<ul class="flex space-x-10 text-center">
+	<ul class="flex flex-col xl:flex-row space-x-10 space-y-10 text-center">
 		{#each plans as plan}
 			<li>
 				<button

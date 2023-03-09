@@ -1,1 +1,43 @@
-commission tab
+<script lang="ts">
+	import Button from '../atoms/Button.svelte';
+	import PlanCard from '../molecules/PlanCard.svelte';
+
+	export let plans = [
+		{
+			label: 'Commision',
+			unit: '$',
+			cost: 45,
+			note: '/hour',
+			features: [],
+			value: 1
+		}
+	];
+
+	export let activeTabValue = 0;
+
+	const handleClick = (tabValue: number) => () => (activeTabValue = tabValue);
+</script>
+
+<div class="flex flex-col place-items-center">
+	<h1 class="title-large pb-20 text-center">
+		Need some work done? We'll do it.
+	</h1>
+	<ul class="">
+		{#each plans as plan}
+			<li>
+				<button
+					class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-dark/20 {activeTabValue ===
+					plan.value
+						? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
+						: 'hover:border-2 rounded-xl'}"
+					on:click={handleClick(plan.value)}
+					type="button"
+					role="plan"
+				>
+					<PlanCard {plan} />
+				</button>
+			</li>
+		{/each}
+	</ul>
+</div>
+

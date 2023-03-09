@@ -17,7 +17,7 @@
 	>
 		{#each promotions as promotion}
 			<li
-				class="w-52 {activeTabValue === promotion.value
+				class="{activeTabValue === promotion.value
 					? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark'
 					: 'hover:border-2 rounded-xl'}"
 			>

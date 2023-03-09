@@ -23,9 +23,9 @@
 	const handleClick = (tabValue: number) => () => (activeTabValue = tabValue);
 </script>
 
-<div class="flex flex-col place-items-center w-[700px]">
-	<h1 class="title-large text-center max-w-xl">Shooting for the stars?</h1>
-	<h1 class="title-large pb-20 text-center max-w-lg">
+<div class="flex flex-col xl:flex-row space-x-10 space-y-10 place-items-center">
+	<h1 class="title-large text-center">Shooting for the stars?</h1>
+	<h1 class="title-large pb-20 text-center">
 		<!--page is formatted quite weirdly and this text was overlappign with the cards so i had to add padding on bottom-->
 		You'll reach the stars with us.
 	</h1>
