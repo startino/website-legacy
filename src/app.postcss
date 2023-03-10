@@ -4,6 +4,14 @@
 @tailwind utilities;
 
 @layer components {
+	/* Custom */
+	.link {
+		@apply underline;
+		@apply text-tertiary-light;
+		@apply dark:text-tertiary-dark;
+	}
+
+	/* Simplified Material Design */
 	.text-primary {
 		@apply text-primary-on-light;
 		@apply dark:text-primary-on-dark;
@@ -37,6 +45,8 @@
 		@apply text-primary-on-light;
 		@apply dark:text-primary-on-dark;
 	}
+
+	// Material Design
 	.display-large {
 		font-family: var(--md-sys-typescale-display-large-font-family-name);
 		font-style: var(--md-sys-typescale-display-large-font-family-style);

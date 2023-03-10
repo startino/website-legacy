@@ -5,8 +5,8 @@
 		{
 			label: 'Partnership',
 			prefix: '',
-			cost: '1.0%',
-			note: 'of gross revenue',
+			cost: '%',
+			note: 'of gross revenue (negotiable)',
 			subtext: '',
 			features: [
 				'50% off Hosting Plans',
