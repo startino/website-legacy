@@ -1,0 +1,46 @@
+name: Deploy to gh-pages Branch
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    # - main
+      - alpha
+    # - 'release-**'
+    paths:
+      - '!**.md'
+  pull_request:
+    branches:
+    # - main
+      - alpha
+    # - 'release-**'
+    paths:
+      - '!**.md'
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          
+      - name: Build Svelte App
+        run: |
+          npm run build
+        
+      - name: Deploy to gh-pages Branch
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
+          target-folder: /
+          clean: true
