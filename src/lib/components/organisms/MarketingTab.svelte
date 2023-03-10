@@ -36,7 +36,7 @@
 				'Social Media Marketing',
 				'Search Engine Optimization',
 				'Regular Meetings: Biannually',
-				'Consulting & strategy development'
+				'Consulting & Strategy Development'
 			],
 			value: 3
 		},
@@ -51,7 +51,7 @@
 				'Social Media Marketing',
 				'Search Engine Optimization',
 				'Regular Meetings: Quarterly',
-				'Consulting & strategy development',
+				'Consulting & Strategy Development',
 				'Social Media Management'
 			],
 			value: 4

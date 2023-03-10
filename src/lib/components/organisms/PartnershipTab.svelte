@@ -5,7 +5,7 @@
 		{
 			label: 'Partnership',
 			prefix: '',
-			cost: '3.8%',
+			cost: '1.0%',
 			note: 'of gross revenue',
 			subtext: '',
 			features: [

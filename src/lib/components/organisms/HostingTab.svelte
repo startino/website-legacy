@@ -17,7 +17,7 @@
 			cost: 87,
 			note: '/mo',
 			subtext: '',
-			features: ['Hosting', 'Priority Customer Suport', '2 hours Maintenance Work'],
+			features: ['Hosting', 'Priority Customer Suport', '2 Hours Maintenance Work'],
 			value: 2
 		},
 		{
@@ -29,8 +29,8 @@
 			features: [
 				'Hosting',
 				'Priority Customer Suport',
-				'4 hours Maintenance Work',
-				'2 hours Developement Work'
+				'4 Hours Maintenance Work',
+				'2 Hours Developement Work'
 			],
 			value: 3
 		},
@@ -43,8 +43,8 @@
 			features: [
 				'Hosting',
 				'Priority Customer Suport',
-				'8 Maintenance Work',
-				'8 hours Developement Work'
+				'8 Hours Maintenance Work',
+				'8 Hours Developement Work'
 			],
 			value: 4
 		}
