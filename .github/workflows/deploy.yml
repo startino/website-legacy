@@ -6,15 +6,11 @@ on:
     # - main
       - alpha
     # - 'release-**'
-    paths:
-      - '!**.md'
   pull_request:
     branches:
     # - main
       - alpha
     # - 'release-**'
-    paths:
-      - '!**.md'
 
 jobs:
   deploy:
