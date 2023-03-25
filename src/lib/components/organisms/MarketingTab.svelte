@@ -9,7 +9,7 @@
 			note: '/mo',
 			subtext: '+ $0.0074/impression',
 			features: ['Campaign Setup', 'Social Media Marketing'],
-			value: 1
+			index: 1
 		},
 		{
 			label: 'Standard',
@@ -23,7 +23,7 @@
 				'Search Engine Optimization',
 				'Regular Meetings: Yearly'
 			],
-			value: 2
+			index: 2
 		},
 		{
 			label: 'Business',
@@ -38,7 +38,7 @@
 				'Regular Meetings: Biannually',
 				'Consulting & Strategy Development'
 			],
-			value: 3
+			index: 3
 		},
 		{
 			label: 'Enterprise',
@@ -54,7 +54,7 @@
 				'Consulting & Strategy Development',
 				'Social Media Management'
 			],
-			value: 4
+			index: 4
 		}
 	];
 
@@ -69,15 +69,17 @@
 		{#each plans as plan}
 			<li>
 				<button
-					class="inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-light/20 dark:bg-surface-variant-dark/20 {activeTabValue ===
-					plan.value
+					class="relative group overflow-hidden inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-light/20 dark:bg-surface-variant-dark/20 border-2 border-transparent {activeTabValue ===
+					plan.index
 						? 'active border-2 rounded-xl border-primary-light dark:border-primary-dark transition-all duration-500 scale-110'
-						: 'hover:border-2 rounded-xl'}"
-					on:click={handleClick(plan.value)}
+						: 'hover:border-outline-light rounded-xl'}"
+					on:click={handleClick(plan.index)}
 					type="button"
 					aria-controls="profile"
 					aria-selected="false"
 				>
+				<!--Shine Box-->
+				<div class="absolute top-0 -inset-full h-full w-1/3 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 group-hover:animate-shine " />
 					<PlanCard {plan} />
 				</button>
 			</li>

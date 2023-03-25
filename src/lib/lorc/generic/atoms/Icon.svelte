@@ -1,52 +1,60 @@
 <script lang="ts">
-    enum IconType {
-    LocationIcon,
-    LinkedinIcon,
-    ExternalLinkIcon,
-    ClockIcon,
-    MenuIcon,
-    LeftArrow,
-    RightArrow,
-    SeperatorIcon,
-    SquareIcon,
-    PhoneIcon,
-}
+	enum IconType {
+		LocationIcon,
+		LinkedinIcon,
+		ExternalLinkIcon,
+		ClockIcon,
+		MenuIcon,
+		LeftArrow,
+		RightArrow,
+		SeperatorIcon,
+		SquareIcon,
+		PhoneIcon
+	}
 </script>
 
-   
-
-
-
 <div class={$$props.class}>
-    {#if $$props.icon == IconType.LocationIcon}
-        <svg width={$$props.width} height={$$props.height} viewBox="0 0 24 24" fill="none" stroke={$$props.color}>
-            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-            <g id="SVGRepo_iconCarrier">
-                <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M13 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/>
-                <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M17.5 9.5c0 3.038-2 6.5-5.5 10.5-3.5-4-5.5-7.462-5.5-10.5a5.5 5.5 0 1 1 11 0Z" />
-            </g>
-        </svg>
-    {:else if $$props.icon == IconType.LinkedinIcon}
-    <svg width={$$props.width} height={$$props.height} viewBox="0 0 24 24" fill="none" stroke={$$props.color}>
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-    {:else if $$props.icon == IconType.ExternalLinkIcon}
-    {:else if $$props.icon == IconType.ClockIcon}
-    {:else if $$props.icon == IconType.MenuIcon}
-    {:else if $$props.icon == IconType.LeftArrow}
-    {:else if $$props.icon == IconType.RightArrow}
-    {:else if $$props.icon == IconType.SquareIcon}
-    {:else if $$props.icon == IconType.PhoneIcon}
-    {:else}
-    'icon' not given...
-    {/if}
+	{#if $$props.icon == IconType.LocationIcon}
+		<svg
+			width={$$props.width}
+			height={$$props.height}
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke={$$props.color}
+		>
+			<g id="SVGRepo_bgCarrier" stroke-width="0" />
+			<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+			<g id="SVGRepo_iconCarrier">
+				<path
+					stroke="currentColor"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M13 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"
+				/>
+				<path
+					stroke="currentColor"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M17.5 9.5c0 3.038-2 6.5-5.5 10.5-3.5-4-5.5-7.462-5.5-10.5a5.5 5.5 0 1 1 11 0Z"
+				/>
+			</g>
+		</svg>
+	{:else if $$props.icon == IconType.LinkedinIcon}
+		<svg
+			width={$$props.width}
+			height={$$props.height}
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke={$$props.color}
+		>
+			<path
+				d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+			/>
+		</svg>
+	{:else if $$props.icon == IconType.ExternalLinkIcon}{:else if $$props.icon == IconType.ClockIcon}{:else if $$props.icon == IconType.MenuIcon}{:else if $$props.icon == IconType.LeftArrow}{:else if $$props.icon == IconType.RightArrow}{:else if $$props.icon == IconType.SquareIcon}{:else if $$props.icon == IconType.PhoneIcon}{:else}
+		'icon' not given...
+	{/if}
 </div>
-
-
-
-
-
 
 <!-- 
 use yew::{function_component, html, Html};

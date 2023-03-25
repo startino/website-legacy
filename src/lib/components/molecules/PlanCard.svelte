@@ -1,4 +1,4 @@
-<div class="flex flex-col space-y-10 p-7">
+<div class="flex flex-col space-y-10 p-7 ">
 	<h1 class="headline-large">
 		{$$props.plan.label}
 	</h1>

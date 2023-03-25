@@ -21,12 +21,16 @@ const config = {
 			},
 
 			animation: {
+				shine: 'shine 0.9s ease-out',
 				wiggle: 'wiggle 1s ease-in-out infinite',
 				slideDown: 'slideDown 5s ease-in-out 1',
 				scroll: 'scroll 5s ease-in-out'
 			},
 
 			keyframes: {
+				shine: {
+					'100%': { left: '125%' }
+				},
 				wiggle: {
 					'0%, 100%': { transform: 'rotate(-3deg)' },
 					'50%': { transform: 'rotate(3deg)' }

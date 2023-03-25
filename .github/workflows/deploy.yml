@@ -3,12 +3,12 @@ on:
   workflow_dispatch:
   push:
     branches:
-    # - main
+      # - main
       - alpha
     # - 'release-**'
   pull_request:
     branches:
-    # - main
+      # - main
       - alpha
     # - 'release-**'
 
@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -28,11 +28,11 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
-          
+
       - name: Build Svelte App
         run: |
           npm run build
-        
+
       - name: Deploy to gh-pages Branch
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
