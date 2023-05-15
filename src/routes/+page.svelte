@@ -9,6 +9,7 @@
 	import { fade } from 'svelte/transition';
 	import type { ObserverEventDetails, ScrollDirection, Options } from 'svelte-inview';
 
+	// Code for the attempted journey dot moving on scroll. May or may not use this code later on so will leave here for now.
 	let scroll: any;
 	let journeyInView: boolean;
 	const handleJourneyDot = ({ detail }: CustomEvent<ObserverEventDetails>) => {
