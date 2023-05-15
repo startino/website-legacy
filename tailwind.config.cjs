@@ -25,7 +25,7 @@ const config = {
 				wiggle: 'wiggle 1s ease-in-out infinite',
 				slideDown: 'slideDown 5s ease-in-out 1',
 				scroll: 'scroll 5s ease-in-out',
-				carouselSlide: 'carouselSlide infinite 15s linear'
+				carouselSlide: 'carouselSlide infinite 25s linear'
 			},
 
 			keyframes: {

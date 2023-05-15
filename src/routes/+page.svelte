@@ -8,7 +8,7 @@
 </script>
 
 <Header />
-
+<ChapterMenu />
 <main
 	class="text-center border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40 flex flex-col items-stretch"
 >
