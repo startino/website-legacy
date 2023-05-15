@@ -24,10 +24,15 @@ const config = {
 				shine: 'shine 0.9s ease-out',
 				wiggle: 'wiggle 1s ease-in-out infinite',
 				slideDown: 'slideDown 5s ease-in-out 1',
-				scroll: 'scroll 5s ease-in-out'
+				scroll: 'scroll 5s ease-in-out',
+				carouselSlide: 'carouselSlide infinite 15s linear'
 			},
 
 			keyframes: {
+				carouselSlide: {
+					'0%': {transform: 'translateX(0%)'},
+					'100%': {transform: 'translateX(-100%)'},
+				},
 				shine: {
 					'100%': { left: '125%' }
 				},
