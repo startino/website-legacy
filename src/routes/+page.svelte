@@ -5,7 +5,25 @@
 	import Button from '$lib/components/atoms/Button.svelte';
 	import ClientCarousel from '$lib/components/organisms/ClientCarousel.svelte';
 	import ChapterMenu from '$lib/components/organisms/ChapterMenu.svelte';
+	import { inview } from 'svelte-inview';
+	import { fade } from 'svelte/transition';
+	import type { ObserverEventDetails, ScrollDirection, Options } from 'svelte-inview';
+
+	let scroll: any;
+	let journeyInView: boolean;
+	const handleJourneyDot = ({ detail }: CustomEvent<ObserverEventDetails>) => {
+		console.log('handling change.');
+
+		journeyInView = detail.inView;
+	};
+
+	const options: Options = {
+		rootMargin: '-50%',
+		unobserveOnEnter: false
+	};
 </script>
+
+<svelte:window bind:scrollY={scroll} />
 
 <Header />
 <ChapterMenu />
@@ -42,33 +60,95 @@
 	<!--Journey Section-->
 	<section
 		id="hero"
-		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20"
+		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
+		use:inview={options}
+		on:inview_change={handleJourneyDot}
 	>
 		<h1 class="display-large">Areas of Expertise</h1>
 
-		<div class="justify-self-start flex flex-col max-w-xs text-left">
-			<h2 class="display-small">We Lorem Ipsum</h2>
-			<h3 class="body-medium">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus euismod
-				euismod id ut est. In vel elit at lorem cursus porttitor. Sed vel ante vulputate,
-				sollicitudin lorem eu, molestie metus.
-			</h3>
+		<!--Checkmark 1-->
+		<div
+			class="h-12 w-12 rounded-full bg-primary-light dark:bg-primary-dark flex justify-self-center relative"
+		>
+			<h1
+				class="headline-medium text-primary-on-light dark:text-primary-on-dark self-center mx-auto"
+			>
+				1
+			</h1>
+			<div class="border-l-1 border-white/30 absolute left-1/2 h-[500px] -z-10" />
 		</div>
-		<div class="justify-self-end flex flex-col max-w-xs text-left">
-			<h2 class="display-small">We Lorem Ipsum</h2>
-			<h3 class="body-medium">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus euismod
-				euismod id ut est. In vel elit at lorem cursus porttitor. Sed vel ante vulputate,
-				sollicitudin lorem eu, molestie metus.
-			</h3>
+		<!--Journey Path will be replaced with an svg later on-->
+
+		<!--Journey Dot... Well sort of..
+		{#if journeyInView}
+			<div
+				class="h-3 w-3 z-20 bg-tertiary-light dark:bg-tertiary-dark rounded-full absolute left-1/2 self-start"
+				style:transform={`translateY( ${scroll * 1 - 1200}px)`}
+			/>
+		{/if}
+		{scroll}
+		-->
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center">
+			<!--Temp. image-->
+			<div class="bg-surface-variant-dark h-42 w-52 sm:justify-self-end" />
+			<div class="flex flex-col max-w-md text-left">
+				<h2 class="display-small">We Lorem Ipsum</h2>
+				<h3 class="body-medium">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus
+					euismod euismod id ut est. In vel elit at lorem cursus porttitor.
+				</h3>
+			</div>
+			<!--Temp. image-->
+			<div class="bg-surface-variant-dark h-32 w-56 sm:justify-self-end" />
+			<div class="flex flex-col max-w-md text-left">
+				<h2 class="display-small">We Lorem Ipsum</h2>
+				<h3 class="body-medium">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus
+					euismod euismod id ut est.
+				</h3>
+			</div>
 		</div>
-		<div class="justify-self-start flex flex-col max-w-xs text-left">
-			<h2 class="display-small">We Lorem Ipsum</h2>
-			<h3 class="body-medium">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus euismod
-				euismod id ut est. In vel elit at lorem cursus porttitor. Sed vel ante vulputate,
-				sollicitudin lorem eu, molestie metus.
-			</h3>
+		<!--Checkmark 2-->
+		<div
+			class="h-12 w-12 rounded-full bg-primary-light dark:bg-primary-dark flex justify-self-center relative"
+		>
+			<h1
+				class="headline-medium text-primary-on-light dark:text-primary-on-dark self-center mx-auto"
+			>
+				2
+			</h1>
+			<div class="border-l-1 border-white/30 absolute left-1/2 h-[400px] -z-10" />
+		</div>
+		<!--Journey Path will be replaced with an svg later on-->
+
+		<!--Journey Dot... Well sort of..
+		{#if journeyInView}
+			<div
+				class="h-3 w-3 z-20 bg-tertiary-light dark:bg-tertiary-dark rounded-full absolute left-1/2 self-start"
+				style:transform={`translateY( ${scroll * 1 - 1200}px)`}
+			/>
+		{/if}
+		{scroll}
+		-->
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl">
+			<!--Temp. image-->
+			<div class="bg-surface-variant-dark h-42 w-52 sm:justify-self-end" />
+			<div class="flex flex-col max-w-md text-left">
+				<h2 class="display-small">We Lorem Ipsum</h2>
+				<h3 class="body-medium">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus
+					euismod euismod id ut est. In vel elit at lorem cursus porttitor.
+				</h3>
+			</div>
+			<!--Temp. image-->
+			<div class="bg-surface-variant-dark h-32 w-56 sm:justify-self-end" />
+			<div class="flex flex-col max-w-md text-left">
+				<h2 class="display-small">We Lorem Ipsum</h2>
+				<h3 class="body-medium">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus
+					euismod euismod id ut est.
+				</h3>
+			</div>
 		</div>
 	</section>
 
