@@ -91,7 +91,7 @@
 		-->
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center">
 			<!--Temp. image-->
-			<div class="bg-surface-variant-dark h-42 w-52 sm:justify-self-end" />
+			<div class="bg-surface-variant-dark h-42 w-full sm:justify-self-end" />
 			<div class="flex flex-col max-w-md text-left">
 				<h2 class="display-small">We Lorem Ipsum</h2>
 				<h3 class="body-medium">
@@ -100,7 +100,7 @@
 				</h3>
 			</div>
 			<!--Temp. image-->
-			<div class="bg-surface-variant-dark h-32 w-56 sm:justify-self-end" />
+			<div class="bg-surface-variant-dark h-32 w-full sm:justify-self-end" />
 			<div class="flex flex-col max-w-md text-left">
 				<h2 class="display-small">We Lorem Ipsum</h2>
 				<h3 class="body-medium">
@@ -133,7 +133,7 @@
 		-->
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl">
 			<!--Temp. image-->
-			<div class="bg-surface-variant-dark h-42 w-52 sm:justify-self-end" />
+			<div class="bg-surface-variant-dark h-52 w-full sm:justify-self-end" />
 			<div class="flex flex-col max-w-md text-left">
 				<h2 class="display-small">We Lorem Ipsum</h2>
 				<h3 class="body-medium">
@@ -142,7 +142,7 @@
 				</h3>
 			</div>
 			<!--Temp. image-->
-			<div class="bg-surface-variant-dark h-32 w-56 sm:justify-self-end" />
+			<div class="bg-surface-variant-dark h-32 w-full sm:justify-self-end" />
 			<div class="flex flex-col max-w-md text-left">
 				<h2 class="display-small">We Lorem Ipsum</h2>
 				<h3 class="body-medium">
@@ -190,8 +190,13 @@
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mx-auto max-w-7xl">
 			{#each Array(6) as index}
 				<div
-					class="bg-surface-variant-light dark:bg-surface-variant-dark rounded-lg flex flex-col items-center p-6"
+					class="bg-surface-variant-light/20 shadow-lg dark:bg-surface-variant-dark/20 rounded-lg max-w-3xl flex flex-col items-center p-6"
 				>
+					<iframe
+						src="https://ggsoccer.futi.no/"
+						frameborder="0"
+						class="w-fit h-auto aspect-[16/9]"
+					/>
 					<img src="favicon.png" alt="Face" class="h-24 w-24 rounded-full" />
 					<h1 class="headline-medium">John Doe, CEO of Phazor</h1>
 					<h2 class="body-medium">
