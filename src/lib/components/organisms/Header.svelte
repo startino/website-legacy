@@ -17,6 +17,7 @@
 			<div class="flex items-center ml-auto">
 				<nav class="text-sm font-semibold leading-6">
 					<ul class="flex m-auto space-x-8">
+						<!--
 						<li>
 							<a
 								class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark"
@@ -41,6 +42,7 @@
 								About
 							</a>
 						</li>
+					-->
 						<li>
 							<a
 								class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark"

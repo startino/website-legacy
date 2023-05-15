@@ -23,14 +23,9 @@
 			<h3 class="text-2xl">Launch Your Business's Online Presence with Confidence And Trust</h3>
 
 			<div class="space-x-6">
-				<a href="{base}/pricing">
-					<Button>
-						<p>Book A Meeting</p>
-					</Button>
-				</a>
 				<a href="{base}/about">
 					<Button>
-						<p>Check Out Pricing</p>
+						<p>Check Out Pricing!</p>
 					</Button>
 				</a>
 			</div>
