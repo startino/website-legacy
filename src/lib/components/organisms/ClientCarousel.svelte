@@ -4,7 +4,7 @@
 </script>
 
 <svelte:window bind:scrollY={scroll} />
-<div id="carousel-parent" class="w-full overflow-hidden relative h-42 flex flex-nowrap">
+<div id="carousel-parent" class="w-full overflow-hidden relative h-fit flex flex-nowrap">
 	<div
 		class="h-full z-10 bg-gradient-to-r from-surface-light dark:from-surface-dark to-transparent w-20 left-0 absolute"
 	/>
