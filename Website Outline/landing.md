@@ -19,6 +19,10 @@ paginate: true
 
 Inspiration is https://www.deso.com/ Bottom left Chapter Menu
 - Nice Menu Icon you can click
+    - Possible Menu Icon animations: 
+        - DeSo: by far most fitting due to the layers design
+        - https://codepen.io/cobra_winfrey/pen/xxxwvpG : just fancy
+![](./chapter%20menu.png)
 
 ---
 
