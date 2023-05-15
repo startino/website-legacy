@@ -17,7 +17,6 @@
 		id="hero"
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid justify-items-center space-y-12 border-secondary-light/20 dark:border-secondary-dark/20"
 	>
-		<ChapterMenu />
 		<div class="grid justify-items-center space-y-12 mx-auto">
 			<h1 class="display-large">Futino</h1>
 
@@ -35,95 +34,6 @@
 					</Button>
 				</a>
 			</div>
-		</div>
-	</section>
-
-	<!--Big-Clients Slideshow-->
-	<section id="hero" class="grow px-4 sm:px-6 md:px-8 grid space-y-12">
-		<h3 class="body-medium">Backed By Premium Companies</h3>
-		<ClientCarousel />
-	</section>
-
-	<!--Journey Section-->
-	<section
-		id="hero"
-		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20"
-	>
-		<h1 class="display-large">Areas of Expertise</h1>
-
-		<div class="justify-self-start flex flex-col max-w-xs text-left">
-			<h2 class="display-small">We Lorem Ipsum</h2>
-			<h3 class="body-medium">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus euismod
-				euismod id ut est. In vel elit at lorem cursus porttitor. Sed vel ante vulputate,
-				sollicitudin lorem eu, molestie metus.
-			</h3>
-		</div>
-		<div class="justify-self-end flex flex-col max-w-xs text-left">
-			<h2 class="display-small">We Lorem Ipsum</h2>
-			<h3 class="body-medium">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus euismod
-				euismod id ut est. In vel elit at lorem cursus porttitor. Sed vel ante vulputate,
-				sollicitudin lorem eu, molestie metus.
-			</h3>
-		</div>
-		<div class="justify-self-start flex flex-col max-w-xs text-left">
-			<h2 class="display-small">We Lorem Ipsum</h2>
-			<h3 class="body-medium">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus euismod
-				euismod id ut est. In vel elit at lorem cursus porttitor. Sed vel ante vulputate,
-				sollicitudin lorem eu, molestie metus.
-			</h3>
-		</div>
-	</section>
-
-	<!--Analyitics Snippet-->
-	<section
-		id="hero"
-		class="grow px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 bg-primary-light/20 dark:bg-primary-dark/10"
-	>
-		<div class="flex flex-row px-4 justify-around w-screen text-center">
-			<div class="flex flex-col p-4">
-				<h2 class="headline-large font-extrabold">50</h2>
-				<h2 class="body-medium font-light">Sites Made</h2>
-			</div>
-			<div class="border-r border-white/20 my-4" />
-			<div class="flex flex-col p-4 justify-self-end">
-				<h2 class="headline-large font-extrabold ">21K</h2>
-				<h2 class="body-medium font-light">Hours Used</h2>
-			</div>
-			<div class="border-r border-white/20 my-4" />
-			<div class="flex flex-col p-4">
-				<h2 class="headline-large font-extrabold">$200K</h2>
-				<h2 class="body-medium font-light">Transacted</h2>
-			</div>
-			<div class="border-r border-white/20 my-4" />
-			<div class="flex flex-col p-4">
-				<h2 class="headline-large font-extrabold">99.9%</h2>
-				<h2 class="body-medium font-light">Pure Waffle</h2>
-			</div>
-		</div>
-	</section>
-
-	<!--Clients Section-->
-	<section
-		id="hero"
-		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20  justify-items-center"
-	>
-		<h1 class="display-large">Our Clients</h1>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mx-auto max-w-7xl">
-			{#each Array(6) as index}
-				<div
-					class="bg-surface-variant-light dark:bg-surface-variant-dark rounded-lg flex flex-col items-center p-6"
-				>
-					<img src="favicon.png" alt="Face" class="h-24 w-24 rounded-full" />
-					<h1 class="headline-medium">John Doe, CEO of Phazor</h1>
-					<h2 class="body-medium">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus
-						euismod euismod id ut est. In vel elit at lorem cursus porttitor.
-					</h2>
-				</div>
-			{/each}
 		</div>
 	</section>
 </main>
