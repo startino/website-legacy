@@ -11,9 +11,9 @@
 	let hasScrolled: boolean = false; // If the user has scrolled at all => true
 	let activeheaderClass = 'sticky top-0 z-40 flex-none w-full transition-colors duration-500';
 	let largeHeaderClass =
-		' py-8 text-primary-container-on-light dark:text-primary-container-on-dark';
+		' py-10 text-primary-container-on-light dark:text-primary-container-on-dark';
 	let miniHeaderClass =
-		'py-4 backdrop-blur bg-surface-light dark:bg-surface-dark text-surface-on-light dark:text-surface-on-dark';
+		'py-6 backdrop-blur bg-surface-light dark:bg-surface-dark text-primary-container-on-light dark:text-primary-container-on-dark';
 
 	// animation on scroll Solution 1
 	/*
