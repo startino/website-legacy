@@ -189,11 +189,11 @@
 				<div
 					class="bg-surface-variant-light/20 shadow-lg dark:bg-surface-variant-dark/20 rounded-lg max-w-3xl flex flex-col items-center p-6"
 				>
-					<iframe
+					<!--<iframe
 						src="https://ggsoccer.futi.no/"
 						frameborder="0"
 						class="w-fit h-auto aspect-[16/9]"
-					/>
+					/>-->
 					<img src="favicon.png" alt="Face" class="h-24 w-24 rounded-full" />
 					<h1 class="headline-medium">John Doe, CEO of Phazor</h1>
 					<h2 class="body-medium">
