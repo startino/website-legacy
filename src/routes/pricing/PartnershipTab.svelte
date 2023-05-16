@@ -1,14 +1,19 @@
 <script lang="ts">
-	import PlanCard from '../molecules/PlanCard.svelte';
+	import PlanCard from './PlanCard.svelte';
 
 	export let plans = [
 		{
-			label: 'Commision',
-			prefix: '$',
-			cost: 45,
-			note: '/hour',
+			label: 'Partnership',
+			prefix: '',
+			cost: '%',
+			note: 'of gross revenue (negotiable)',
 			subtext: '',
-			features: [],
+			features: [
+				'50% off Hosting Plans',
+				'50% off Marketing Plans',
+				'90% off Initial Website Developement',
+				'50% off Commissions'
+			],
 			index: 1
 		}
 	];
@@ -18,8 +23,11 @@
 	const handleClick = (tabValue: number) => () => (activeTabValue = tabValue);
 </script>
 
-<div class="grid space-y-10 place-items-center">
-	<h1 class="title-large">Need some work done? We'll do it.</h1>
+<div class="grid space-x-10 space-y-10 place-items-center">
+	<h1 class="title-large text-center">
+		Shooting for the stars?<br />You'll reach the stars with us.
+	</h1>
+
 	<ul class="flex flex-col xl:flex-row space-y-5 xl:space-x-5 xl:space-y-0">
 		{#each plans as plan}
 			<li>
@@ -33,7 +41,7 @@
 					aria-controls="profile"
 					aria-selected="false"
 				>
-				<!--Shine Box. It's just a white box that slides over the card.-->
+				<!--Shine Box-->
 				<div class="absolute top-0 -inset-full h-full w-1/3 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 group-hover:animate-shine " />
 					<PlanCard {plan} />
 				</button>
