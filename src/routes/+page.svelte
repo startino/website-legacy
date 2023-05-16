@@ -5,38 +5,106 @@
 	import Button from '$lib/components/atoms/Button.svelte';
 	import ClientCarousel from '$lib/components/organisms/ClientCarousel.svelte';
 	import ChapterMenu from '$lib/components/organisms/ChapterMenu.svelte';
-	import { inview } from 'svelte-inview';
-	import { fade } from 'svelte/transition';
-	import type { ObserverEventDetails, ScrollDirection, Options } from 'svelte-inview';
+	import { onMount } from 'svelte';
+	import { tsParticles } from 'tsparticles-engine';
+	import { loadFull } from 'tsparticles';
 
-	// Code for the attempted journey dot moving on scroll. May or may not use this code later on so will leave here for now.
-	let scroll: any;
-	let journeyInView: boolean;
-	const handleJourneyDot = ({ detail }: CustomEvent<ObserverEventDetails>) => {
-		console.log('handling change.');
-
-		journeyInView = detail.inView;
-	};
-
-	const options: Options = {
-		rootMargin: '-50%',
-		unobserveOnEnter: false
-	};
+	onMount(() => {
+		loadFull(tsParticles);
+		tsParticles.load('tsparticles', {
+			background: {
+				color: {
+					value: '#000000'
+				}
+			},
+			fpsLimit: 120,
+			interactivity: {
+				events: {
+					onClick: {
+						enable: true,
+						mode: 'push'
+					},
+					onHover: {
+						enable: true,
+						mode: 'repulse'
+					},
+					resize: true
+				},
+				modes: {
+					bubble: {
+						distance: 400,
+						duration: 2,
+						opacity: 0.8,
+						size: 40
+					},
+					push: {
+						quantity: 4
+					},
+					repulse: {
+						distance: 200,
+						duration: 0.4
+					}
+				}
+			},
+			particles: {
+				color: {
+					value: '#ffffff'
+				},
+				links: {
+					color: '#ffffff',
+					distance: 150,
+					enable: true,
+					opacity: 0.5,
+					width: 1
+				},
+				collisions: {
+					enable: true
+				},
+				move: {
+					direction: 'none',
+					enable: true,
+					outMode: 'bounce',
+					random: false,
+					speed: 6,
+					straight: false
+				},
+				number: {
+					density: {
+						enable: true,
+						area: 800
+					},
+					value: 10
+				},
+				opacity: {
+					value: 0.5
+				},
+				shape: {
+					type: 'circle'
+				},
+				size: {
+					random: true,
+					value: 5
+				}
+			},
+			detectRetina: true,
+			fullScreen: false
+		});
+	});
 </script>
-
-<svelte:window bind:scrollY={scroll} />
 
 <Header />
 <ChapterMenu />
+
 <main
 	class="text-center border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40 flex flex-col items-stretch"
 >
 	<!--Hero-->
 	<section
 		id="hero"
-		class="grow py-32 h-screen sm:py-34 md:py-44 px-4 sm:px-6 md:px-8 grid justify-items-center space-y-12"
+		class="grow py-32 h-screen sm:py-34 md:py-44 px-4 sm:px-6 md:px-8 grid justify-items-center space-y-12 relative"
 	>
-		<div class="grid justify-items-center space-y-12 mx-auto">
+		<div id="tsparticles" class="w-full h-full absolute -z-10" />
+		<div class="grid justify-items-center space-y-12 mx-auto h-fit self-center">
 			<h1 class="display-large">Futino</h1>
 
 			<h3 class="text-2xl">Launch Your Business's Online Presence with Confidence And Trust</h3>
@@ -50,6 +118,7 @@
 			</div>
 		</div>
 	</section>
+
 	<!--Big-Clients Slideshow-->
 	<section id="hero" class="grow grid">
 		<ClientCarousel />
@@ -59,8 +128,6 @@
 	<section
 		id="hero"
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
-		use:inview={options}
-		on:inview_change={handleJourneyDot}
 	>
 		<h1 class="display-large">Areas of Expertise</h1>
 
