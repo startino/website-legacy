@@ -52,7 +52,7 @@
 				},
 				links: {
 					color: '#ffffff',
-					distance: 150,
+					distance: 80,
 					enable: true,
 					opacity: 0.5,
 					width: 1
@@ -65,7 +65,7 @@
 					enable: true,
 					outMode: 'bounce',
 					random: false,
-					speed: 6,
+					speed: 3,
 					straight: false
 				},
 				number: {
@@ -73,7 +73,7 @@
 						enable: true,
 						area: 800
 					},
-					value: 10
+					value: 7
 				},
 				opacity: {
 					value: 0.5
