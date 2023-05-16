@@ -1,73 +1,75 @@
 <script lang="ts">
-	import PlanCard from '../molecules/PlanCard.svelte';
+	import PlanCard from './PlanCard.svelte';
+	import PromotionToggle from './PromotionToggle.svelte';
 
 	export let plans = [
 		{
 			label: 'Basic',
 			prefix: '$',
-			cost: 14,
+			cost: 29,
 			note: '/mo',
-			subtext: '+ $0.0074/impression',
-			features: ['Campaign Setup', 'Social Media Marketing'],
+			subtext: '',
+			features: ['Hosting', 'Customer Support'],
 			index: 1
 		},
 		{
 			label: 'Standard',
 			prefix: '$',
-			cost: 28,
+			cost: 87,
 			note: '/mo',
-			subtext: '+ $0.005/impression',
-			features: [
-				'Campaign Setup',
-				'Social Media Marketing',
-				'Search Engine Optimization',
-				'Regular Meetings: Yearly'
-			],
+			subtext: '',
+			features: ['Hosting', 'Priority Customer Suport', '2 Hours Maintenance Work'],
 			index: 2
 		},
 		{
 			label: 'Business',
 			prefix: '$',
-			cost: 85,
+			cost: 261,
 			note: '/mo',
-			subtext: '+ $0.0035/impression',
+			subtext: '',
 			features: [
-				'Campaign Setup',
-				'Social Media Marketing',
-				'Search Engine Optimization',
-				'Regular Meetings: Biannually',
-				'Consulting & Strategy Development'
+				'Hosting',
+				'Priority Customer Suport',
+				'4 Hours Maintenance Work',
+				'2 Hours Developement Work'
 			],
 			index: 3
 		},
 		{
 			label: 'Enterprise',
 			prefix: '$',
-			cost: 257,
+			cost: 783,
 			note: '/mo',
-			subtext: '+ $0.0026/impression',
+			subtext: '',
 			features: [
-				'Campaign Setup',
-				'Social Media Marketing',
-				'Search Engine Optimization',
-				'Regular Meetings: Quarterly',
-				'Consulting & Strategy Development',
-				'Social Media Management'
+				'Hosting',
+				'Priority Customer Suport',
+				'8 Hours Maintenance Work',
+				'8 Hours Developement Work'
 			],
 			index: 4
 		}
 	];
 
+	let promotions: {label: string; value: number; for: string; discount: string}[] = [
+		{ label: 'Monthly', value: 1, for: 'monthly', discount: '' },
+		{ label: 'Biannually', value: 2, for: 'biennially', discount: '1 Month Free' },
+		{ label: 'Yearly', value: 3, for: 'annuallyy', discount: '3 Months Free' }
+	];
 	export let activeTabValue = 0;
 
 	const handleClick = (tabValue: number) => () => (activeTabValue = tabValue);
 </script>
 
 <div class="grid space-y-10 place-items-center">
-	<h1 class="title-large">Maximize Your Reach with Tailored Digital Marketing.</h1>
-	<ul class="flex flex-col xl:flex-row space-y-5 xl:space-x-5 xl:space-y-0">
+	<h1 class="title-large">
+		Experience Lightning-Fast Website Hosting with Our Reliable and Secure Services.
+	</h1>
+	<PromotionToggle {promotions} />
+	<ul class="flex flex-col justify-center xl:flex-row space-y-5 xl:space-x-5 xl:space-y-0">
 		{#each plans as plan}
-			<li>
+			<li class="justify-center">
+				
 				<button
 					class="relative group overflow-hidden inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-light/20 dark:bg-surface-variant-dark/20 border-2 border-transparent {activeTabValue ===
 					plan.index
@@ -86,3 +88,6 @@
 		{/each}
 	</ul>
 </div>
+
+<style>
+</style>

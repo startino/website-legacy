@@ -1,12 +1,11 @@
 <script lang="ts">
 	import Header from '$lib/components/organisms/Header.svelte';
 	import Footer from '$lib/components/organisms/Footer.svelte';
-	import HostingTab from '$lib/components/organisms/HostingTab.svelte';
-	import MarketingTab from '$lib/components/organisms/MarketingTab.svelte';
-	import PartnershipTab from '$lib/components/organisms/PartnershipTab.svelte';
+	import HostingTab from './HostingTab.svelte';
+	import MarketingTab from './MarketingTab.svelte';
+	import PartnershipTab from './PartnershipTab.svelte';
 	import Tabs from '$lib/components/organisms/Tabs.svelte';
-	import CommisionTab from '$lib/components/organisms/CommisionTab.svelte';
-	import PromotionToggle from '$lib/components/molecules/PromotionToggle.svelte';
+	import CommisionTab from './CommisionTab.svelte';
 
 	let tabs = [
 		{ label: 'Hosting Plans', value: 1, component: HostingTab },
@@ -15,11 +14,6 @@
 		{ label: 'Partnership', value: 4, component: PartnershipTab }
 	];
 
-	let promotions = [
-		{ label: 'Monthly', value: 1, for: 'monthly', discount: '' },
-		{ label: 'Biannually', value: 2, for: 'biennially', discount: '1 Month Free' },
-		{ label: 'Yearly', value: 3, for: 'annuallyy', discount: '3 Months Free' }
-	];
 </script>
 
 <Header />
@@ -31,8 +25,6 @@
 		<h1 class="text-5xl">Adopt an online presence the way you want to.</h1>
 
 		<h3 class="text-2xl">Consider some of our offers:</h3>
-
-		<PromotionToggle {promotions} />
 
 		<Tabs {tabs} />
 	</div>
