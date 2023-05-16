@@ -51,10 +51,7 @@
 		</div>
 	</section>
 	<!--Big-Clients Slideshow-->
-	<section id="hero" class="grow grid space-y-2">
-		<div class="px-4 sm:px-6 md:px-8">
-			<h3 class="body-medium">Backed By Premium Companies</h3>
-		</div>
+	<section id="hero" class="grow grid">
 		<ClientCarousel />
 	</section>
 
