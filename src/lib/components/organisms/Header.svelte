@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import ThemeButton from '$lib/components/molecules/ThemeButton.svelte';
+	import ThemeButton from '$lib/components/atoms/ThemeButton.svelte';
 	import Logo from '$lib/components/atoms/Logo.svelte';
 </script>
 
