@@ -1,9 +1,8 @@
 <script lang="ts">
-	let scroll: any;
-	let carouselSpeed = 1;
+	let scrollY: number;
 </script>
 
-<svelte:window bind:scrollY={scroll} />
+<svelte:window bind:scrollY />
 <div id="carousel-parent" class="w-full overflow-hidden relative h-fit flex flex-nowrap py-2">
 	<div
 		class="h-full z-10 bg-gradient-to-r from-surface-light dark:from-surface-dark to-transparent w-20 left-0 absolute"
@@ -11,6 +10,7 @@
 	<div
 		class="h-full z-10 bg-gradient-to-l from-surface-light dark:from-surface-dark to-transparent w-20 right-0 absolute"
 	/>
+
 	{#each Array(3) as repeated_so_that_it_can_cycle}
 		<div class="logo-carousel">
 			<div class="box border-1 border-white/20 shadow-lg">
@@ -35,6 +35,6 @@
 	}
 
 	.logo-carousel {
-		@apply flex flex-nowrap flex-row animate-carouselSlide py-3;
+		@apply flex flex-nowrap flex-row py-3 animate-carouselSlide;
 	}
 </style>

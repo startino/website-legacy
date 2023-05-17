@@ -12,21 +12,13 @@
 	onMount(() => {
 		loadFull(tsParticles);
 		tsParticles.load('tsparticles', {
-			background: {
-				color: {
-					value: '#000000'
-				}
-			},
+			background: {},
 			fpsLimit: 120,
 			interactivity: {
 				events: {
 					onClick: {
 						enable: true,
 						mode: 'push'
-					},
-					onHover: {
-						enable: true,
-						mode: 'repulse'
 					},
 					resize: true
 				},
@@ -38,21 +30,17 @@
 						size: 40
 					},
 					push: {
-						quantity: 4
-					},
-					repulse: {
-						distance: 200,
-						duration: 0.4
+						quantity: 10
 					}
 				}
 			},
 			particles: {
 				color: {
-					value: '#ffffff'
+					value: '#00e384'
 				},
 				links: {
 					color: '#ffffff',
-					distance: 80,
+					distance: 100,
 					enable: true,
 					opacity: 0.5,
 					width: 1
@@ -103,7 +91,11 @@
 		id="hero"
 		class="grow py-32 h-screen sm:py-34 md:py-44 px-4 sm:px-6 md:px-8 grid justify-items-center space-y-12 relative"
 	>
-		<div id="tsparticles" class="w-full h-full absolute -z-10" />
+		<div
+			id="tsparticles"
+			class="w-full h-full absolute -z-10"
+			style:transform={`translate3d(24,24,12)`}
+		/>
 		<div class="grid justify-items-center space-y-12 mx-auto h-fit self-center">
 			<h1 class="display-large">Futino</h1>
 
@@ -229,7 +221,7 @@
 			</div>
 			<div class="border-r border-white/20 my-4" />
 			<div class="flex flex-col p-4 justify-self-end">
-				<h2 class="headline-large font-extrabold ">21K</h2>
+				<h2 class="headline-large font-extrabold">21K</h2>
 				<h2 class="body-medium font-light">Hours Used</h2>
 			</div>
 			<div class="border-r border-white/20 my-4" />
@@ -248,7 +240,7 @@
 	<!--Clients Section-->
 	<section
 		id="hero"
-		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20  justify-items-center"
+		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
 		<h1 class="display-large">Our Clients</h1>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mx-auto max-w-7xl">
