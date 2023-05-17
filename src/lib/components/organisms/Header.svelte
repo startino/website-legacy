@@ -7,7 +7,7 @@
 	import process from 'node:process';
 	import { onMount } from 'svelte';
 
-	let scroll: number;
+	let scrollY: number;
 	let hasScrolled: boolean = false; // If the user has scrolled at all => true
 	let activeheaderClass = 'sticky top-0 z-40 flex-none w-full transition-colors duration-500';
 	let largeHeaderClass =
@@ -48,7 +48,7 @@
 	});
 </script>
 
-<svelte:window bind:scrollY={scroll} />
+<svelte:window bind:scrollY />
 
 <div
 	id="header"
