@@ -158,6 +158,8 @@
 			fullScreen: false
 		});
 	});
+
+	onMount(() => {});
 </script>
 
 <svelte:window bind:scrollY />
