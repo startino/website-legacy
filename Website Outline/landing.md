@@ -11,18 +11,16 @@ paginate: true
 
 - Company Logo
 - Navigation Menu
-    - About
-    - Services
-    - Pricing
+  - About
+  - Services
+  - Pricing
 
 ## Chapter Menu
 
 Inspiration is https://www.deso.com/ Bottom left Chapter Menu
-- Nice Menu Icon you can click
-    - Possible Menu Icon animations: 
-        - DeSo: by far most fitting due to the layers design
-        - https://codepen.io/cobra_winfrey/pen/xxxwvpG : just fancy
-![](./chapter%20menu.png)
+
+- Nice Menu Icon you can click - Possible Menu Icon animations: - DeSo: by far most fitting due to the layers design - https://codepen.io/cobra_winfrey/pen/xxxwvpG : just fancy
+  ![](./chapter%20menu.png)
 
 ---
 
@@ -40,6 +38,7 @@ Inspiration is https://www.deso.com/ Bottom left Chapter Menu
 
 Inspiration:
 https://pineview.io/ "Areas of Expertise"
+
 - We'll Design
 - We'll Develop
 - We'll Host
@@ -50,20 +49,21 @@ https://pineview.io/ "Areas of Expertise"
 # Analytics Snippet
 
 - Fancy stats about why we’re good
-![w:screen h:100](./analytics.png)
+  ![w:screen h:100](./analytics.png)
 
 ---
 
 # Clients Section
 
 - Cards with:
-    - Picture and name
-    - Testimonial
-    - IFrame to Client Website
-        - Scales up on hover
-        - Autoscrolls on hover
+  - Picture and name
+  - Testimonial
+  - IFrame to Client Website
+    - Scales up on hover
+    - Autoscrolls on hover
 
 ---
 
 # Contact Section
+
 - Contact form with contact methods

@@ -51,7 +51,7 @@
 		}
 	];
 
-	let promotions: {label: string; value: number; for: string; discount: string}[] = [
+	let promotions: { label: string; value: number; for: string; discount: string }[] = [
 		{ label: 'Monthly', value: 1, for: 'monthly', discount: '' },
 		{ label: 'Biannually', value: 2, for: 'biennially', discount: '1 Month Free' },
 		{ label: 'Yearly', value: 3, for: 'annuallyy', discount: '3 Months Free' }
@@ -69,7 +69,6 @@
 	<ul class="flex flex-col justify-center xl:flex-row space-y-5 xl:space-x-5 xl:space-y-0">
 		{#each plans as plan}
 			<li class="justify-center">
-				
 				<button
 					class="relative group overflow-hidden inline-block p-4 rounded-t-lg shadow-xl bg-surface-variant-light/20 dark:bg-surface-variant-dark/20 border-2 border-transparent {activeTabValue ===
 					plan.index
@@ -80,8 +79,10 @@
 					aria-controls="profile"
 					aria-selected="false"
 				>
-				<!--Shine Box-->
-				<div class="absolute top-0 -inset-full h-full w-1/3 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 group-hover:animate-shine " />
+					<!--Shine Box-->
+					<div
+						class="absolute top-0 -inset-full h-full w-1/3 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 group-hover:animate-shine"
+					/>
 					<PlanCard {plan} />
 				</button>
 			</li>

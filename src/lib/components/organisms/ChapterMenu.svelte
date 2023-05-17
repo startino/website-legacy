@@ -51,7 +51,7 @@
 	>
 		<div class="h-10 w-8 bg-white/50 self-end divide-black/30 dark:divide-white" />
 
-		<div class="flex flex-col ">
+		<div class="flex flex-col">
 			<ul
 				class="divide-y-1 divide-black/10 dark:divide-white/10 space-y-4"
 				in:fade={animateIn}
@@ -75,7 +75,7 @@
 					{/each}
 				{:else}
 					<div class="flex flex-col">
-						<h1 class="title-small  text-primary-light dark:text-primary-dark">
+						<h1 class="title-small text-primary-light dark:text-primary-dark">
 							Chapter 0{chapters[selectedChapter - 1].chapterNumber}
 						</h1>
 						<h1 class="title-medium font-bold">{chapters[selectedChapter - 1].title}</h1>
