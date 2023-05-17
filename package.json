@@ -11,7 +11,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write . && npm run lint && npm audit fix"
+		"format": "prettier --plugin-search-dir . --write . && npm run lint"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",

@@ -11,7 +11,7 @@
 	>
 		<Logo />
 		<ul
-			class="flex flex-wrap items-center mb-6 space-x-6 text-sm sm:mb-0 text-background-on-light dark:text-background-on-dark"
+			class="flex flex-wrap items-center mb-6 space-x-6 text-sm  sm:mb-0 text-background-on-light dark:text-background-on-dark"
 		>
 			<!-- <li>
 				<a

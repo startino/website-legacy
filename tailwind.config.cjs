@@ -1,3 +1,5 @@
+
+
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
@@ -25,13 +27,13 @@ const config = {
 				wiggle: 'wiggle 1s ease-in-out infinite',
 				slideDown: 'slideDown 5s ease-in-out 1',
 				scroll: 'scroll 5s ease-in-out',
-				carouselSlide: 'carouselSlide infinite 25s linear'
+				carouselSlide: 'carouselSlide infinite 25s linear',
 			},
 
 			keyframes: {
 				carouselSlide: {
-					'0%': { transform: 'translateX(0%)' },
-					'100%': { transform: 'translateX(-100%)' }
+					'0%': {transform: 'translateX(0%)'},
+					'100%': {transform: 'translateX(-100%)'},
 				},
 				shine: {
 					'100%': { left: '125%' }

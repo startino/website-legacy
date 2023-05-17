@@ -13,6 +13,7 @@
 		{ label: 'Commission', value: 3, component: CommisionTab },
 		{ label: 'Partnership', value: 4, component: PartnershipTab }
 	];
+
 </script>
 
 <Header />
