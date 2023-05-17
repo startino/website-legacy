@@ -9,11 +9,12 @@
 
 	let scrollY: number;
 	let hasScrolled: boolean = false; // If the user has scrolled at all => true
-	let activeheaderClass = 'sticky top-0 z-40 flex-none w-full transition-colors duration-500';
+
 	let largeHeaderClass =
 		' py-10 text-primary-container-on-light dark:text-primary-container-on-dark';
+	let activeheaderClass = largeHeaderClass;
 	let miniHeaderClass =
-		'py-6 backdrop-blur bg-surface-light dark:bg-surface-dark text-primary-container-on-light dark:text-primary-container-on-dark';
+		'py-3 border-b border-secondary-light/10 dark:border-secondary-dark/10 backdrop-blur bg-surface-light/60 dark:bg-surface-dark/60 text-primary-container-on-light backdrop-blur dark:text-primary-container-on-dark';
 
 	// animation on scroll Solution 1
 	/*
@@ -52,9 +53,9 @@
 
 <div
 	id="header"
-	class="{$$props.class} {activeheaderClass} fixed top-0 z-40 flex-none w-full transition-all duration-400"
+	class="{$$props.class} {activeheaderClass} border-b border-transparent fixed top-0 z-40 flex-none w-full transition-all duration-400"
 >
-	<div class="py-2 mx-5 border-secondary-light/10 dark:border-secondary-dark/10">
+	<div class="py-2 mx-5">
 		<div class="flex relative items-center md:px-10 lg:px-20 xl:px-40 px-auto md:px-auto">
 			<a class="flex overflow-hidden px-3 gap-3 justify-center" href="{base}/">
 				<Logo />
