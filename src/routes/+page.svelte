@@ -11,8 +11,9 @@
 	import { inview } from 'svelte-inview';
 	import type { ObserverEventDetails, Options } from 'svelte-inview';
 	import { fade } from 'svelte/transition';
-	import TransitionElement from '$lib/components/organisms/TransitionElement.svelte';
-	import type TransitionOptions from '$lib/components/organisms/TransitionElement.svelte';
+	import TransitionElement, {
+		type TransitionOptions
+	} from '$lib/components/organisms/TransitionElement.svelte';
 
 	let scrollY: number;
 
@@ -21,7 +22,7 @@
 		unobserveOnEnter: true
 	};
 
-	const leftSlidePreset = {
+	const leftSlidePreset: TransitionOptions = {
 		delay: 0,
 		duration: 500,
 		top: 150,
@@ -226,20 +227,20 @@
 	</section>
 
 	<!--Big-Clients Slideshow-->
-	<section id="hero" class="grid self-end -mx-6">
+	<section id="hero" class="grid self-end -mx-6 z-10">
 		<div id="tsparticles-client-carousel" class="w-full h-fit absolute -z-10" />
 		<ClientCarousel />
 	</section>
 
 	<!--Journey Section-->
 	<section
-		id="hero"
+		id="journey"
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center relative"
 	>
 		<!--Going to be the transition & parallax image, like pineview.io's one-->
 		<div
-			class="w-full h-full absolute -z-10 top-0 bg-gradient-to-b from-black/5 via-black/90 to-black/5"
-			style:transform={`translate3d(0, ${-scrollY * 1.1}px, 0)`}
+			class="w-full h-full absolute top-0 bg-gradient-to-b from-transparent via-black/90 to-transparent"
+			style:transform={`translate3d(0, ${-scrollY * 1.5}px, 0)`}
 		/>
 		<!--Background image for journey section. Purpose is to blend with the transition image.-->
 		<div
@@ -248,7 +249,7 @@
 		<h1 class="display-large py-12" in:fade>Areas of Expertise</h1>
 
 		{#each chapters as chapter}
-			<TransitionElement duration={500} delay={100} top={200} bottom={0} transition="fade">
+			<TransitionElement duration={500} delay={100} top={200} bottom={0}>
 				<!--Chapter 1-->
 				<div class="flex flex-col place-items-center py-12">
 					<h1
@@ -285,27 +286,12 @@
 					<!--Content-->
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center py-8">
 						<!--Temp. image-->
-						<!--When I learn how, I want to pass optional arguments in one single class-->
-						<TransitionElement
-							transition={leftSlidePreset.transition}
-							duration={leftSlidePreset.duration}
-							delay={leftSlidePreset.delay}
-							x={leftSlidePreset.x}
-							top={leftSlidePreset.top}
-							class="w-full"
-						>
+						<TransitionElement presetOptions={leftSlidePreset} class="w-full">
 							<div
 								class="bg-surface-variant-dark h-48 w-full sm:justify-self-end"
 							/></TransitionElement
 						>
-						<TransitionElement
-							transition={rightSlidePreset.transition}
-							duration={rightSlidePreset.duration}
-							delay={rightSlidePreset.delay}
-							x={rightSlidePreset.x}
-							top={rightSlidePreset.top}
-							class="w-full"
-						>
+						<TransitionElement presetOptions={rightSlidePreset} class="w-full">
 							<div class="flex flex-col max-w-md text-left">
 								<h2 class="display-small">We Lorem Ipsum</h2>
 								<h3 class="body-medium">
@@ -315,24 +301,10 @@
 							</div>
 						</TransitionElement>
 						<!--Temp. image-->
-						<TransitionElement
-							transition={leftSlidePreset.transition}
-							duration={leftSlidePreset.duration}
-							delay={leftSlidePreset.delay}
-							x={leftSlidePreset.x}
-							top={leftSlidePreset.top - 192}
-							class="w-full"
-						>
+						<TransitionElement presetOptions={leftSlidePreset} class="w-full">
 							<div class="bg-surface-variant-dark h-32 w-full sm:justify-self-end" />
 						</TransitionElement>
-						<TransitionElement
-							transition={rightSlidePreset.transition}
-							duration={rightSlidePreset.duration}
-							delay={rightSlidePreset.delay}
-							x={rightSlidePreset.x}
-							top={rightSlidePreset.top - 192}
-							class="w-full"
-						>
+						<TransitionElement presetOptions={rightSlidePreset} class="w-full">
 							<div class="flex flex-col max-w-md text-left">
 								<h2 class="display-small">We Lorem Ipsum</h2>
 								<h3 class="body-medium">

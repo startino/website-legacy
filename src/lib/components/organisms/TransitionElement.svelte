@@ -1,9 +1,14 @@
 <script context="module" lang="ts">
 	// Want to try using this instead of props in the future to improve it.
 	export type TransitionOptions = {
-		top: number;
-		bottom: number;
-		once: boolean;
+		top?: number;
+		bottom?: number;
+		once?: boolean;
+		transition?: String;
+		delay?: number;
+		duration?: number;
+		x?: number;
+		y?: number;
 	};
 </script>
 
@@ -16,35 +21,66 @@
 	export let animation_out = 'none; opacity: 0';
 	export let css_animation = '';
 
-	export let once = true;
-	export let top = 0;
-	export let bottom = 0;
+	// Individual Options.
+	export let once: boolean = false;
+	export let transition: String = '';
+	export let top: number = 0;
+	export let bottom: number = 0;
+	export let duration: number = 0;
+	export let delay: number = 0;
 
-	// cute litle reactive dispatch to get if is observing :3
+	let defaultOptions: TransitionOptions = {
+		once: false,
+		transition: 'fade',
+		top: 0,
+		bottom: 0,
+		delay: 0,
+		duration: 300,
+		x: 0,
+		y: 0
+	};
+	export let presetOptions: TransitionOptions = defaultOptions;
+
+	// This is the formatted version of the given prompts.
+	const propOptions: TransitionOptions = {
+		...defaultOptions,
+		once: once,
+		bottom: bottom,
+		delay: delay,
+		duration: duration,
+		top: top,
+		transition: transition
+	};
+
+	// Setup the finalizedOptions based on priority.
+	const finalizedOptions: TransitionOptions = {
+		// Lowest Priority
+		...defaultOptions,
+		// Middle Priority
+		...propOptions,
+		// Highest Priority
+		...presetOptions
+	};
+
+	// Dispatch this event and update the check every frame.
 	const dispatch = createEventDispatcher();
-	// @ts-ignore
 	$: dispatch('update', { observing: inView });
 
-	// be aware... he's looking...
+	// True if the element being observed is in the viewport
 	let inView = true;
 
-	// for some reason the 'bind:this={box}' on div stops working after npm run build... so... workaround time >:|
-	const elementID = `random_id_-${Math.random()}`;
+	// Generates a random ID to identify the element. There's probaby a better solution.
+	let element: Element;
 
-	/// current in experimental support, no support for IE (only Edge)
-	/// see more in: https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver
-	/**
-	 * @param {Element | null} element
-	 */
-	function intersection_verify(element: Element | null) {
-		// bottom left top right
+	function intersection_verify(element: Element) {
+		// The space around that will trigger the animation.
 		const rootMargin = `${-bottom}px 0px ${-top}px 0px`;
 
+		// Configure Observer
 		const observer = new IntersectionObserver(
 			(entries) => {
 				inView = entries[0].isIntersecting;
 				if (inView && once) {
-					// @ts-ignore
 					observer.unobserve(element);
 				}
 			},
@@ -52,66 +88,34 @@
 				rootMargin
 			}
 		);
-
-		// @ts-ignore
+		// Begin observing
 		observer.observe(element);
-		// @ts-ignore
+
 		return () => observer.unobserve(element);
 	}
 
-	/// Fallback in case the browser not have the IntersectionObserver
-	/**
-	 * @param {HTMLElement | null} box
-	 */
-	function bounding_verify(box: HTMLElement | null) {
-		// @ts-ignore
-		const c = box.getBoundingClientRect();
-		inView = c.top + top < window.innerHeight && c.bottom - bottom > 0;
-
-		if (inView && once) {
-			// @ts-ignore
-			window.removeEventListener('scroll', verify);
-		}
-
-		// @ts-ignore
-		window.addEventListener('scroll', bounding_verify);
-		// @ts-ignore
-		return () => window.removeEventListener('scroll', bounding_verify);
-	}
-
 	onMount(() => {
-		// for some reason the 'bind:this={box}' on div stops working after npm run build... so... workaround time >:|
-		const box = document.getElementById(elementID);
-
-		if (IntersectionObserver) {
-			return intersection_verify(box);
-		} else {
-			return bounding_verify(box);
-		}
+		return intersection_verify(element);
 	});
 </script>
 
-<div id={elementID} class={$$props.class}>
+<div class={$$props.class} bind:this={element}>
 	{#if inView}
-		{#if $$props.transition == 'fade'}
+		{#if finalizedOptions.transition == 'fade'}
 			<div
 				in:fade={{ duration: $$props.duration, delay: $$props.delay }}
 				style="animation: {animation}; {css_animation}"
 			>
 				<slot />
 			</div>
-		{:else if $$props.transition == 'fly'}
+		{:else if finalizedOptions.transition == 'fly'}
 			<div
-				in:fly={{ x: $$props.x, y: $$props.y, duration: $$props.duration, delay: $$props.delay }}
-				style="animation: {animation}; {css_animation}"
-			>
-				<slot />
-			</div>
-
-			<!--Default to fade animation-->
-		{:else}
-			<div
-				in:fade={{ duration: $$props.duration, delay: $$props.delay }}
+				in:fly={{
+					x: finalizedOptions.x,
+					y: finalizedOptions.y,
+					duration: finalizedOptions.duration,
+					delay: finalizedOptions.delay
+				}}
 				style="animation: {animation}; {css_animation}"
 			>
 				<slot />
