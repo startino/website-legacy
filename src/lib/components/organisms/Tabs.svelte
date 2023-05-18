@@ -19,7 +19,7 @@
 					: 'hover:border-b-2 mx-2'}
 			>
 				<button
-					class="inline-block p-4 rounded-t-lg "
+					class="inline-block p-4 rounded-t-lg"
 					on:click={handleClick(tab.value)}
 					type="button"
 					role="tab"

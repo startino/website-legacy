@@ -7,24 +7,24 @@
 	import ChapterMenu from '$lib/components/organisms/ChapterMenu.svelte';
 	import { onMount } from 'svelte';
 	import { tsParticles } from 'tsparticles-engine';
-	import { loadFull } from 'tsparticles';
+	import { loadCustom } from './tsparticles-custom-import'; // correct path format?
+	import { tsparticlesOptions } from './tsparticles-options';
 	import { inview } from 'svelte-inview';
-	import type { ObserverEventDetails, Options } from 'svelte-inview';
-	import { fade } from 'svelte/transition';
+	import type { Options } from 'svelte-inview';
+	import { fade, slide } from 'svelte/transition';
 	import TransitionElement, {
 		type TransitionOptions
 	} from '$lib/components/organisms/TransitionElement.svelte';
 
 	let scrollY: number;
 
-	const options: Options = {
-		rootMargin: '-50%',
-		unobserveOnEnter: true
+	const inviewOptions: Options = {
+		rootMargin: '-10%'
 	};
 
 	const leftSlidePreset: TransitionOptions = {
 		delay: 0,
-		duration: 500,
+		duration: 300,
 		top: 150,
 		bottom: 0,
 		transition: 'fly',
@@ -32,7 +32,7 @@
 	};
 	const rightSlidePreset = {
 		delay: 0,
-		duration: 500,
+		duration: 300,
 		top: 0,
 		bottom: 0,
 		transition: 'fly',
@@ -57,141 +57,11 @@
 		}
 	];
 
-	//TODO create json object for tsparticle
 	onMount(() => {
-		loadFull(tsParticles);
-		tsParticles.load('tsparticles-hero', {
-			background: {},
-			fpsLimit: 120,
-			interactivity: {
-				events: {
-					onClick: {
-						enable: true,
-						mode: 'push'
-					},
-					resize: true
-				},
-				modes: {
-					bubble: {
-						distance: 400,
-						duration: 2,
-						opacity: 0.8,
-						size: 40
-					},
-					push: {
-						quantity: 10
-					}
-				}
-			},
-			particles: {
-				color: {
-					value: '#00e384'
-				},
-				links: {
-					color: '#ffffff',
-					distance: 100,
-					enable: true,
-					opacity: 0.5,
-					width: 1
-				},
-				collisions: {
-					enable: true
-				},
-				move: {
-					direction: 'none',
-					enable: true,
-					outMode: 'bounce',
-					random: false,
-					speed: 3,
-					straight: false
-				},
-				number: {
-					density: {
-						enable: true,
-						area: 800
-					},
-					value: 7
-				},
-				opacity: {
-					value: 0.5
-				},
-				shape: {
-					type: 'circle'
-				},
-				size: {
-					random: true,
-					value: 5
-				}
-			},
-			detectRetina: true,
-			fullScreen: false
-		});
-		tsParticles.load('tsparticles-client-carousel', {
-			background: {},
-			fpsLimit: 120,
-			interactivity: {
-				events: {
-					onClick: {
-						enable: true,
-						mode: 'push'
-					},
-					resize: true
-				},
-				modes: {
-					bubble: {
-						distance: 400,
-						duration: 2,
-						opacity: 0.8,
-						size: 40
-					},
-					push: {
-						quantity: 10
-					}
-				}
-			},
-			particles: {
-				color: {
-					value: '#00e384'
-				},
-				links: {
-					color: '#ffffff',
-					distance: 100,
-					enable: true,
-					opacity: 0.5,
-					width: 1
-				},
-				collisions: {
-					enable: true
-				},
-				move: {
-					direction: 'none',
-					enable: true,
-					outMode: 'bounce',
-					random: false,
-					speed: 3,
-					straight: false
-				},
-				number: {
-					density: {
-						enable: true,
-						area: 400
-					},
-					value: 2
-				},
-				opacity: {
-					value: 0.5
-				},
-				shape: {
-					type: 'circle'
-				},
-				size: {
-					random: true,
-					value: 5
-				}
-			},
-			detectRetina: true,
-			fullScreen: false
-		});
+		const options = tsparticlesOptions;
+		loadCustom(tsParticles);
+		tsParticles.load('tsparticles-hero', options);
+		tsParticles.load('tsparticles-client-carousel');
 	});
 
 	onMount(() => {});
@@ -249,77 +119,83 @@
 		<h1 class="display-large py-12" in:fade>Areas of Expertise</h1>
 
 		{#each chapters as chapter}
-			<TransitionElement duration={500} delay={100} top={200} bottom={0}>
-				<!--Chapter 1-->
-				<div class="flex flex-col place-items-center py-12">
-					<h1
-						class="display-small p-4 font-extrabold tracking-wide transition-all duration-700 {chapter.inView
-							? ' text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark'
-							: 'text-surface-on-light dark:text-surface-on-dark'}"
-					>
-						{chapter.title}
-					</h1>
+			<!--Chapter 1-->
+			<div class="flex flex-col place-items-center py-12">
+				<h1
+					class="display-small p-4 font-extrabold tracking-wide transition-all duration-700 {chapter.inView
+						? ' text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark'
+						: 'text-surface-on-light dark:text-surface-on-dark'}"
+				>
+					{chapter.title}
+				</h1>
 
-					<!--Circle and line-->
-					<div
-						class="h-14 w-14 rounded-full bg-surface-light dark:bg-surface-dark flex justify-self-center relative"
-						use:inview={options}
-						on:inview_change={(event) => {
-							const { inView, entry, scrollDirection, observer, node } = event.detail;
-							chapter.inView = true;
-						}}
+				<!--Circle and line-->
+				<div
+					class="h-14 w-14 rounded-full bg-surface-light dark:bg-surface-dark flex justify-self-center relative"
+					use:inview={inviewOptions}
+					on:inview_enter={(event) => {
+						chapter.inView = true;
+					}}
+				>
+					<!--Circle Glow Effect-->
+					{#if chapter.inView === true}
+						<div
+							in:fade={{ delay: 300, duration: leftSlidePreset.duration }}
+							class="absolute -z-10 -inset-1 bg-gradient-to-r from-primary-dark to-secondary-dark animate-spin rounded-full blur transition-all"
+						/>
+					{:else}
+						<div
+							class="absolute -z-10 opacity-0 -inset-1 bg-gradient-to-r from-primary-dark to-secondary-dark animate-spin rounded-full blur transition-all"
+						/>
+					{/if}
+					<h1
+						class="headline-medium font-bold text-surface-on-light dark:text-surface-on-dark self-center mx-auto"
 					>
-						<!--Circle Glow Effect-->
-						{#if chapter.inView === true}
-							<div
-								in:fade
-								class="absolute -z-10 -inset-1 bg-gradient-to-r from-primary-dark to-secondary-dark animate-spin rounded-full blur opacity-100 transition-all"
-							/>
-						{/if}
-						<h1
-							class="headline-medium font-bold text-surface-on-light dark:text-surface-on-dark self-center mx-auto"
-						>
-							{chapter.chapterNumber}
-						</h1>
-						<div class="border-l-1 border-white/30 absolute left-1/2 h-[450px] -z-10" />
-					</div>
-					<!--Content-->
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center py-8">
-						<!--Temp. image-->
-						<TransitionElement presetOptions={leftSlidePreset} class="w-full">
-							<div
-								class="bg-surface-variant-dark h-48 w-full sm:justify-self-end"
-							/></TransitionElement
-						>
-						<TransitionElement presetOptions={rightSlidePreset} class="w-full">
-							<div class="flex flex-col max-w-md text-left">
-								<h2 class="display-small">We Lorem Ipsum</h2>
-								<h3 class="body-medium">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae
-									purus euismod euismod id ut est. In vel elit at lorem cursus porttitor.
-								</h3>
-							</div>
-						</TransitionElement>
-						<!--Temp. image-->
-						<TransitionElement presetOptions={leftSlidePreset} class="w-full">
-							<div class="bg-surface-variant-dark h-32 w-full sm:justify-self-end" />
-						</TransitionElement>
-						<TransitionElement presetOptions={rightSlidePreset} class="w-full">
-							<div class="flex flex-col max-w-md text-left">
-								<h2 class="display-small">We Lorem Ipsum</h2>
-								<h3 class="body-medium">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae
-									purus euismod euismod id ut est.
-								</h3>
-							</div>
-						</TransitionElement>
-					</div>
+						{chapter.chapterNumber}
+					</h1>
+					{#if chapter.inView === true}
+						<div
+							in:slide={{ delay: 300, duration: leftSlidePreset.duration }}
+							class="border-l-1 border-white/30 absolute left-1/2 h-[450px] -z-10"
+						/>
+					{:else}{/if}
 				</div>
-			</TransitionElement>
+				<!--Content-->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center py-8">
+					<!--Temp. image-->
+					<TransitionElement presetOptions={leftSlidePreset} class="w-full">
+						<div
+							class="bg-surface-variant-dark h-48 w-full sm:justify-self-end"
+						/></TransitionElement
+					>
+					<TransitionElement presetOptions={rightSlidePreset} class="w-full">
+						<div class="flex flex-col max-w-md text-left">
+							<h2 class="display-small">We Lorem Ipsum</h2>
+							<h3 class="body-medium">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus
+								euismod euismod id ut est. In vel elit at lorem cursus porttitor.
+							</h3>
+						</div>
+					</TransitionElement>
+					<!--Temp. image-->
+					<TransitionElement presetOptions={leftSlidePreset} class="w-full">
+						<div class="bg-surface-variant-dark h-32 w-full sm:justify-self-end" />
+					</TransitionElement>
+					<TransitionElement presetOptions={rightSlidePreset} class="w-full">
+						<div class="flex flex-col max-w-md text-left">
+							<h2 class="display-small">We Lorem Ipsum</h2>
+							<h3 class="body-medium">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus
+								euismod euismod id ut est.
+							</h3>
+						</div>
+					</TransitionElement>
+				</div>
+			</div>
 		{/each}
 	</section>
 
-	<!--Analyitics Snippet-->
+	<!--Analytics Snippet-->
 	<section
 		id="hero"
 		class="grow px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 bg-primary-light/20 dark:bg-primary-dark/10"

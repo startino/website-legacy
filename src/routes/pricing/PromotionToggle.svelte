@@ -2,7 +2,7 @@
 	import Promotion from './Promotion.svelte';
 	import OfferText from './OfferText.svelte';
 
-	export let promotions: {label: string; value: number; for: string; discount: string}[] = [];
+	export let promotions: { label: string; value: number; for: string; discount: string }[] = [];
 	export let activeTabValue = 1;
 
 	const handleClick = (tabValue: number) => () => (activeTabValue = tabValue);

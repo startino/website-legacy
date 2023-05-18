@@ -30,12 +30,12 @@
 	export let delay: number = 0;
 
 	let defaultOptions: TransitionOptions = {
-		once: false,
+		once: false, // Later on this should be true, but for testing it's easier to have it as false.
 		transition: 'fade',
 		top: 0,
 		bottom: 0,
 		delay: 0,
-		duration: 300,
+		duration: 1000,
 		x: 0,
 		y: 0
 	};
@@ -113,6 +113,16 @@
 				in:fly={{
 					x: finalizedOptions.x,
 					y: finalizedOptions.y,
+					duration: finalizedOptions.duration,
+					delay: finalizedOptions.delay
+				}}
+				style="animation: {animation}; {css_animation}"
+			>
+				<slot />
+			</div>
+		{:else if finalizedOptions.transition == 'slide'}
+			<div
+				in:slide={{
 					duration: finalizedOptions.duration,
 					delay: finalizedOptions.delay
 				}}
