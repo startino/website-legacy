@@ -23,11 +23,11 @@ export const tsparticlesOptions = {
 	},
 	particles: {
 		color: {
-			value: '#00e384'
+			value: '#ffffff'
 		},
 		links: {
 			color: '#ffffff',
-			distance: 100,
+			distance: 500,
 			enable: true,
 			opacity: 0.5,
 			width: 1
@@ -48,7 +48,7 @@ export const tsparticlesOptions = {
 				enable: true,
 				area: 400
 			},
-			value: 2
+			value: 3
 		},
 		opacity: {
 			value: 0.5

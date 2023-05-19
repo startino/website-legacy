@@ -19,7 +19,8 @@
 	let scrollY: number;
 
 	const inviewOptions: Options = {
-		rootMargin: '-10%'
+		rootMargin: '-10%',
+		unobserveOnEnter: false
 	};
 
 	const leftSlidePreset: TransitionOptions = {
@@ -61,7 +62,7 @@
 		const options = tsparticlesOptions;
 		loadCustom(tsParticles);
 		tsParticles.load('tsparticles-hero', options);
-		tsParticles.load('tsparticles-client-carousel');
+		tsParticles.load('tsparticles-client-carousel', options);
 	});
 
 	onMount(() => {});
@@ -82,9 +83,17 @@
 	>
 		<div id="tsparticles-hero" class="w-full h-full absolute -z-10" />
 		<div class="grid justify-items-center space-y-12 mx-auto h-fit self-center">
-			<h1 class="display-large">Futino</h1>
+			<div class="w-fit">
+				<h1 class="display-large">Futino</h1>
+			</div>
 
-			<h3 class="text-2xl">Launch Your Business's Online Presence with Confidence And Trust</h3>
+			<div class="w-fit">
+				<h3
+					class="headline-small overflow-hidden border-r-1 border-transparent whitespace-nowrap animate-typingsubtitle"
+				>
+					Launch Your Business's Online Presence with Confidence And Trust
+				</h3>
+			</div>
 
 			<div class="space-x-6">
 				<a href="{base}/about">
@@ -109,12 +118,12 @@
 	>
 		<!--Going to be the transition & parallax image, like pineview.io's one-->
 		<div
-			class="w-full h-full absolute top-0 bg-gradient-to-b from-transparent via-black/90 to-transparent"
+			class="w-full h-full absolute top-0 bg-gradient-to-b from-transparent via-white/90 dark:via-black/90 to-transparent"
 			style:transform={`translate3d(0, ${-scrollY * 1.5}px, 0)`}
 		/>
 		<!--Background image for journey section. Purpose is to blend with the transition image.-->
 		<div
-			class="bg-gradient-to-t from-black/50 from-50% to-transparent -z-20 h-full w-full absolute"
+			class="bg-gradient-to-t from-white/50 dark:from-black/50 from-50% to-transparent -z-20 h-full w-full absolute"
 		/>
 		<h1 class="display-large py-12" in:fade>Areas of Expertise</h1>
 
@@ -145,7 +154,7 @@
 						/>
 					{:else}
 						<div
-							class="absolute -z-10 opacity-0 -inset-1 bg-gradient-to-r from-primary-dark to-secondary-dark animate-spin rounded-full blur transition-all"
+							class="absolute -z-10 opacity-0 -inset-1 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark animate-spin rounded-full blur transition-all"
 						/>
 					{/if}
 					<h1
@@ -156,7 +165,11 @@
 					{#if chapter.inView === true}
 						<div
 							in:slide={{ delay: 300, duration: leftSlidePreset.duration }}
-							class="border-l-1 border-white/30 absolute left-1/2 h-[450px] -z-10"
+							class="border-l-2 border-white dark:border-black absolute left-1/2 h-[450px] -z-10"
+						/>
+						<div
+							in:slide={{ delay: 500, duration: 1000 }}
+							class="border-l-4 border-primary-light dark:border-primary-dark left-1/2 absolute h-[450px] -z-20 opacity-100 blur-sm transition-all"
 						/>
 					{:else}{/if}
 				</div>

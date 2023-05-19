@@ -25,10 +25,21 @@ const config = {
 				wiggle: 'wiggle 1s ease-in-out infinite',
 				slideDown: 'slideDown 5s ease-in-out 1',
 				scroll: 'scroll 5s ease-in-out',
-				carouselSlide: 'carouselSlide infinite 25s linear'
+				carouselSlide: 'carouselSlide infinite 25s linear',
+				typingtitle: 'typing 1s steps(5), blinkCursor 6 0.5s steps(5) ',
+				typingsubtitle: 'typing 3s steps(64), blinkCursor infinite 0.5s steps(64) ',
 			},
 
 			keyframes: {
+				typing: {
+					'0%': {width: "0"},
+				'99%': {width: '100%'},
+				'100%': {"border-right-color": "transparent"}
+				},
+				blinkCursor: {
+					'0%':{"border-right-color": "white"},
+					'50%':{"border-right-color": "transparent"}
+				},
 				carouselSlide: {
 					'0%': { transform: 'translateX(0%)' },
 					'100%': { transform: 'translateX(-100%)' }
