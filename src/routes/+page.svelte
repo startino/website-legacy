@@ -168,7 +168,7 @@
 		<!--Going to be the transition & parallax image, like pineview.io's one-->
 		<div
 			class="w-full h-full absolute top-0 bg-gradient-to-b from-transparent via-white/90 dark:via-black/90 to-transparent"
-			style:transform={`translate3d(0, ${-scrollY * 1.5}px, 0)`}
+			style:transform={`translate3d(0, ${-scrollY * 2.5}px, 0)`}
 		/>
 		<!--Background image for journey section. Purpose is to blend with the transition image.-->
 		<div
