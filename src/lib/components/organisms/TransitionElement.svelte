@@ -97,7 +97,6 @@
 	}
 
 	onMount(() => {
-		console.log('ID: ', element, ' Options:', finalizedOptions);
 		return intersection_verify(element);
 	});
 </script>

@@ -28,17 +28,24 @@ const config = {
 				carouselSlide: 'carouselSlide infinite 25s linear',
 				typingtitle: 'typing 1s steps(5), blinkCursor 6 0.5s steps(5) ',
 				typingsubtitle: 'typing 3s steps(64), blinkCursor infinite 0.5s steps(64) ',
+				ripple: 'ripple 0.7s '
 			},
 
 			keyframes: {
+				ripple: {
+					to: {
+						transform: 'scale(4)',
+						opacity: 0
+					}
+				},
 				typing: {
-					'0%': {width: "0"},
-				'99%': {width: '100%'},
-				'100%': {"border-right-color": "transparent"}
+					'0%': { width: '0' },
+					'99%': { width: '100%' },
+					'100%': { 'border-right-color': 'transparent' }
 				},
 				blinkCursor: {
-					'0%':{"border-right-color": "white"},
-					'50%':{"border-right-color": "transparent"}
+					'0%': { 'border-right-color': 'white' },
+					'50%': { 'border-right-color': 'transparent' }
 				},
 				carouselSlide: {
 					'0%': { transform: 'translateX(0%)' },

@@ -16,6 +16,7 @@
 		type TransitionOptions
 	} from '$lib/components/organisms/TransitionElement.svelte';
 	import Icon from '$lib/components/atoms/Icon.svelte';
+	import ClientCard from './ClientCard.svelte';
 
 	let scrollY: number;
 
@@ -65,6 +66,41 @@
 			inView: false,
 			title: 'Marketing',
 			id: 'marketing'
+		}
+	];
+
+	const clientCards = [
+		{
+			index: 0,
+			img_path: 'fav_icon.png',
+			name: 'John Mackadoo',
+			company: 'Flyers Go Crazy',
+			body: "I know there's a way i can type loris paragraphs in vscode but I forgot the shortcut, if you could lmk, would be appreciated.",
+			vid_path: 'client_websites/ggsoccer_whole_dark.webm'
+		},
+		{
+			index: 1,
+			img_path: 'fav_icon.png',
+			name: 'John Mackadoo',
+			company: 'Flyers Go Crazy',
+			body: "I know there's a way i can type loris paragraphs in vscode but I forgot the shortcut, if you could lmk, would be appreciated.",
+			vid_path: 'client_websites/ggsoccer_whole_dark.webm'
+		},
+		{
+			index: 2,
+			img_path: 'fav_icon.png',
+			name: 'John Mackadoo',
+			company: 'Flyers Go Crazy',
+			body: "I know there's a way i can type loris paragraphs in vscode but I forgot the shortcut, if you could lmk, would be appreciated.",
+			vid_path: 'client_websites/ggsoccer_whole_dark.webm'
+		},
+		{
+			index: 3,
+			img_path: 'fav_icon.png',
+			name: 'John Mackadoo',
+			company: 'Flyers Go Crazy',
+			body: "I know there's a way i can type loris paragraphs in vscode but I forgot the shortcut, if you could lmk, would be appreciated.",
+			vid_path: 'client_websites/ggsoccer_whole_dark.webm'
 		}
 	];
 
@@ -228,7 +264,7 @@
 		id="analytics"
 		class="grow px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 bg-primary-light/20 dark:bg-primary-dark/10"
 	>
-		<TransitionElement transition="slide">
+		<TransitionElement transition="slide" duration={300} delay={100}>
 			<div class="flex flex-row px-4 justify-around text-center">
 				<div class="flex flex-col p-4">
 					<h2 class="headline-large font-extrabold">50</h2>
@@ -259,24 +295,9 @@
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
 		<h1 class="display-large">Our Clients</h1>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mx-auto max-w-7xl">
-			{#each Array(6) as index}
-				<div
-					class="bg-surface-variant-light/20 shadow-lg dark:bg-surface-variant-dark/20 rounded-lg max-w-3xl flex flex-col items-center p-6"
-				>
-					<!--<iframe
-						src="https://ggsoccer.futi.no/"
-						frameborder="0"
-						class="w-fit h-auto aspect-[16/9]"
-					/>-->
-					<img src="favicon.png" alt="Face" class="h-24 w-24 rounded-full" />
-					<h1 class="headline-medium">John Doe, CEO of Phazor</h1>
-					<h2 class="body-medium">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus
-						euismod euismod id ut est. In vel elit at lorem cursus porttitor.
-					</h2>
-				</div>
-			{/each}
+		<div class="flex flex-wrap gap-12 items-center justify-items-center max-w-7xl overflow-clip">
+			{#each clientCards as { index, name, company, body, vid_path }}
+				<ClientCard {name} {company} {body} {vid_path} />{/each}
 		</div>
 	</section>
 

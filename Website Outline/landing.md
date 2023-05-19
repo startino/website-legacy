@@ -70,12 +70,12 @@ https://pineview.io/ "Areas of Expertise"
 
 ---
 
-# About us Snippet 
-  - Quotes and bio of Jonas and Jorge
+# About us Snippet
+
+- Quotes and bio of Jonas and Jorge
 
 ---
 
 # Call to action section
-  - Call to action for checking out pricing & contacting us
 
-
+- Call to action for checking out pricing & contacting us
