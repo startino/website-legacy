@@ -120,7 +120,7 @@
 <ChapterMenu />
 
 <main
-	class="text-center border-b shadow-2xl border-primary-light/40 dark:border-primary-dark/40 flex flex-col items-stretch"
+	class="text-center border-b w shadow-2xl border-primary-light/40 dark:border-primary-dark/40 flex flex-col items-stretch"
 >
 	<!--Hero-->
 	<section
@@ -128,28 +128,26 @@
 		class="grow py-32 h-screen sm:py-34 md:py-44 px-4 sm:px-6 md:px-8 grid justify-items-center space-y-12 relative"
 	>
 		<div id="tsparticles-hero" class="w-full h-full absolute -z-10" />
-		<div class="grid justify-items-center space-y-12 mx-auto h-fit self-center">
+		<div class="grid justify-items-center space-y-12 h-fit w-full mx-auto self-center">
 			<div class="w-fit">
 				<h1 class="display-large">Futino</h1>
 			</div>
 
-			<div class="w-fit">
-				<h3
-					class="headline-small overflow-hidden border-r-1 border-transparent whitespace-nowrap animate-typingsubtitle"
-				>
-					Launch Your Business's Online Presence with Confidence And Trust
-				</h3>
-			</div>
+			<h3
+				class="title-small md:headline-small overflow-hidden border-r-1 border-transparent whitespace-nowrap animate-typingsubtitle"
+			>
+				Launch Your Business's Online Presence with Confidence And Trust
+			</h3>
 
-			<div class="space-x-6">
+			<div class="gap-x-4 grid grid-cols-1 md:grid-cols-2">
 				<a href="{base}/contact">
-					<Button>
-						<p>Contact Us!</p>
+					<Button class="w-full">
+						<p class="title-medium p-2">Contact Us!</p>
 					</Button>
 				</a>
 				<a href="{base}/about">
-					<Button>
-						<p>Check Out Pricing!</p>
+					<Button class="w-full">
+						<p class="title-medium p-2">Check Out Pricing!</p>
 					</Button>
 				</a>
 			</div>
@@ -157,7 +155,7 @@
 	</section>
 
 	<!--Big-Clients Slideshow-->
-	<section id="hero" class="grid self-end -mx-6 z-10">
+	<section id="slideshow" class="grid self-end -mx-6 z-10">
 		<div id="tsparticles-client-carousel" class="w-full h-fit absolute -z-10" />
 		<ClientCarousel />
 	</section>
@@ -264,8 +262,8 @@
 		id="analytics"
 		class="grow px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 bg-primary-light/20 dark:bg-primary-dark/10"
 	>
-		<TransitionElement transition="slide" duration={300} delay={100}>
-			<div class="flex flex-row px-4 justify-around text-center">
+		<TransitionElement transition="slide" duration={300} delay={100} once={true}>
+			<div class="flex flex-wrap md:flex-row px-4 justify-around text-center">
 				<div class="flex flex-col p-4">
 					<h2 class="headline-large font-extrabold">50</h2>
 					<h2 class="body-medium font-light">Sites Made</h2>
@@ -318,7 +316,7 @@
 						Send us message on one of these platforms. We'll get back to you within a couple hours.
 					</p>
 					<div class="flex-1 flex flex-col space-y-5 h-50">
-						<div class="grid grid-cols-4 grid-rows-3 gap-2">
+						<div class="grid grid-cols-4 grid-rows-3 gap-4">
 							<!--Phone number-->
 							<div class="col-span-1 rounded-full bg-surface-variant-light w-min h-min ml-auto p-5">
 								<Icon icon="phone" height="32px" width="32px" />
@@ -390,11 +388,11 @@
 			</div>
 		</div>
 		<!-- Things like FAQ, requesting quotes, more about us, etc.-->
-		<div class="flex flex-row space-x-4 py-8">
-			{#each Array(3) as card}
+		<div class="flex flex-row space-x-4 py-8 w-fit">
+			{#each Array(2) as card}
 				<div class="shadow-lg shadow-black/40 flex flex-col p-4">
 					<h1 class="display-small font-bold">Title</h1>
-					<Button class="mx-4 body-medium font-semi-bold"
+					<Button class="body-medium font-semi-bold"
 						><input type="button" value="Find Answers Now" /></Button
 					>
 				</div>

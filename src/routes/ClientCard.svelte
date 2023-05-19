@@ -13,11 +13,8 @@
 			clip.play();
 		});
 
-		/* Applying mouseout event on video clip 
-        and then we call pause() function to stop 
-        the video when the mouse is out the video */
 		card.addEventListener('mouseout', function (e) {
-			clip.playbackRate = -1;
+			//clip.playbackRate = -1;
 		});
 	});
 </script>
@@ -37,12 +34,14 @@
 			{$$props.body}
 		</h2>
 	</div>
+	<!--Webite video-->
+	<!--Cant seem to align it to the bottom...-->
 	<video
 		bind:this={clip}
 		muted
 		id="clip"
 		preload="auto"
-		class="w-fit transition-transform aspect-[16/9] h-fit"
+		class="w-fit transition-transform aspect-[16/9] self-end"
 	>
 		<source
 			title={$$props.company}
