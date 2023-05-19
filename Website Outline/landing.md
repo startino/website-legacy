@@ -67,3 +67,15 @@ https://pineview.io/ "Areas of Expertise"
 # Contact Section
 
 - Contact form with contact methods
+
+---
+
+# About us Snippet 
+  - Quotes and bio of Jonas and Jorge
+
+---
+
+# Call to action section
+  - Call to action for checking out pricing & contacting us
+
+

@@ -23,23 +23,28 @@
 	const chapters = [
 		{
 			chapterNumber: 1,
-			title: 'Welcome'
+			title: 'Welcome',
+			href: '#hero'
 		},
 		{
 			chapterNumber: 2,
-			title: 'Design'
+			title: 'Design',
+			href: '#design'
 		},
 		{
 			chapterNumber: 3,
-			title: 'Develop'
+			title: 'Develop',
+			href: '#develop'
 		},
 		{
 			chapterNumber: 4,
-			title: 'Host'
+			title: 'Host',
+			href: '#host'
 		},
 		{
 			chapterNumber: 5,
-			title: 'Marketing'
+			title: 'Marketing',
+			href: '#marketing'
 		}
 	];
 </script>
@@ -47,20 +52,28 @@
 <div class="fixed z-40 flex-none w-full bottom-0 p-6">
 	<button
 		on:click={handleExpandClick}
-		class="flex flex-row gap-6 max-w-xs bg-surface-variant-light dark:bg-surface-variant-dark rounded-xl p-4 text-left items-center"
+		class="flex flex-row gap-6 max-w-xs bg-surface-variant-light dark:bg-black/70 rounded-xl p-4 text-left items-center w-52"
 	>
 		<div class="h-10 w-8 bg-white/50 self-end divide-black/30 dark:divide-white" />
 
-		<div class="flex flex-col">
-			<ul
-				class="divide-y-1 divide-black/10 dark:divide-white/10 space-y-4"
-				in:fade={animateIn}
-				out:fade={animateOut}
-			>
+		<div class="flex flex-col transition-all duration-1000">
+			<ul class="divide-y-1 divide-black/10 dark:divide-white/10 space-y-4">
 				{#if isExpanded}
 					{#each chapters as chapter}
-						<li class="" in:slide={animateIn} out:slide={animateOut}>
-							<a on:click={() => (selectedChapter = chapter.chapterNumber)} href="#{chapter.title}">
+						<li
+							class=""
+							in:slide={{
+								delay: chapter.chapterNumber * 70 + animateIn.delay,
+								duration: 500,
+								easing: circOut
+							}}
+							out:slide={{
+								delay: chapter.chapterNumber * 70 + animateOut.delay,
+								duration: 300,
+								easing: circOut
+							}}
+						>
+							<a on:click={() => (selectedChapter = chapter.chapterNumber)} href={chapter.href}>
 								{#if chapter.chapterNumber === selectedChapter}
 									<h1 class="body-small text-left text-primary-light dark:text-primary-dark">
 										Chapter 0{chapter.chapterNumber}

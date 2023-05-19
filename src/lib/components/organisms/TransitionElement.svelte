@@ -42,7 +42,7 @@
 	export let presetOptions: TransitionOptions = defaultOptions;
 
 	// This is the formatted version of the given prompts.
-	const propOptions: TransitionOptions = {
+	let propOptions: TransitionOptions = {
 		...defaultOptions,
 		once: once,
 		bottom: bottom,
@@ -53,7 +53,7 @@
 	};
 
 	// Setup the finalizedOptions based on priority.
-	const finalizedOptions: TransitionOptions = {
+	let finalizedOptions: TransitionOptions = {
 		// Lowest Priority
 		...defaultOptions,
 		// Middle Priority
@@ -95,6 +95,7 @@
 	}
 
 	onMount(() => {
+		console.log(finalizedOptions.transition);
 		return intersection_verify(element);
 	});
 </script>
