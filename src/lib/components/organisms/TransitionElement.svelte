@@ -22,12 +22,12 @@
 	export let css_animation = '';
 
 	// Individual Options.
-	export let once: boolean = false;
-	export let transition: String = '';
-	export let top: number = 0;
-	export let bottom: number = 0;
-	export let duration: number = 0;
-	export let delay: number = 0;
+	export let once: boolean | undefined = undefined;
+	export let transition: String | undefined = undefined;
+	export let top: number | undefined = undefined;
+	export let bottom: number | undefined = undefined;
+	export let duration: number | undefined = undefined;
+	export let delay: number | undefined = undefined;
 
 	let defaultOptions: TransitionOptions = {
 		once: false, // Later on this should be true, but for testing it's easier to have it as false.
@@ -53,13 +53,15 @@
 	};
 
 	// Setup the finalizedOptions based on priority.
-	let finalizedOptions: TransitionOptions = {
-		// Lowest Priority
-		...defaultOptions,
-		// Middle Priority
-		...propOptions,
-		// Highest Priority
-		...presetOptions
+	let finalizedOptions = {
+		top: propOptions.top || presetOptions.top || defaultOptions.top,
+		bottom: propOptions.bottom || presetOptions.bottom || defaultOptions.bottom,
+		once: propOptions.once || presetOptions.once || defaultOptions.once,
+		transition: propOptions.transition || presetOptions.transition || defaultOptions.transition,
+		delay: propOptions.delay || presetOptions.delay || defaultOptions.delay,
+		duration: propOptions.duration || presetOptions.duration || defaultOptions.duration,
+		x: propOptions.x || presetOptions.x || defaultOptions.x,
+		y: propOptions.y || presetOptions.y || defaultOptions.y
 	};
 
 	// Dispatch this event and update the check every frame.
@@ -74,7 +76,7 @@
 
 	function intersection_verify(element: Element) {
 		// The space around that will trigger the animation.
-		const rootMargin = `${-bottom}px 0px ${-top}px 0px`;
+		const rootMargin = `${-finalizedOptions.bottom!}px 0px ${-finalizedOptions.top!}px 0px`;
 
 		// Configure Observer
 		const observer = new IntersectionObserver(
@@ -95,7 +97,7 @@
 	}
 
 	onMount(() => {
-		console.log(finalizedOptions.transition);
+		console.log('ID: ', element, ' Options:', finalizedOptions);
 		return intersection_verify(element);
 	});
 </script>
