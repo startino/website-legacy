@@ -12,12 +12,19 @@
 			console.log('mouseover');
 			clip.play();
 		});
+
+		/* Applying mouseout event on video clip 
+        and then we call pause() function to stop 
+        the video when the mouse is out the video */
+		card.addEventListener('mouseout', function (e) {
+			clip.playbackRate = -1;
+		});
 	});
 </script>
 
 <div
 	bind:this={card}
-	class="bg-surface-variant-light/20 shadow-lg dark:bg-surface-variant-dark/20 rounded-lg h-fit w-72 md:w-80 xl:w-110 group overflow-hidden flex flex-col flex-grow hover:flex-grow-[10] transition-all duration-500"
+	class="bg-surface-variant-light/20 shadow-lg dark:bg-surface-variant-dark/20 rounded-lg h-fit w-72 md:w-80 xl:w-110 group overflow-hidden flex flex-col flex-grow hover:flex-grow-[10] transition-all duration-1000"
 >
 	<div
 		class="
@@ -32,7 +39,6 @@
 	</div>
 	<video
 		bind:this={clip}
-		loop
 		muted
 		id="clip"
 		preload="auto"
