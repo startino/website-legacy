@@ -20,33 +20,7 @@
 	let isExpanded: boolean = false;
 	let selectedChapter = 1;
 
-	const chapters = [
-		{
-			chapterNumber: 1,
-			title: 'Welcome',
-			href: '#hero'
-		},
-		{
-			chapterNumber: 2,
-			title: 'Design',
-			href: '#design'
-		},
-		{
-			chapterNumber: 3,
-			title: 'Develop',
-			href: '#develop'
-		},
-		{
-			chapterNumber: 4,
-			title: 'Host',
-			href: '#host'
-		},
-		{
-			chapterNumber: 5,
-			title: 'Marketing',
-			href: '#marketing'
-		}
-	];
+	export let chapters: any; // Was erroring if I didn't give type. is it somethingwrong with my vscode?
 </script>
 
 <div class="fixed z-40 flex-none w-full bottom-0 p-6">
@@ -59,34 +33,37 @@
 		<div class="flex flex-col transition-all duration-1000">
 			<ul class="divide-y-1 divide-black/10 dark:divide-white/10 space-y-4">
 				{#if isExpanded}
-					{#each chapters as chapter}
+					{#each chapters as { chapterNumber, title, id }}
 						<li
 							class=""
 							in:slide={{
-								delay: chapter.chapterNumber * 70 + animateIn.delay,
+								delay: chapterNumber * 70 + animateIn.delay,
 								duration: 500,
 								easing: circOut
 							}}
 							out:slide={{
-								delay: chapter.chapterNumber * 70 + animateOut.delay,
+								delay: chapterNumber * 70 + animateOut.delay,
 								duration: 300,
 								easing: circOut
 							}}
 						>
-							<a on:click={() => (selectedChapter = chapter.chapterNumber)} href={chapter.href}>
-								{#if chapter.chapterNumber === selectedChapter}
+							<a on:click={() => (selectedChapter = chapterNumber)} href="#{id}">
+								{#if chapterNumber === selectedChapter}
+									<!--The Selected Chapter-->
 									<h1 class="body-small text-left text-primary-light dark:text-primary-dark">
-										Chapter 0{chapter.chapterNumber}
+										Chapter 0{chapterNumber}
 									</h1>
-									<h1 class="body-large text-left font-bold">{chapter.title}</h1>
+									<h1 class="body-large text-left font-bold">{title}</h1>
 								{:else}
-									<h1 class="body-small text-left">Chapter 0{chapter.chapterNumber}</h1>
-									<h1 class="body-large text-left font-bold">{chapter.title}</h1>
+									<!--Non-selected Chapters-->
+									<h1 class="body-small text-left">Chapter 0{chapterNumber}</h1>
+									<h1 class="body-large text-left font-bold">{title}</h1>
 								{/if}
 							</a>
 						</li>
 					{/each}
 				{:else}
+					<!--Selected chapter when not collapsed-->
 					<div class="flex flex-col">
 						<h1 class="title-small text-primary-light dark:text-primary-dark">
 							Chapter 0{chapters[selectedChapter - 1].chapterNumber}

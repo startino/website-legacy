@@ -5,6 +5,7 @@
 	import Button from '$lib/components/atoms/Button.svelte';
 	import ClientCarousel from '$lib/components/organisms/ClientCarousel.svelte';
 	import ChapterMenu from '$lib/components/organisms/ChapterMenu.svelte';
+	import { chapters } from './chapters';
 	import { onMount } from 'svelte';
 	import { tsParticles } from 'tsparticles-engine';
 	import { loadCustom } from './tsparticles-custom-import'; // correct path format?
@@ -38,33 +39,6 @@
 		transition: 'fly',
 		x: 100
 	};
-
-	const chapters = [
-		{
-			chapterNumber: 1,
-			inView: false,
-			title: 'Design',
-			id: 'design'
-		},
-		{
-			chapterNumber: 2,
-			inView: false,
-			title: 'Develop',
-			id: 'develop'
-		},
-		{
-			chapterNumber: 3,
-			inView: false,
-			title: 'Host',
-			id: 'host'
-		},
-		{
-			chapterNumber: 4,
-			inView: false,
-			title: 'Marketing',
-			id: 'marketing'
-		}
-	];
 
 	const clientCards = [
 		{
@@ -114,7 +88,7 @@
 <svelte:window bind:scrollY />
 
 <Header />
-<ChapterMenu />
+<ChapterMenu {chapters} />
 
 <main
 	class="text-center border-b w shadow-2xl border-primary-light/40 dark:border-primary-dark/40 flex flex-col items-stretch"
@@ -200,18 +174,28 @@
 						{chapter.chapterNumber}
 					</h1>
 					<!--Circle Glow Effect-->
-
-					<TransitionElement transition="fade" delay={300} duration={300} class="-z-10">
+					<TransitionElement transition="fade" delay={300} duration={500} class="-z-10">
 						<div
 							class="absolute -z-10 -inset-1 bg-gradient-to-r from-primary-dark to-secondary-dark animate-spin rounded-full blur transition-all"
 						/>
 					</TransitionElement>
 
-					<TransitionElement transition="slide" delay={300} duration={3000} class="-z-10">
+					<!--Line glow Effect-->
+					<TransitionElement
+						transition="slide"
+						delay={100}
+						duration={1500}
+						axis={'y'}
+						class="-z-10"
+					>
+						<!--Background line-->
 						<div
 							class="border-l-2 border-white dark:border-black absolute left-1/2 h-[450px] -z-10"
 						/>
+						<!--Glow Line. Transition element not working on slide. tried debugging for a long time, no avail. this works though.-->
+
 						<div
+							in:slide={{ duration: 500, axis: 'y', delay: 300 }}
 							class="border-l-4 border-primary-light dark:border-primary-dark left-1/2 absolute h-[450px] -z-20 opacity-100 blur-sm transition-all"
 						/>
 					</TransitionElement>
@@ -286,7 +270,7 @@
 		id="clients"
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
-		<TransitionElement transition="fade" duration={300}>
+		<TransitionElement transition="fade" duration={500}>
 			<h1 class="display-large">Our Clients</h1>
 			<div class="flex flex-wrap gap-12 items-center justify-items-center max-w-7xl overflow-clip">
 				{#each clientCards as { index, name, company, body, vid_path }}
@@ -299,7 +283,7 @@
 		id="contact"
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
-		<TransitionElement transition="fade" duration={400}>
+		<TransitionElement transition="fade" duration={500}>
 			<h1 class="display-large">We'd Love to Hear From You</h1>
 
 			<div
@@ -411,7 +395,7 @@
 		id="about"
 		class="grow py-24 sm:py-28 md:py-32 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
-		<TransitionElement transition="fade" duration={400} class="">
+		<TransitionElement transition="fade" duration={500} class="">
 			<div class="flex flex-col max-w-7xl mx-auto place-items-center space-y-6">
 				<h1 class="display-large py-12">Meet The Founders</h1>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">

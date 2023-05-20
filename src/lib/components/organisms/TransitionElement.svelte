@@ -9,6 +9,7 @@
 		duration?: number;
 		x?: number;
 		y?: number;
+		axis?: 'x' | 'y';
 	};
 </script>
 
@@ -28,6 +29,7 @@
 	export let bottom: number | undefined = undefined;
 	export let duration: number | undefined = undefined;
 	export let delay: number | undefined = undefined;
+	export let axis: 'x' | 'y' | undefined = undefined;
 
 	let defaultOptions: TransitionOptions = {
 		once: true, // Later on this should be true, but for testing it's easier to have it as false.
@@ -37,7 +39,8 @@
 		delay: 0,
 		duration: 1000,
 		x: 0,
-		y: 0
+		y: 0,
+		axis: 'y'
 	};
 	export let presetOptions: TransitionOptions = defaultOptions;
 
@@ -49,7 +52,8 @@
 		delay: delay,
 		duration: duration,
 		top: top,
-		transition: transition
+		transition: transition,
+		axis: axis
 	};
 
 	// Setup the finalizedOptions based on priority.
@@ -61,7 +65,8 @@
 		delay: propOptions.delay || presetOptions.delay || defaultOptions.delay,
 		duration: propOptions.duration || presetOptions.duration || defaultOptions.duration,
 		x: propOptions.x || presetOptions.x || defaultOptions.x,
-		y: propOptions.y || presetOptions.y || defaultOptions.y
+		y: propOptions.y || presetOptions.y || defaultOptions.y,
+		axis: propOptions.axis || presetOptions.axis || defaultOptions.axis
 	};
 
 	// True if the element being observed is in the viewport
@@ -105,7 +110,7 @@
 	onMount(() => {
 		window.addEventListener('scroll', handler);
 		verify_intersection();
-		//console.log(finalizedOptions);
+		console.log(finalizedOptions);
 		return () => window.removeEventListener('scroll', handler);
 	});
 </script>
@@ -114,7 +119,7 @@
 	{#if inView}
 		{#if finalizedOptions.transition == 'fade'}
 			<div
-				in:fade={{ duration: $$props.duration, delay: $$props.delay }}
+				in:fade={{ duration: finalizedOptions.duration, delay: finalizedOptions.delay }}
 				style="animation: {animation}; {css_animation}"
 			>
 				<slot />
