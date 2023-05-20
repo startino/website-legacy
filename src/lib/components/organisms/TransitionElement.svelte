@@ -110,7 +110,7 @@
 	onMount(() => {
 		window.addEventListener('scroll', handler);
 		verify_intersection();
-		console.log(finalizedOptions);
+		//console.log(finalizedOptions);
 		return () => window.removeEventListener('scroll', handler);
 	});
 </script>

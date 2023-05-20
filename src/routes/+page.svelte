@@ -18,6 +18,7 @@
 	} from '$lib/components/organisms/TransitionElement.svelte';
 	import Icon from '$lib/components/atoms/Icon.svelte';
 	import ClientCard from './ClientCard.svelte';
+	import { tooltip } from '$lib/components/organisms/tooltip/tooltip';
 
 	let scrollY: number;
 
