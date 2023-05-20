@@ -30,7 +30,7 @@
 	export let delay: number | undefined = undefined;
 
 	let defaultOptions: TransitionOptions = {
-		once: false, // Later on this should be true, but for testing it's easier to have it as false.
+		once: true, // Later on this should be true, but for testing it's easier to have it as false.
 		transition: 'fade',
 		top: 0,
 		bottom: 0,
@@ -69,35 +69,47 @@
 	$: dispatch('update', { observing: inView });
 
 	// True if the element being observed is in the viewport
-	let inView = true;
+	let inView = false;
 
 	// Generates a random ID to identify the element. There's probaby a better solution.
 	let element: Element;
 
-	function intersection_verify(element: Element) {
-		// The space around that will trigger the animation.
-		const rootMargin = `${-finalizedOptions.bottom!}px 0px ${-finalizedOptions.top!}px 0px`;
+	function handler() {
+		const rect = element.getBoundingClientRect();
+		inView =
+			rect.top - finalizedOptions.top! < window.innerHeight &&
+			rect.left - finalizedOptions.bottom! < window.innerWidth;
 
-		// Configure Observer
-		const observer = new IntersectionObserver(
-			(entries) => {
-				inView = entries[0].isIntersecting;
-				if (inView && once) {
-					observer.unobserve(element);
+		if (inView && once) {
+			window.removeEventListener('scroll', handler);
+		}
+	}
+
+	function verify_intersection() {
+		if (typeof IntersectionObserver !== 'undefined') {
+			const rootMargin = `${finalizedOptions.bottom!}px 0px ${finalizedOptions.top!}px 0px`;
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					inView = entries[0].isIntersecting;
+					if (inView && once) {
+						observer.unobserve(element);
+					}
+				},
+				{
+					rootMargin
 				}
-			},
-			{
-				rootMargin
-			}
-		);
-		// Begin observing
-		observer.observe(element);
+			);
 
-		return () => observer.unobserve(element);
+			observer.observe(element);
+			return () => observer.unobserve(element);
+		}
 	}
 
 	onMount(() => {
-		return intersection_verify(element);
+		verify_intersection();
+		window.addEventListener('scroll', handler);
+		return () => window.removeEventListener('scroll', handler);
 	});
 </script>
 

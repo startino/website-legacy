@@ -26,20 +26,17 @@
 	};
 
 	const leftSlidePreset: TransitionOptions = {
-		delay: 0,
+		delay: 100,
 		duration: 300,
-		top: 150,
-		bottom: 0,
 		transition: 'fly',
-		x: -300
+		x: -100
 	};
 	const rightSlidePreset = {
-		delay: 0,
+		delay: 100,
 		duration: 300,
-		top: 0,
-		bottom: 0,
+
 		transition: 'fly',
-		x: 300
+		x: 100
 	};
 
 	const chapters = [
@@ -133,21 +130,23 @@
 				<h1 class="display-large">Futino</h1>
 			</div>
 
-			<h3
-				class="title-small md:headline-small overflow-hidden border-r-1 border-transparent whitespace-nowrap animate-typingsubtitle"
-			>
-				Launch Your Business's Online Presence with Confidence And Trust
-			</h3>
+			<div class="w-fit">
+				<h3
+					class="title-small md:headline-small overflow-hidden border-r-1 border-transparent whitespace-nowrap animate-typingsubtitle"
+				>
+					Launch Your Business's Online Presence with Confidence And Trust
+				</h3>
+			</div>
 
-			<div class="gap-x-4 grid grid-cols-1 md:grid-cols-2">
-				<a href="{base}/contact">
-					<Button class="w-full">
-						<p class="title-medium p-2">Contact Us!</p>
+			<div class="gap-y-4 gap-x-4 grid grid-cols-2 sm::grid-cols-2">
+				<a href="{base}/about">
+					<Button class="w-full h-full">
+						<p class="title-medium p-2">Check Out Pricing!</p>
 					</Button>
 				</a>
-				<a href="{base}/about">
-					<Button class="w-full">
-						<p class="title-medium p-2">Check Out Pricing!</p>
+				<a href="{base}/contact">
+					<Button class="w-full h-full">
+						<p class="title-medium p-2">Contact Us!</p>
 					</Button>
 				</a>
 			</div>
@@ -262,7 +261,7 @@
 		id="analytics"
 		class="grow px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 bg-primary-light/20 dark:bg-primary-dark/10"
 	>
-		<TransitionElement transition="slide" duration={300} delay={100} once={true}>
+		<TransitionElement transition="slide" duration={200} delay={100} once={true}>
 			<div class="flex flex-wrap md:flex-row px-4 justify-around text-center">
 				<div class="flex flex-col p-4">
 					<h2 class="headline-large font-extrabold">50</h2>
