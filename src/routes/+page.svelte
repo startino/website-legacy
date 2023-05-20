@@ -151,7 +151,7 @@
 
 		{#each chapters as { inView, chapterNumber, title, id, content }}
 			<!--Chapter Setion-->
-			<div {id} class="flex flex-col place-items-center py-12 relative overflow-hidden">
+			<div {id} class="flex flex-col place-items-center py-24 relative overflow-hidden">
 				<h1
 					class="display-small p-4 font-extrabold tracking-wide transition-all duration-700 {inView
 						? ' text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark'
@@ -166,7 +166,7 @@
 					<div class="border-l-2 border-white dark:border-black h-full absolute top-24 -z-10" />
 					<!--Glow Line. Transition element not working on slide. tried debugging for a long time, no avail. this works though.-->
 					<div
-						in:slide={{ duration: 500, axis: 'y', delay: 300 }}
+						in:slide={{ duration: 2000, axis: 'y', delay: 300 }}
 						class="border-l-4 border-b-4 border-primary-light dark:border-primary-dark h-full top-24 absolute left-1/2 -z-20 opacity-100 blur-sm"
 					/>
 				</TransitionElement>
@@ -203,8 +203,8 @@
 						<!-- Title and Paragraph-->
 						<TransitionElement presetOptions={rightSlidePreset} class="w-full">
 							<div class="flex flex-col max-w-md text-left">
-								<h2 class="display-small">{title}</h2>
-								<h3 class="body-medium">
+								<h2 class="display-small max-w-3xl">{title}</h2>
+								<h3 class="body-medium max-w-3xl">
 									{body}
 								</h3>
 							</div>
