@@ -115,35 +115,46 @@
 	});
 </script>
 
-<div class={$$props.class} bind:this={element}>
-	{#if inView}
-		{#if finalizedOptions.transition == 'fade'}
-			<div
-				in:fade={{ duration: finalizedOptions.duration, delay: finalizedOptions.delay }}
-				style="animation: {animation}; {css_animation}"
-			>
-				<slot />
-			</div>
-		{:else if finalizedOptions.transition == 'fly'}
-			<div
-				in:fly={{
-					x: finalizedOptions.x,
-					y: finalizedOptions.y,
-					duration: finalizedOptions.duration,
-					delay: finalizedOptions.delay
-				}}
-				style="animation: {animation}; {css_animation}"
-			>
-				<slot />
-			</div>
-		{:else if finalizedOptions.transition == 'slide'}
-			<div in:slide style="animation: {animation}; {css_animation}">
-				<slot />
-			</div>
-		{/if}
-	{:else}
-		<div style="animation: {animation_out}; {css_animation}">
+{#if inView}
+	{#if finalizedOptions.transition == 'fade'}
+		<div
+			bind:this={element}
+			in:fade={{ duration: finalizedOptions.duration, delay: finalizedOptions.delay }}
+			style="animation: {animation}; {css_animation}"
+			class={$$props.class}
+		>
+			<slot />
+		</div>
+	{:else if finalizedOptions.transition == 'fly'}
+		<div
+			bind:this={element}
+			in:fly={{
+				x: finalizedOptions.x,
+				y: finalizedOptions.y,
+				duration: finalizedOptions.duration,
+				delay: finalizedOptions.delay
+			}}
+			style="animation: {animation}; {css_animation}"
+			class={$$props.class}
+		>
+			<slot />
+		</div>
+	{:else if finalizedOptions.transition == 'slide'}
+		<div
+			bind:this={element}
+			in:slide
+			style="animation: {animation}; {css_animation}"
+			class={$$props.class}
+		>
 			<slot />
 		</div>
 	{/if}
-</div>
+{:else}
+	<div
+		bind:this={element}
+		style="animation: {animation_out}; {css_animation}"
+		class={$$props.class}
+	>
+		<slot />
+	</div>
+{/if}

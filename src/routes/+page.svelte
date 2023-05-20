@@ -138,10 +138,10 @@
 		id="journey"
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center relative"
 	>
-		<!--Going to be the transition & parallax image, like pineview.io's one-->
+		<!--Transition & parallax image, like pineview.io's one-->
 		<div
 			class="w-full h-full absolute top-0 bg-gradient-to-b from-transparent via-white/90 dark:via-black/90 to-transparent"
-			style:transform={`translate3d(0, ${-scrollY * 2.5}px, 0)`}
+			style:transform={`translate3d(0, ${-scrollY * 5}px, 0)`}
 		/>
 		<!--Background image for journey section. Purpose is to blend with the transition image.-->
 		<div
@@ -149,29 +149,40 @@
 		/>
 		<h1 class="display-large py-12" in:fade>Areas of Expertise</h1>
 
-		{#each chapters as chapter}
+		{#each chapters as { inView, chapterNumber, title, id, content }}
 			<!--Chapter Setion-->
-			<div id={chapter.id} class="flex flex-col place-items-center py-12">
+			<div {id} class="flex flex-col place-items-center py-12 relative overflow-hidden">
 				<h1
-					class="display-small p-4 font-extrabold tracking-wide transition-all duration-700 {chapter.inView
+					class="display-small p-4 font-extrabold tracking-wide transition-all duration-700 {inView
 						? ' text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark'
 						: 'text-surface-on-light dark:text-surface-on-dark'}"
 				>
-					{chapter.title}
+					{title}
 				</h1>
 
-				<!--Circle and line-->
+				<!--Center Line-->
+				<TransitionElement transition="slide" class="h-full absolute left-1/2">
+					<!--Background line-->
+					<div class="border-l-2 border-white dark:border-black h-full absolute top-24 -z-10" />
+					<!--Glow Line. Transition element not working on slide. tried debugging for a long time, no avail. this works though.-->
+					<div
+						in:slide={{ duration: 500, axis: 'y', delay: 300 }}
+						class="border-l-4 border-b-4 border-primary-light dark:border-primary-dark h-full top-24 absolute left-1/2 -z-20 opacity-100 blur-sm"
+					/>
+				</TransitionElement>
+
+				<!--Circle-->
 				<div
 					class="h-14 w-14 rounded-full bg-surface-light dark:bg-surface-dark flex justify-self-center relative"
 					use:inview={inviewOptions}
 					on:inview_enter={(event) => {
-						chapter.inView = true;
+						inView = true;
 					}}
 				>
 					<h1
 						class="headline-medium font-bold text-surface-on-light dark:text-surface-on-dark self-center mx-auto"
 					>
-						{chapter.chapterNumber}
+						{chapterNumber}
 					</h1>
 					<!--Circle Glow Effect-->
 					<TransitionElement transition="fade" delay={300} duration={500} class="-z-10">
@@ -179,57 +190,26 @@
 							class="absolute -z-10 -inset-1 bg-gradient-to-r from-primary-dark to-secondary-dark animate-spin rounded-full blur transition-all"
 						/>
 					</TransitionElement>
-
-					<!--Line glow Effect-->
-					<TransitionElement
-						transition="slide"
-						delay={100}
-						duration={1500}
-						axis={'y'}
-						class="-z-10"
-					>
-						<!--Background line-->
-						<div
-							class="border-l-2 border-white dark:border-black absolute left-1/2 h-[450px] -z-10"
-						/>
-						<!--Glow Line. Transition element not working on slide. tried debugging for a long time, no avail. this works though.-->
-
-						<div
-							in:slide={{ duration: 500, axis: 'y', delay: 300 }}
-							class="border-l-4 border-primary-light dark:border-primary-dark left-1/2 absolute h-[450px] -z-20 opacity-100 blur-sm transition-all"
-						/>
-					</TransitionElement>
 				</div>
 				<!--Content-->
 				<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center py-8">
-					<!--Temp. image-->
-					<TransitionElement presetOptions={leftSlidePreset} class="w-full">
-						<div
-							class="bg-surface-variant-dark h-48 w-full sm:justify-self-end"
-						/></TransitionElement
-					>
-					<TransitionElement presetOptions={rightSlidePreset} class="w-full">
-						<div class="flex flex-col max-w-md text-left">
-							<h2 class="display-small">We Lorem Ipsum</h2>
-							<h3 class="body-medium">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus
-								euismod euismod id ut est. In vel elit at lorem cursus porttitor.
-							</h3>
-						</div>
-					</TransitionElement>
-					<!--Temp. image-->
-					<TransitionElement presetOptions={leftSlidePreset} class="w-full">
-						<div class="bg-surface-variant-dark h-32 w-full sm:justify-self-end" />
-					</TransitionElement>
-					<TransitionElement presetOptions={rightSlidePreset} class="w-full">
-						<div class="flex flex-col max-w-md text-left">
-							<h2 class="display-small">We Lorem Ipsum</h2>
-							<h3 class="body-medium">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec neque vitae purus
-								euismod euismod id ut est.
-							</h3>
-						</div>
-					</TransitionElement>
+					{#each content as { title, body }}
+						<!--Graphic Image-->
+						<TransitionElement presetOptions={leftSlidePreset} class="w-full">
+							<div
+								class="bg-surface-variant-dark h-48 w-full sm:justify-self-end"
+							/></TransitionElement
+						>
+						<!-- Title and Paragraph-->
+						<TransitionElement presetOptions={rightSlidePreset} class="w-full">
+							<div class="flex flex-col max-w-md text-left">
+								<h2 class="display-small">{title}</h2>
+								<h3 class="body-medium">
+									{body}
+								</h3>
+							</div>
+						</TransitionElement>
+					{/each}
 				</div>
 			</div>
 		{/each}
