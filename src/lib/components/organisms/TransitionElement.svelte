@@ -64,10 +64,6 @@
 		y: propOptions.y || presetOptions.y || defaultOptions.y
 	};
 
-	// Dispatch this event and update the check every frame.
-	const dispatch = createEventDispatcher();
-	$: dispatch('update', { observing: inView });
-
 	// True if the element being observed is in the viewport
 	let inView = false;
 
@@ -107,8 +103,9 @@
 	}
 
 	onMount(() => {
-		verify_intersection();
 		window.addEventListener('scroll', handler);
+		verify_intersection();
+		//console.log(finalizedOptions);
 		return () => window.removeEventListener('scroll', handler);
 	});
 </script>
@@ -135,13 +132,7 @@
 				<slot />
 			</div>
 		{:else if finalizedOptions.transition == 'slide'}
-			<div
-				in:slide={{
-					duration: finalizedOptions.duration,
-					delay: finalizedOptions.delay
-				}}
-				style="animation: {animation}; {css_animation}"
-			>
+			<div in:slide style="animation: {animation}; {css_animation}">
 				<slot />
 			</div>
 		{/if}

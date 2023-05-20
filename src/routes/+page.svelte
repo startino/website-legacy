@@ -194,32 +194,27 @@
 						chapter.inView = true;
 					}}
 				>
-					<!--Circle Glow Effect-->
-					{#if chapter.inView === true}
-						<div
-							in:fade={{ delay: 300, duration: leftSlidePreset.duration }}
-							class="absolute -z-10 -inset-1 bg-gradient-to-r from-primary-dark to-secondary-dark animate-spin rounded-full blur transition-all"
-						/>
-					{:else}
-						<div
-							class="absolute -z-10 opacity-0 -inset-1 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark animate-spin rounded-full blur transition-all"
-						/>
-					{/if}
 					<h1
 						class="headline-medium font-bold text-surface-on-light dark:text-surface-on-dark self-center mx-auto"
 					>
 						{chapter.chapterNumber}
 					</h1>
-					{#if chapter.inView === true}
+					<!--Circle Glow Effect-->
+
+					<TransitionElement transition="fade" delay={300} duration={300} class="-z-10">
 						<div
-							in:slide={{ delay: 300, duration: leftSlidePreset.duration }}
+							class="absolute -z-10 -inset-1 bg-gradient-to-r from-primary-dark to-secondary-dark animate-spin rounded-full blur transition-all"
+						/>
+					</TransitionElement>
+
+					<TransitionElement transition="slide" delay={300} duration={3000} class="-z-10">
+						<div
 							class="border-l-2 border-white dark:border-black absolute left-1/2 h-[450px] -z-10"
 						/>
 						<div
-							in:slide={{ delay: 500, duration: 1000 }}
 							class="border-l-4 border-primary-light dark:border-primary-dark left-1/2 absolute h-[450px] -z-20 opacity-100 blur-sm transition-all"
 						/>
-					{:else}{/if}
+					</TransitionElement>
 				</div>
 				<!--Content-->
 				<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center py-8">
@@ -291,173 +286,190 @@
 		id="clients"
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
-		<h1 class="display-large">Our Clients</h1>
-		<div class="flex flex-wrap gap-12 items-center justify-items-center max-w-7xl overflow-clip">
-			{#each clientCards as { index, name, company, body, vid_path }}
-				<ClientCard {name} {company} {body} {vid_path} />{/each}
-		</div>
+		<TransitionElement transition="fade" duration={300}>
+			<h1 class="display-large">Our Clients</h1>
+			<div class="flex flex-wrap gap-12 items-center justify-items-center max-w-7xl overflow-clip">
+				{#each clientCards as { index, name, company, body, vid_path }}
+					<ClientCard {name} {company} {body} {vid_path} />{/each}
+			</div>
+		</TransitionElement>
 	</section>
 
 	<section
 		id="contact"
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
-		<h1 class="display-large">We'd Love to Hear From You</h1>
+		<TransitionElement transition="fade" duration={400}>
+			<h1 class="display-large">We'd Love to Hear From You</h1>
 
-		<div
-			class="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-auto max-w-7xl items-center justify-items-center"
-		>
-			<!--PM Option-->
-			<div class="flex p-8 shadow-lg shadow-black/40 space-y-12 flex-col max-w-3xl">
-				<div class="text-left space-y-10">
-					<h2 class="display-medium font-extrabold">Give us a PM</h2>
-					<p class="title-medium">
-						Send us message on one of these platforms. We'll get back to you within a couple hours.
-					</p>
-					<div class="flex-1 flex flex-col space-y-5 h-50">
-						<div class="grid grid-cols-4 grid-rows-3 gap-4">
-							<!--Phone number-->
-							<div class="col-span-1 rounded-full bg-surface-variant-light w-min h-min ml-auto p-5">
-								<Icon icon="phone" height="32px" width="32px" />
+			<div
+				class="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-auto max-w-7xl items-center justify-items-center"
+			>
+				<!--PM Option-->
+				<div class="flex p-8 shadow-lg shadow-black/40 space-y-12 flex-col max-w-3xl">
+					<div class="text-left space-y-10">
+						<h2 class="display-medium font-extrabold">Give us a PM</h2>
+						<p class="title-medium">
+							Send us message on one of these platforms. We'll get back to you within a couple
+							hours.
+						</p>
+						<div class="flex-1 flex flex-col space-y-5 h-50">
+							<div class="grid grid-cols-4 grid-rows-3 gap-4">
+								<!--Phone number-->
+								<div
+									class="col-span-1 rounded-full bg-surface-variant-light w-min h-min ml-auto p-5"
+								>
+									<Icon icon="phone" height="32px" width="32px" />
+								</div>
+
+								<a class="col-span-3 flex items-center" href="tel:9133600394">
+									<h1 class="title-small sm:title-large pl-2">+852 9747 3013</h1>
+								</a>
+								<!--WhatsApp-->
+								<div
+									class="col-span-1 rounded-full bg-surface-variant-light w-min h-min ml-auto p-5"
+								>
+									<Icon icon="email" height="32px" width="32px" fillColor="black" />
+								</div>
+
+								<a class="col-span-3 flex items-center" href="mailto:contact@futi.no">
+									<h1 class="title-small sm:title-large pl-2">Futino Whatsapp</h1>
+								</a>
+								<!--Email-->
+								<div
+									class="col-span-1 rounded-full bg-surface-variant-light w-min h-min ml-auto p-5"
+								>
+									<Icon icon="instagram" height="32px" width="32px" fillColor="black" />
+								</div>
+
+								<a class="col-span-3 flex items-center" href="mailto:ggsoccercamps@gmail.com">
+									<h1 class="title-small sm:title-large pl-2">@Futino</h1>
+								</a>
+								<!--Email-->
+								<div
+									class="col-span-1 rounded-full bg-surface-variant-light w-min h-min ml-auto p-5"
+								>
+									<Icon icon="email" height="32px" width="32px" fillColor="black" />
+								</div>
+
+								<a class="col-span-3 flex items-center" href="mailto:contact@futi.no">
+									<h1 class="title-small sm:title-large pl-2">contact@futi.no</h1>
+								</a>
 							</div>
-
-							<a class="col-span-3 flex items-center" href="tel:9133600394">
-								<h1 class="title-small sm:title-large pl-2">+852 9747 3013</h1>
-							</a>
-							<!--WhatsApp-->
-							<div class="col-span-1 rounded-full bg-surface-variant-light w-min h-min ml-auto p-5">
-								<Icon icon="email" height="32px" width="32px" fillColor="black" />
-							</div>
-
-							<a class="col-span-3 flex items-center" href="mailto:contact@futi.no">
-								<h1 class="title-small sm:title-large pl-2">Futino Whatsapp</h1>
-							</a>
-							<!--Email-->
-							<div class="col-span-1 rounded-full bg-surface-variant-light w-min h-min ml-auto p-5">
-								<Icon icon="instagram" height="32px" width="32px" fillColor="black" />
-							</div>
-
-							<a class="col-span-3 flex items-center" href="mailto:ggsoccercamps@gmail.com">
-								<h1 class="title-small sm:title-large pl-2">@Futino</h1>
-							</a>
-							<!--Email-->
-							<div class="col-span-1 rounded-full bg-surface-variant-light w-min h-min ml-auto p-5">
-								<Icon icon="email" height="32px" width="32px" fillColor="black" />
-							</div>
-
-							<a class="col-span-3 flex items-center" href="mailto:contact@futi.no">
-								<h1 class="title-small sm:title-large pl-2">contact@futi.no</h1>
-							</a>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!--Contact form Option-->
-			<div class="flex p-8 shadow-lg shadow-black/40 space-y-12 flex-col w-full h-full">
-				<div class="text-left space-y-10">
-					<h2 class="display-medium font-extrabold">Contact Us</h2>
-					<p class="title-medium">
-						Feel free to us an email for any requests or questions. We'll get back to you within a
-						couple hours.
-					</p>
+				<!--Contact form Option-->
+				<div class="flex p-8 shadow-lg shadow-black/40 space-y-12 flex-col w-full h-full">
+					<div class="text-left space-y-10">
+						<h2 class="display-medium font-extrabold">Contact Us</h2>
+						<p class="title-medium">
+							Feel free to us an email for any requests or questions. We'll get back to you within a
+							couple hours.
+						</p>
+					</div>
+					<form method="post" class="flex-1 flex flex-col space-y-5 h-64">
+						<input
+							class="border border-black/50 dark:border-white/50 p-1 dark:bg-black/5"
+							type="text"
+							name="name"
+							id="name"
+							placeholder="Name"
+						/>
+						<input
+							class="border border-black/50 dark:border-white/50 p-1 dark:bg-surface-dark/5"
+							type="text"
+							name="email"
+							id="email"
+							placeholder="E-Mail"
+						/>
+						<textarea
+							class="flex-1 border border-black/50 dark:border-white/50 p-1 dark:bg-black/5"
+							name="message"
+							id="message"
+							placeholder="Message"
+						/>
+						<Button><input type="button" value="Send Email" /></Button>
+					</form>
 				</div>
-				<form method="post" class="flex-1 flex flex-col space-y-5 h-64">
-					<input
-						class="border border-black/50 dark:border-white/50 p-1 dark:bg-black/5"
-						type="text"
-						name="name"
-						id="name"
-						placeholder="Name"
-					/>
-					<input
-						class="border border-black/50 dark:border-white/50 p-1 dark:bg-surface-dark/5"
-						type="text"
-						name="email"
-						id="email"
-						placeholder="E-Mail"
-					/>
-					<textarea
-						class="flex-1 border border-black/50 dark:border-white/50 p-1 dark:bg-black/5"
-						name="message"
-						id="message"
-						placeholder="Message"
-					/>
-					<Button><input type="button" value="Send Email" /></Button>
-				</form>
 			</div>
-		</div>
-		<!-- Things like FAQ, requesting quotes, more about us, etc.-->
-		<div class="flex flex-row space-x-4 py-8 w-fit">
-			{#each Array(2) as card}
-				<div class="shadow-lg shadow-black/40 flex flex-col p-4">
-					<h1 class="display-small font-bold">Title</h1>
-					<Button class="body-medium font-semi-bold"
-						><input type="button" value="Find Answers Now" /></Button
-					>
-				</div>
-			{/each}
-		</div>
+			<!-- Things like FAQ, requesting quotes, more about us, etc.-->
+			<div class="flex flex-row space-x-4 py-8 w-fit mx-auto">
+				{#each Array(2) as card}
+					<div class="shadow-lg shadow-black/40 flex flex-col p-4">
+						<h1 class="display-small font-bold">Title</h1>
+						<Button class="body-medium font-semi-bold"
+							><input type="button" value="Find Answers Now" /></Button
+						>
+					</div>
+				{/each}
+			</div>
+		</TransitionElement>
 	</section>
 
 	<section
 		id="about"
 		class="grow py-24 sm:py-28 md:py-32 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
-		<div class="flex flex-col max-w-7xl mx-auto place-items-center space-y-6">
-			<h1 class="display-large py-12">Meet The Founders</h1>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">
-				<!--Jorge's Card-->
-				<div
-					class="flex flex-col bg-surface-variant-light/20 shadow-lg dark:bg-surface-variant-dark/20 rounded-lg p-6"
-				>
-					<img src="" alt="Not found" class="rounded-full h-24 w-24 self-center bg-black" />
-					<h2 class="display-small pt-2">Jorge Lewis</h2>
-					<h3 class="title-small pb-4 text-gray-400">COO & Co-founder of Futino</h3>
-					<h2 class="body-large">
-						I noticed that making a website was either too expensive or too time consuming for
-						everyone, including individuals, startups, even large businesses. I wanted to create a
-						solution to these problems.
-					</h2>
+		<TransitionElement transition="fade" duration={400} class="">
+			<div class="flex flex-col max-w-7xl mx-auto place-items-center space-y-6">
+				<h1 class="display-large py-12">Meet The Founders</h1>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">
+					<!--Jorge's Card-->
+					<div
+						class="flex flex-col bg-surface-variant-light/20 shadow-lg dark:bg-surface-variant-dark/20 rounded-lg p-6"
+					>
+						<img src="" alt="Not found" class="rounded-full h-24 w-24 self-center bg-black" />
+						<h2 class="display-small pt-2">Jorge Lewis</h2>
+						<h3 class="title-small pb-4 text-gray-400">COO & Co-founder of Futino</h3>
+						<h2 class="body-large">
+							I noticed that making a website was either too expensive or too time consuming for
+							everyone, including individuals, startups, even large businesses. I wanted to create a
+							solution to these problems.
+						</h2>
+					</div>
+					<!--Jonas' Card-->
+					<div
+						class="flex flex-col bg-surface-variant-light/20 shadow-lg dark:bg-surface-variant-dark/20 rounded-lg p-6"
+					>
+						<img src="" alt="Not found" class="rounded-full h-24 w-24 self-center bg-black" />
+						<h2 class="display-small pt-2">Jonas Lindberg</h2>
+						<h3 class="title-small pb-4 text-gray-400">CTO & Co-founder of Futino</h3>
+						<h2 class="body-large">
+							I noticed that making a website was either too expensive or too time consuming for
+							everyone, including individuals, startups, even large businesses. I wanted to create a
+							solution to these problems.
+						</h2>
+					</div>
 				</div>
-				<!--Jonas' Card-->
-				<div
-					class="flex flex-col bg-surface-variant-light/20 shadow-lg dark:bg-surface-variant-dark/20 rounded-lg p-6"
-				>
-					<img src="" alt="Not found" class="rounded-full h-24 w-24 self-center bg-black" />
-					<h2 class="display-small pt-2">Jonas Lindberg</h2>
-					<h3 class="title-small pb-4 text-gray-400">CTO & Co-founder of Futino</h3>
-					<h2 class="body-large">
-						I noticed that making a website was either too expensive or too time consuming for
-						everyone, including individuals, startups, even large businesses. I wanted to create a
-						solution to these problems.
-					</h2>
-				</div>
+				<Button>
+					<h1 class="p-2">Learn More</h1>
+				</Button>
 			</div>
-		</div>
-		<Button>
-			<h1 class="p-2">Learn More</h1>
-		</Button>
+		</TransitionElement>
 	</section>
 
 	<section
 		id="calltoaction"
 		class="grow py-24 sm:py-28 md:py-32 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
-		<div class="flex flex-col space-y-12">
-			<h1 class="display-large">Let's Get Started</h1>
-			<div class="gap-x-4 grid grid-cols-1 md:grid-cols-2">
-				<a href="{base}/contact">
-					<Button class="w-full">
-						<p class="title-large p-4">Contact Us!</p>
-					</Button>
-				</a>
-				<a href="{base}/about">
-					<Button class="w-full">
-						<p class="title-large p-4">Check Out Pricing!</p>
-					</Button>
-				</a>
-			</div>
-		</div>
+		<TransitionElement transition="fade" duration={300}>
+			<div class="flex flex-col space-y-12">
+				<h1 class="display-large">Let's Get Started</h1>
+				<div class="gap-x-4 grid grid-cols-1 md:grid-cols-2">
+					<a href="{base}/contact">
+						<Button class="w-full">
+							<p class="title-large p-4">Contact Us!</p>
+						</Button>
+					</a>
+					<a href="{base}/about">
+						<Button class="w-full">
+							<p class="title-large p-4">Check Out Pricing!</p>
+						</Button>
+					</a>
+				</div>
+			</div></TransitionElement
+		>
 	</section>
 </main>
 
