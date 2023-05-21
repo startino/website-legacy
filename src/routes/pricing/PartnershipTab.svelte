@@ -41,8 +41,10 @@
 					aria-controls="profile"
 					aria-selected="false"
 				>
-				<!--Shine Box-->
-				<div class="absolute top-0 -inset-full h-full w-1/3 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 group-hover:animate-shine " />
+					<!--Shine Box-->
+					<div
+						class="absolute top-0 -inset-full h-full w-1/3 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 group-hover:animate-shine"
+					/>
 					<PlanCard {plan} />
 				</button>
 			</li>

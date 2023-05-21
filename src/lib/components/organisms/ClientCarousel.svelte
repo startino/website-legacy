@@ -1,24 +1,35 @@
-<script lang="ts">
-	let scroll: any;
-	let carouselSpeed = 1;
-</script>
+<div id="carousel-parent" class="w-full overflow-hidden relative h-fit flex flex-nowrap py-2">
+	<div
+		class="h-full z-10 bg-gradient-to-r from-surface-light dark:from-surface-dark to-transparent w-20 left-0 absolute"
+	/>
+	<div
+		class="h-full z-10 bg-gradient-to-l from-surface-light dark:from-surface-dark to-transparent w-20 right-0 absolute"
+	/>
 
-<svelte:window bind:scrollY={scroll} />
-<div class="w-screen">
-	<div class="inline-block">
-		<div class="box bg-blue-500" />
-		<div class="box bg-green-500" />
-		<div class="box bg-yellow-500" />
-		<div class="box bg-amber-500" />
-		<div class="box bg-orange-500" />
-		<div class="box bg-pink-500" />
-		<div class="box bg-red-500" />
-		<div class="box bg-white" />
-	</div>
+	{#each Array(3) as repeated_so_that_it_can_cycle}
+		<div class="logo-carousel">
+			<div class="box border-1 border-white/20 shadow-lg">
+				<img src="favicon.png" alt="" class="h-32 w-32 mx-auto" />
+			</div>
+			<div class="box border-1 border-white/20 shadow-lg">
+				<img src="favicon.png" alt="" class="h-32 w-32 mx-auto" />
+			</div>
+			<div class="box border-1 border-white/20 shadow-lg">
+				<img src="favicon.png" alt="" class="h-32 w-32 mx-auto" />
+			</div>
+			<div class="box border-1 border-white/20 shadow-lg">
+				<img src="favicon.png" alt="" class="h-32 w-32 mx-auto" />
+			</div>
+		</div>
+	{/each}
 </div>
 
 <style>
 	.box {
-		@apply h-24 w-48 rounded-lg m-3;
+		@apply w-32 md:w-64 rounded-lg mx-6 flex-shrink-0;
+	}
+
+	.logo-carousel {
+		@apply flex flex-row py-3 animate-carouselSlide;
 	}
 </style>
