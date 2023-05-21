@@ -3,14 +3,14 @@ on:
   workflow_dispatch:
   push:
     branches:
-      # - main
-      - alpha
-    # - 'release-**'
+      - stable
+      # - 'beta-**'
+      # - alpha
   pull_request:
     branches:
-      # - main
-      - alpha
-    # - 'release-**'
+      - stable
+      # - 'beta-**'
+      # - alpha
 
 jobs:
   deploy:
