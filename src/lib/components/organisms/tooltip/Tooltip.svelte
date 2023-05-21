@@ -1,35 +1,46 @@
 <script lang="ts">
-	export let content = '';
+	export let content: string;
 	let isHovered = false;
-	export let x: number;
-	export let y: number;
+	export let direction: 'left' | 'right' | 'top' | 'bottom';
+	let directionStyling: string;
 
-	function mouseOver(event: { pageX: number; pageY: number }) {
-		console.log('Mouse over');
+	switch (direction) {
+		case 'left':
+			directionStyling = 'right-full';
+		case 'right':
+			directionStyling = 'left-full';
+		case 'top':
+			directionStyling = 'bottom-full';
+		case 'bottom':
+			directionStyling = 'top-full';
+	}
+
+	function mouseOver(event) {
 		isHovered = true;
-		x = event.pageX + 5;
-		y = event.pageY + 5;
 	}
-	function mouseMove(event: { pageX: number; pageY: number }) {
-		console.log('Mouse move');
-		x = event.pageX + 5;
-		y = event.pageY + 5;
-	}
-	function mouseLeave() {
-		console.log('Mouse leave');
+
+	function mouseLeave(event) {
 		isHovered = false;
 	}
-
-	export function setPos(newX: number, newY: number) {
-		x = newX;
-		y = newY;
-		console.log(x, y);
-		console.log(content);
+	function focus(event) {
+		//isHovered = true;
 	}
 </script>
 
-<div class="bg-gray-300 h-64 w-64 absolute z-50 top-[{y}px] left-[{x}px]">
-	<h1 class="display-large">
-		{content}
-	</h1>
+<!--This Component is used for when you want to place a tooltip element. (rather than using an action)-->
+
+<div
+	on:mouseover={mouseOver}
+	on:mouseleave={mouseLeave}
+	on:focus={focus}
+	class="relative {$$props.class} flex justify-items-center"
+>
+	{#if isHovered}
+		<div class="bg-surface-light dark:bg-surface-dark p-4 w-64 rounded-lg absolute bottom-full">
+			<h1 class="body-medium">
+				{content}
+			</h1>
+		</div>
+	{/if}
+	<slot />
 </div>

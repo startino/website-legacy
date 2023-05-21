@@ -1,8 +1,9 @@
-import Tooltip from './Tooltip.svelte';
+import Tooltip from './TooltipAction.svelte';
 
 export function tooltip(element: Element, content: string) {
 	let tooltipComponent: Tooltip;
 	function mouseOver(event) {
+		console.log('mouse over tooltip');
 		tooltipComponent = new Tooltip({
 			props: {
 				content: content,
@@ -14,7 +15,10 @@ export function tooltip(element: Element, content: string) {
 		});
 	}
 	function mouseMove(event) {
-		tooltipComponent.setPos(event.pageX, event.pageY);
+		tooltipComponent.$set({
+			x: event.pageX,
+			y: event.pageY
+		});
 	}
 	function mouseLeave() {
 		tooltipComponent.$destroy();

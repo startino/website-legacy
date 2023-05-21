@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Tooltip from './tooltip/Tooltip.svelte';
+
 	export let tabs: any[] = [];
 	export let activeTabValue = 1;
 
@@ -24,7 +26,18 @@
 					type="button"
 					role="tab"
 					aria-controls="profile"
-					aria-selected="false">{tab.label}</button
+					aria-selected="false"
+				>
+					<div class="flex flex-row items-center">
+						<h1 class="headline-medium">{tab.label}</h1>
+						<!--
+							<Tooltip
+							direction="top"
+							content="This explains the plan"
+							class="m-3 w-4 h-6 bg-surface-variant-light dark:bg-surface-variant-dark rounded-full"
+						/>
+						-->
+					</div></button
 				>
 			</li>
 		{/each}

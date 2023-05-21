@@ -102,7 +102,7 @@
 		<div id="tsparticles-hero" class="w-full h-full absolute -z-10" />
 		<div class="grid justify-items-center space-y-12 h-fit w-full mx-auto self-center">
 			<div class="w-fit">
-				<h1 class="display-large">Futino</h1>
+				<h1 class="display-large" use:tooltip={'this is content for a tooltip'}>Futino</h1>
 			</div>
 
 			<div class="w-fit">
