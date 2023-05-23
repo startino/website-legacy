@@ -36,8 +36,8 @@
 		transition: 'fade',
 		top: 0,
 		bottom: 0,
-		delay: 0,
-		duration: 500,
+		delay: 100,
+		duration: 1000,
 		x: 0,
 		y: 0,
 		axis: 'y'

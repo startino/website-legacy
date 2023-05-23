@@ -5,7 +5,7 @@ export const tsparticlesOptions = {
 		events: {
 			onClick: {
 				enable: true,
-				mode: 'push'
+				//mode: 'push'
 			},
 			resize: true
 		},
@@ -17,13 +17,13 @@ export const tsparticlesOptions = {
 				size: 40
 			},
 			push: {
-				quantity: 10
+				quantity: 2
 			}
 		}
 	},
 	particles: {
 		color: {
-			value: '#ffffff'
+			value: '#ffff'
 		},
 		links: {
 			color: '#ffffff',
@@ -51,7 +51,7 @@ export const tsparticlesOptions = {
 			value: 3
 		},
 		opacity: {
-			value: 0.5
+			value: 0.6
 		},
 		shape: {
 			type: 'circle'
