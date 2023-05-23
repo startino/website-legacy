@@ -128,7 +128,6 @@
 
 	<!--Big-Clients Slideshow-->
 	<section id="slideshow" class="grid self-end z-10">
-		<div id="tsparticles-client-carousel" class="w-full h-fit absolute -z-10" />
 		<ClientCarousel />
 	</section>
 
@@ -144,7 +143,7 @@
 		/>
 		<!--Background image for journey section. Purpose is to blend with the transition image.-->
 		<div
-			class="bg-gradient-to-t from-white/50 dark:from-black/50 from-50% to-transparent -z-20 h-full w-full absolute"
+			class="bg-gradient-to-t from-white/50 dark:from-black/50 from-50% to-transparent -z-30 h-full w-full absolute"
 		/>
 		<TransitionElement top={-200}>
 			<h1 class="display-large py-12">Areas of Expertise</h1>
@@ -161,13 +160,26 @@
 					</h1>
 
 					<!--Center Line-->
-					<TransitionElement transition="slide" class="h-full absolute left-1/2">
-						<!--Background line-->
-						<div class="border-l-2 border-white dark:border-black h-full absolute top-28" />
-						<!--Glow Line. Transition element not working on slide. tried debugging for a long time, no avail. this works though.-->
+					<TransitionElement
+						transition="slide"
+						class="h-full absolute -z-10 left-1/2 top-28"
+						duration={2000}
+						axis={'y'}
+						delay={700}
+					>
+						<div class="border-l-2 border-white dark:border-black h-full" />
+					</TransitionElement>
+
+					<!--Glow Line-->
+					<TransitionElement
+						transition="slide"
+						class="h-full absolute -z-20 left-1/2 top-28 blur-sm flex"
+						duration={2000}
+						axis={'y'}
+						delay={700}
+					>
 						<div
-							in:slide={{ duration: 2000, axis: 'y', delay: 300 }}
-							class="border-l-4 border-b-4 border-primary-light dark:border-primary-dark h-full top-28 absolute left-1/2 -z-10 opacity-100 blur-sm"
+							class="bg-primary-light dark:bg-primary-dark w-1.5 h-full opacity-100 self-center"
 						/>
 					</TransitionElement>
 
@@ -192,7 +204,9 @@
 						</TransitionElement>
 					</div>
 					<!--Content-->
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center py-8">
+					<div
+						class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center py-8 z-10"
+					>
 						{#each content as { title, body }}
 							<!--Graphic Image-->
 							<TransitionElement presetOptions={leftSlidePreset} class="w-full">
