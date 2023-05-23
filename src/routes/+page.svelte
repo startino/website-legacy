@@ -150,7 +150,12 @@
 
 			<!--Chapters Setion-->
 			{#each chapters as { inView, chapterNumber, title, id, content }}
-				<div {id} class="flex flex-col place-items-center py-32 relative overflow-hidden">
+				<div
+					{id}
+					class={chapterNumber != chapters.length
+						? 'flex flex-col place-items-center py-32 relative '
+						: 'flex flex-col place-items-center py-32 relative overflow-hidden'}
+				>
 					<h1
 						class="display-medium p-4 font-extrabold tracking-wide transition-all duration-700 {inView
 							? ' text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark'
@@ -162,7 +167,7 @@
 					<!--Center Line-->
 					<TransitionElement
 						transition="slide"
-						class="h-full absolute -z-10 left-1/2 top-28"
+						class="h-full absolute -z-10 left-1/2 top-64"
 						duration={2000}
 						axis={'y'}
 						delay={700}
@@ -173,13 +178,13 @@
 					<!--Glow Line-->
 					<TransitionElement
 						transition="slide"
-						class="h-full absolute -z-20 left-1/2 top-28 blur-sm flex"
+						class="h-full absolute -z-20 left-1/2 top-64 blur-sm flex mx-auto"
 						duration={2000}
 						axis={'y'}
 						delay={700}
 					>
 						<div
-							class="bg-primary-light dark:bg-primary-dark w-1.5 h-full opacity-100 self-center"
+							class="bg-primary-light dark:bg-primary-dark w-1.5 h-full pb-2 opacity-50 md:opacity-100 self-center"
 						/>
 					</TransitionElement>
 
@@ -196,16 +201,16 @@
 						>
 							{chapterNumber}
 						</h1>
-						<!--Circle Glow Effect-->
+						<!--Glow Effect-->
 						<TransitionElement transition="fade" delay={300} duration={500} class="-z-10">
 							<div
-								class="absolute -z-10 -inset-1 bg-gradient-to-r from-primary-dark to-secondary-dark animate-spin rounded-full blur transition-all"
+								class="absolute -z-20 -inset-1 bg-gradient-to-r from-primary-dark to-secondary-dark animate-spin rounded-full blur transition-all"
 							/>
 						</TransitionElement>
 					</div>
 					<!--Content-->
 					<div
-						class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center py-8 z-10"
+						class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-7xl justify-items-center py-8 z-10 overflow-hidden"
 					>
 						{#each content as { title, body }}
 							<!--Graphic Image-->
