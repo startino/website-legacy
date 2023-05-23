@@ -65,7 +65,7 @@
 >
 	<section
 		id="hero"
-		class="grow py-32 sm:py-34 md:py-44 px-4 sm:px-6 md:px-8 grid justify-items-center space-y-12 shadow-lg"
+		class="grow py-32 sm:py-34 h-screen md:py-44 px-4 sm:px-6 md:px-8 grid justify-items-center space-y-12 shadow-lg"
 	>
 		<div class="grid justify-items-center space-y-12 h-fit w-full mx-auto self-center">
 			<div class="w-fit">
@@ -129,7 +129,7 @@
 					specifically to you.
 				</h2>
 
-				<TransitionElement transition="slide" axis={'x'}>
+				<TransitionElement transition="slide" delay={200} duration={1000}>
 					<div class="flex flex-col divide-y title-medium border-y">
 						{#each team as { index, name, position, body, imgPath }}
 							<!-- svelte-ignore a11y-click-events-have-key-events -->

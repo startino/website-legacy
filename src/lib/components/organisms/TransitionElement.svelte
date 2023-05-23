@@ -142,7 +142,11 @@
 	{:else if finalizedOptions.transition == 'slide'}
 		<div
 			bind:this={element}
-			in:slide
+			in:slide={{
+				axis: finalizedOptions.axis,
+				duration: finalizedOptions.duration,
+				delay: finalizedOptions.delay
+			}}
 			style="animation: {animation}; {css_animation}"
 			class={$$props.class}
 		>
