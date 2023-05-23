@@ -37,7 +37,7 @@
 		top: 0,
 		bottom: 0,
 		delay: 0,
-		duration: 1000,
+		duration: 500,
 		x: 0,
 		y: 0,
 		axis: 'y'
@@ -110,7 +110,7 @@
 	onMount(() => {
 		window.addEventListener('scroll', handler);
 		verify_intersection();
-		//console.log(finalizedOptions);
+		console.log(finalizedOptions);
 		return () => window.removeEventListener('scroll', handler);
 	});
 </script>
