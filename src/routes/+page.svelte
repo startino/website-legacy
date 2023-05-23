@@ -19,6 +19,7 @@
 	import Icon from '$lib/components/atoms/Icon.svelte';
 	import ClientCard from './ClientCard.svelte';
 	import { tooltip } from '$lib/components/organisms/tooltip/tooltip';
+	import AnimatedCounter from './AnimatedCounter.svelte';
 
 	let scrollY: number;
 
@@ -153,8 +154,8 @@
 				<div
 					{id}
 					class={chapterNumber != chapters.length
-						? 'flex flex-col place-items-center py-32 relative '
-						: 'flex flex-col place-items-center py-32 relative overflow-hidden'}
+						? 'flex flex-col h-screen place-items-center py-32 relative '
+						: 'flex flex-col h-screen place-items-center py-32 relative overflow-hidden'}
 				>
 					<h1
 						class="display-medium p-4 font-extrabold tracking-wide transition-all duration-700 {inView
@@ -243,22 +244,43 @@
 		<TransitionElement transition="slide" duration={200} delay={100}>
 			<div class="flex flex-wrap md:flex-row px-4 justify-around text-center">
 				<div class="flex flex-col p-4">
-					<h2 class="headline-large font-extrabold">50</h2>
+					<AnimatedCounter class="headline-large font-extrabold" finalValue={50} duration={700} />
 					<h2 class="body-medium font-light">Sites Made</h2>
 				</div>
 				<div class="border-r border-white/20 my-4" />
 				<div class="flex flex-col p-4 justify-self-end">
-					<h2 class="headline-large font-extrabold">21K</h2>
+					<h2 class="headline-large font-extrabold inline">
+						<AnimatedCounter
+							class="headline-large font-extrabold inline"
+							finalValue={21}
+							duration={700}
+						/>
+						K
+					</h2>
 					<h2 class="body-medium font-light">Hours Used</h2>
 				</div>
 				<div class="border-r border-white/20 my-4" />
 				<div class="flex flex-col p-4">
-					<h2 class="headline-large font-extrabold">$200K</h2>
+					<h2 class="headline-large font-extrabold inline">
+						<span class="-mr-1">$</span>
+						<AnimatedCounter
+							class="headline-large font-extrabold inline"
+							finalValue={200}
+							duration={700}
+						/>
+						K
+					</h2>
 					<h2 class="body-medium font-light">Transacted</h2>
 				</div>
 				<div class="border-r border-white/20 my-4" />
 				<div class="flex flex-col p-4">
-					<h2 class="headline-large font-extrabold">99.9%</h2>
+					<h2 class="headline-large font-extrabold inline">
+						<AnimatedCounter
+							class="headline-large font-extrabold inline"
+							finalValue={99.9}
+							duration={700}
+						/>%
+					</h2>
 					<h2 class="body-medium font-light">Pure Waffle</h2>
 				</div>
 			</div>
@@ -271,7 +293,7 @@
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
 		<TransitionElement transition="fade" duration={500}>
-			<h1 class="display-large">Our Clients</h1>
+			<h1 class="display-large py-12">Our Clients</h1>
 			<div class="flex flex-wrap gap-12 items-center justify-items-center max-w-7xl overflow-clip">
 				{#each clientCards as { index, name, company, body, vid_path }}
 					<ClientCard {name} {company} {body} {vid_path} />{/each}
