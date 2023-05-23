@@ -4,7 +4,7 @@ export const tsparticlesOptions = {
 	interactivity: {
 		events: {
 			onClick: {
-				enable: true,
+				enable: true
 				//mode: 'push'
 			},
 			resize: true
