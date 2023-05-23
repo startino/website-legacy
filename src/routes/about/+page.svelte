@@ -90,16 +90,16 @@
 		id="about-transparency"
 		class="grow py-32 sm:py-34 md:py-32 px-4 sm:px-6 md:px-8 grid justify-items-center space-y-12 border-b border-primary-light/20 dark:border-primary-dark/20"
 	>
-		<div class="flex flex-col text-left w-full pl-12 max-w-3xl space-y-8">
+		<div class="flex flex-col text-left w-full pl-12 max-w-7xl space-y-8">
 			<!--Any sort of glass effect would be good here-->
 			<h1 class="display-large text-left">Glass like Transparency.</h1>
-			<p class="body-large">
+			<p class="body-large max-w-3xl">
 				We believe that transparency builds trust and fosters strong, long-lasting relationships
 				with our clients. When it comes to pricing, we believe in fair and
 				<span class="text-primary-light dark:text-primary-dark font-bold">upfront pricing</span>
 				, without any hidden fees or surprises.
 			</p>
-			<p class="body-large">
+			<p class="body-large max-w-3xl">
 				Additionally, we embrace the use of
 				<span class="text-primary-light dark:text-primary-dark font-bold">open-source software</span
 				>
@@ -107,6 +107,9 @@
 				frameworks, libraries, and tools, we ensure flexibility, security, and cost-effectiveness for
 				our clients.
 			</p>
+			<Button class="w-fit">
+				<h1 class="title-small">Don't believe us? Ask us.</h1>
+			</Button>
 		</div>
 	</section>
 
@@ -114,10 +117,10 @@
 		id="about-people"
 		class="grow py-32 h-screen sm:py-34 md:py-32 px-4 sm:px-6 md:px-8 grid justify-items-center space-y-12 border-b border-primary-light/20 dark:border-primary-dark/20"
 	>
-		<div class="flex flex-col text-left w-full pl-12 max-w-3xl space-y-8">
+		<div class="flex flex-col text-left w-full pl-12 max-w-7xl space-y-8">
 			<!--Any sort of glass effect would be good here-->
-			<h1 class="display-large text-left">(Y)our People</h1>
-			<h2 class="headline-small">
+			<h1 class="display-large text-left">[Y]our People</h1>
+			<h2 class="headline-small max-w-3xl">
 				Rest assured, our team will know your business. Highly skilled developers assigned
 				specifically to you.
 			</h2>
@@ -148,6 +151,9 @@
 					</div>
 				{/each}
 			</div>
+			<Button class="w-fit">
+				<h1 class="title-small">Meet the Team</h1>
+			</Button>
 		</div>
 	</section>
 </main>
