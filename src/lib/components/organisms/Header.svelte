@@ -72,14 +72,7 @@
 								Home
 							</a>
 						</li>
-						<li>
-							<a
-								class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark"
-								href="{base}/contact"
-							>
-								Contact
-							</a>
-						</li>
+
 						<li>
 							<a
 								class="inline hover:text-tertiary-light dark:hover:text-tertiary-dark"
