@@ -150,11 +150,12 @@
 		/>
 		<h1 class="display-large py-12" in:fade>Areas of Expertise</h1>
 
+		<!--Chapters Setion-->
 		{#each chapters as { inView, chapterNumber, title, id, content }}
-			<!--Chapter Setion-->
-			<div {id} class="flex flex-col place-items-center py-24 relative overflow-hidden">
+			
+			<div {id} class="flex flex-col place-items-center py-32 relative overflow-hidden">
 				<h1
-					class="display-small p-4 font-extrabold tracking-wide transition-all duration-700 {inView
+					class="display-medium p-4 font-extrabold tracking-wide transition-all duration-700 {inView
 						? ' text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark'
 						: 'text-surface-on-light dark:text-surface-on-dark'}"
 				>
@@ -164,11 +165,11 @@
 				<!--Center Line-->
 				<TransitionElement transition="slide" class="h-full absolute left-1/2">
 					<!--Background line-->
-					<div class="border-l-2 border-white dark:border-black h-full absolute top-24 -z-10" />
+					<div class="border-l-2 border-white dark:border-black h-full absolute top-28" />
 					<!--Glow Line. Transition element not working on slide. tried debugging for a long time, no avail. this works though.-->
 					<div
 						in:slide={{ duration: 2000, axis: 'y', delay: 300 }}
-						class="border-l-4 border-b-4 border-primary-light dark:border-primary-dark h-full top-24 absolute left-1/2 -z-20 opacity-100 blur-sm"
+						class="border-l-4 border-b-4 border-primary-light dark:border-primary-dark h-full top-28 absolute left-1/2 -z-10 opacity-100 blur-sm"
 					/>
 				</TransitionElement>
 
@@ -181,7 +182,7 @@
 					}}
 				>
 					<h1
-						class="headline-medium font-bold text-surface-on-light dark:text-surface-on-dark self-center mx-auto"
+						class="headline-medium font-bold text-surface-on-light dark:text-surface-on-dark self-center mx-auto z-10"
 					>
 						{chapterNumber}
 					</h1>
@@ -219,7 +220,7 @@
 	<!--Analytics Snippet-->
 	<section
 		id="analytics"
-		class="grow px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 bg-primary-light/20 dark:bg-primary-dark/10"
+		class="grow px-4 sm:px-6 md:px-8 grid border-secondary-light/20 dark:border-secondary-dark/20 bg-primary-light/20 dark:bg-primary-dark/10"
 	>
 		<TransitionElement transition="slide" duration={200} delay={100} once={true}>
 			<div class="flex flex-wrap md:flex-row px-4 justify-around text-center">
@@ -265,7 +266,7 @@
 		class="grow py-32 sm:py-34 md:py-44 shadow-lg px-4 sm:px-6 md:px-8 grid space-y-12 border-secondary-light/20 dark:border-secondary-dark/20 justify-items-center"
 	>
 		<TransitionElement transition="fade" duration={500}>
-			<h1 class="display-large">We'd Love to Hear From You</h1>
+			<h1 class="display-large py-12">We'd Love to Hear From You</h1>
 
 			<div
 				class="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-auto max-w-7xl items-center justify-items-center"
@@ -360,14 +361,20 @@
 			</div>
 			<!-- Things like FAQ, requesting quotes, more about us, etc.-->
 			<div class="flex flex-row space-x-4 py-8 w-fit mx-auto">
-				{#each Array(2) as card}
+			
 					<div class="shadow-lg shadow-black/40 flex flex-col p-4">
-						<h1 class="display-small font-bold">Title</h1>
+						<h1 class="display-small font-bold">FAQs</h1>
 						<Button class="body-medium font-semi-bold"
 							><input type="button" value="Find Answers Now" /></Button
 						>
 					</div>
-				{/each}
+					<div class="shadow-lg shadow-black/40 flex flex-col p-4">
+						<h1 class="display-small font-bold">Get a Quote</h1>
+						<Button class="body-medium font-semi-bold"
+							><input type="button" value="Find Answers Now" /></Button
+						>
+					</div>
+				
 			</div>
 		</TransitionElement>
 	</section>
@@ -421,18 +428,18 @@
 		<TransitionElement transition="fade" duration={300}>
 			<div class="flex flex-col space-y-12">
 				<h1 class="display-large">Let's Get Started</h1>
-				<div class="gap-x-4 grid grid-cols-1 md:grid-cols-2">
-					<a href="{base}/contact">
-						<Button class="w-full">
-							<p class="title-large p-4">Contact Us!</p>
-						</Button>
-					</a>
-					<a href="{base}/about">
-						<Button class="w-full">
-							<p class="title-large p-4">Check Out Pricing!</p>
-						</Button>
-					</a>
-				</div>
+				<div class="gap-y-4 gap-x-4 grid grid-cols-2 sm::grid-cols-2">
+				<a href="{base}/about">
+					<Button class="w-full h-full">
+						<p class="title-medium p-2">Check Out Pricing!</p>
+					</Button>
+				</a>
+				<a href="{base}/contact">
+					<Button class="w-full h-full">
+						<p class="title-medium p-2">Contact Us!</p>
+					</Button>
+				</a>
+			</div>
 			</div></TransitionElement
 		>
 	</section>
